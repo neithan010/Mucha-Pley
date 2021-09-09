@@ -29,7 +29,7 @@ func _physics_process(delta):
 		rotation = velocity.angle()+PI/2
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
-	move_and_slide(velocity)
+	var _move = move_and_slide(velocity)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
