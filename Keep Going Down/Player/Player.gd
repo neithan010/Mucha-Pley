@@ -10,14 +10,12 @@ const UP    = INPUT_NAME+"_up"
 const DOWN  = INPUT_NAME+"_down"
 const RIGHT = INPUT_NAME+"_right"
 const LEFT  = INPUT_NAME+"_left"
-
+const minion_range = 200
 
 var velocity := Vector2.ZERO
-
 # Called when the node enters the scene tree for the first time.
-func _ready():
-	pass 
 
+	
 func _physics_process(delta):
 	var input_vector := Vector2.ZERO
 	input_vector.x = Input.get_action_strength(RIGHT) - Input.get_action_strength(LEFT)
@@ -29,7 +27,9 @@ func _physics_process(delta):
 		rotation = velocity.angle()+PI/2
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
-	var _move = move_and_slide(velocity)
+	
+	
+	move_and_slide(velocity)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
