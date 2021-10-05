@@ -8,11 +8,14 @@ const UP    = INPUT_NAME+"_up"
 const DOWN  = INPUT_NAME+"_down"
 const RIGHT = INPUT_NAME+"_right"
 const LEFT  = INPUT_NAME+"_left"
+const SPACE = INPUT_NAME+"_space"
 var in_range := true
 #var player : Player
 
 
 onready var player = $"../Player"
+onready var animation_tree = $AnimationTree
+onready var attack = $Attack
 var velocity := Vector2.ZERO
 
 # Called when the node enters the scene tree for the first time.
@@ -20,6 +23,8 @@ func _ready():
 	ACCEL     = 4000
 	MAX_SPEED = 30000
 	FRICTION  = 3000
+	animation_tree.active = true
+	attack.hide()
 	print(player)
 
 
