@@ -4,17 +4,18 @@ extends BaseAttacker
 
 
 const INPUT_NAME := "minion"
-const UP    = INPUT_NAME+"_up"
-const DOWN  = INPUT_NAME+"_down"
-const RIGHT = INPUT_NAME+"_right"
-const LEFT  = INPUT_NAME+"_left"
-const SPACE = INPUT_NAME+"_space"
+const UP    	= INPUT_NAME+"_up"
+const DOWN  	= INPUT_NAME+"_down"
+const RIGHT 	= INPUT_NAME+"_right"
+const LEFT  	= INPUT_NAME+"_left"
+const ATTACK	= INPUT_NAME+"_attack"
 var in_range := true
 #var player : Player
 
 
 onready var player = $"../Player"
 onready var animation_tree = $AnimationTree
+onready var playback = $AnimationTree.get("parameters/playback")
 onready var attack = $Attack
 var velocity := Vector2.ZERO
 
@@ -46,5 +47,13 @@ func _physics_process(delta):
 		rotation = velocity.angle()+PI/2
 	
 	var _move = move_and_slide(velocity)
+	
+	if Input.is_action_just_pressed(ATTACK):
+		_attack()
+		return
+		
+func _attack():
+	attack.show()
+	playback.travel("attack")
 
 
