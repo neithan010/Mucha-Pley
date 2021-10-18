@@ -1,6 +1,14 @@
 extends BaseAttacker
 
-
+#Inherits vars:
+#var HP: int
+#var ARMOR: int
+#var MAX_SPEED: int
+#var ACCEL: int
+#var FRICTION: int
+#var velocity:= Vector2.ZERO
+#var DAMAGE: int
+#var ATTACK_SPEED: int
 
 
 const INPUT_NAME := "minion"
@@ -9,11 +17,9 @@ const DOWN  = INPUT_NAME+"_down"
 const RIGHT = INPUT_NAME+"_right"
 const LEFT  = INPUT_NAME+"_left"
 var in_range := true
-#var player : Player
-
 
 onready var player = $"../Player"
-var velocity := Vector2.ZERO
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

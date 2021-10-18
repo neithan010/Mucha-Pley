@@ -8,6 +8,7 @@ radius = 15.4855
 
 [node name="Minion" type="KinematicBody2D"]
 position = Vector2( 189.938, 103.072 )
+collision_layer = 0
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true

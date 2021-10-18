@@ -1,6 +1,14 @@
 extends BaseActor
 class_name Player
 
+#Inherits vars:
+#var HP: int
+#var ARMOR: int
+#var MAX_SPEED: int
+#var ACCEL: int
+#var FRICTION: int
+#var velocity:= Vector2.ZERO
+
 const INPUT_NAME := "player"
 const UP    = INPUT_NAME+"_up"
 const DOWN  = INPUT_NAME+"_down"
@@ -17,7 +25,7 @@ var dash_dir : Vector2
 var dash_curr_spd = 0
 var dash_recharge = DASH_RELOAD_TIME
 
-var velocity := Vector2.ZERO
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	ACCEL     = 4000
@@ -33,7 +41,8 @@ func _physics_process(delta):
 	var input_vector := Vector2.ZERO
 	input_vector.x = Input.get_action_strength(RIGHT) - Input.get_action_strength(LEFT)
 	input_vector.y = Input.get_action_strength(DOWN)  - Input.get_action_strength(UP)
-	rotation = velocity.angle()+PI/2
+	if velocity != Vector2.ZERO:
+		rotation = velocity.angle()
 	
 	if Input.is_action_just_pressed("player_dash") and dash_recharge <=0:
 		dash_recharge = DASH_RELOAD_TIME
@@ -42,7 +51,11 @@ func _physics_process(delta):
 		dash_dir= input_vector.normalized()
 		dash_curr_spd = DASH_SPEED_init
 		
-		
+	if Input.is_action_just_pressed("ui_select"):
+		var bullet = preload("res://Bullet.tscn").instance()
+		bullet.init(500, 10, position, rotation, self)
+		owner.add_child(bullet)
+		print(bullet)
 	
 	match move_state:
 		STATE.move:
@@ -66,12 +79,20 @@ func _physics_process(delta):
 			else:
 				move_state = STATE.move
 	
-#	print("recharge: ", dash_recharge)
-#	print("dashing: ", dash_timer)
-#	print("delta:", delta)
+
 	move_and_slide(velocity)
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+
+func _on_Hurtbox_area_entered(area):
+	#cuando entra una hitbox enemiga en la hurtbox del player
+	#(Cuando el player recibe un ataque)
+	print("Received Attack")
+	print(area)
+	print(area.control)
+	print(area.get_area_damage())
