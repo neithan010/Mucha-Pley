@@ -23,7 +23,6 @@ onready var player = $"../Player"
 onready var animation_tree = $AnimationTree
 onready var playback = $AnimationTree.get("parameters/playback")
 onready var attack = $Attack
-var velocity := Vector2.ZERO
 
 
 # Called when the node enters the scene tree for the first time.
