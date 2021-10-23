@@ -20,8 +20,6 @@ const ATTACK	= INPUT_NAME+"_attack"
 var in_range := true
 
 onready var player = $"../Player"
-onready var animation_tree = $AnimationTree
-onready var playback = $AnimationTree.get("parameters/playback")
 onready var attack = $Attack
 
 
@@ -30,8 +28,6 @@ func _ready():
 	ACCEL     = 4000
 	MAX_SPEED = 30000
 	FRICTION  = 3000
-	animation_tree.active = true
-	attack.hide()
 	print(player)
 
 
@@ -50,7 +46,7 @@ func _physics_process(delta):
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 	if velocity != Vector2.ZERO:
-		rotation = velocity.angle()+PI/2
+		rotation = velocity.angle()
 	
 	var _move = move_and_slide(velocity)
 	
@@ -60,6 +56,6 @@ func _physics_process(delta):
 		
 func _attack():
 	attack.show()
-	playback.travel("attack")
+
 
 
