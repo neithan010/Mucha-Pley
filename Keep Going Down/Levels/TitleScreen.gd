@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 onready var play_button = $Menu/Play
+onready var file_button = $Menu/File
 onready var quit_button = $Menu/Quit
 
 func _ready():
@@ -12,8 +13,3 @@ func on_play_pressed():
 
 func on_quit_pressed():
 	get_tree().quit()
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
