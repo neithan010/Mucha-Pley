@@ -32,12 +32,6 @@ font_data = ExtResource( 4 )
 
 [node name="World" type="Node2D"]
 
-[node name="Logo" type="TextureRect" parent="Title/Menu"]
-margin_right = 1039.0
-margin_bottom = 80.0
-texture = ExtResource( 4 )
-stretch_mode = 4
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 1 )
 
