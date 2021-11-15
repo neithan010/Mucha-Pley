@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Minion/Minion.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://PlayerController.gd" type="Script" id=3]
+[ext_resource path="res://Levels/HUD.gd" type="Script" id=4]
+[ext_resource path="res://Fonts/80s-retro-future.ttf" type="DynamicFontData" id=5]
 
 [sub_resource type="Curve" id=1]
 _data = [ Vector2( 0.0238908, 0.736364 ), 0.0, 1.04931, 0, 0, Vector2( 0.993174, 0.472727 ), 3.07158, 0.0, 0, 0 ]
@@ -10,6 +12,31 @@ _data = [ Vector2( 0.0238908, 0.736364 ), 0.0, 1.04931, 0, 0, Vector2( 0.993174,
 [sub_resource type="Gradient" id=2]
 offsets = PoolRealArray( 0, 0.145038 )
 colors = PoolColorArray( 0, 0.988235, 0.85098, 1, 0, 0.415686, 0.733333, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0, 0, 0, 0.235294 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="DynamicFont" id=4]
+size = 26
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 26
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 26
+font_data = ExtResource( 5 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 1, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0, 0, 0, 0 )
 
 [node name="PlayerController" type="Node"]
 script = ExtResource( 3 )
@@ -24,3 +51,156 @@ gradient = SubResource( 2 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 107.028, 99.4715 )
+
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource( 4 )
+
+[node name="Speed" type="Node" parent="HUD"]
+
+[node name="Panel" type="Panel" parent="HUD/Speed"]
+margin_left = 14.0
+margin_top = 13.0
+margin_right = 115.0
+margin_bottom = 107.0
+custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="HUD/Speed"]
+margin_left = 33.0
+margin_top = 28.0
+margin_right = 104.0
+margin_bottom = 95.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="x" type="Label" parent="HUD/Speed"]
+margin_left = 48.1122
+margin_top = 41.4032
+margin_right = 64.1122
+margin_bottom = 71.4032
+custom_fonts/font = SubResource( 4 )
+text = "x"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="HUD/Speed"]
+margin_left = 72.0
+margin_top = 42.8648
+margin_right = 88.0
+margin_bottom = 72.8648
+custom_fonts/font = SubResource( 5 )
+text = "#"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Armor" type="Node" parent="HUD"]
+
+[node name="Panel" type="Panel" parent="HUD/Armor"]
+margin_left = 14.0
+margin_top = 110.0
+margin_right = 115.0
+margin_bottom = 204.0
+custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="HUD/Armor"]
+margin_left = 31.0
+margin_top = 120.0
+margin_right = 103.0
+margin_bottom = 195.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="HUD/Armor"]
+margin_left = 52.0
+margin_top = 141.865
+margin_right = 84.0
+margin_bottom = 171.865
+custom_fonts/font = SubResource( 5 )
+text = "##"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Damage" type="Node" parent="HUD"]
+
+[node name="Panel" type="Panel" parent="HUD/Damage"]
+margin_left = 14.0
+margin_top = 207.781
+margin_right = 115.0
+margin_bottom = 301.781
+custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="HUD/Damage"]
+margin_left = 29.0
+margin_top = 218.0
+margin_right = 105.0
+margin_bottom = 290.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="x" type="Label" parent="HUD/Damage"]
+margin_left = 48.1122
+margin_top = 236.184
+margin_right = 64.1122
+margin_bottom = 266.184
+custom_fonts/font = SubResource( 4 )
+text = "x"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="HUD/Damage"]
+margin_left = 72.0
+margin_top = 237.645
+margin_right = 88.0
+margin_bottom = 267.645
+custom_fonts/font = SubResource( 5 )
+text = "#"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Health" type="Node" parent="HUD"]
+
+[node name="Panel" type="Panel" parent="HUD/Health"]
+visible = false
+margin_left = 122.0
+margin_top = 477.0
+margin_right = 948.0
+margin_bottom = 571.0
+custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ProgressBar" type="ProgressBar" parent="HUD/Health"]
+margin_left = 161.258
+margin_top = 511.094
+margin_right = 912.258
+margin_bottom = 541.094
+rect_min_size = Vector2( 200, 0 )
+size_flags_horizontal = 0
+custom_fonts/font = SubResource( 6 )
+custom_styles/fg = SubResource( 7 )
+custom_styles/bg = SubResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="HP_changed" from="Player" to="HUD" method="_on_Player_HP_changed"]

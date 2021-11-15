@@ -94,4 +94,5 @@ func _on_Hurtbox_area_entered(area):
 	print(area.control)
 	print(area.get_area_damage())
 	self.HP -= area.get_area_damage()
+	emit_signal("HP_changed")
 	print(self.HP)
