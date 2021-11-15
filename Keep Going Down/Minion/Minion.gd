@@ -1,5 +1,7 @@
 extends BaseAttacker
 
+signal attack_changed
+
 #Inherits vars:
 #var HP: int
 #var ARMOR: int
@@ -9,7 +11,6 @@ extends BaseAttacker
 #var velocity:= Vector2.ZERO
 #var DAMAGE: int
 #var ATTACK_SPEED: int
-
 
 const INPUT_NAME := "minion"
 const UP    	= INPUT_NAME+"_up"

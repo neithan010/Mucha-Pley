@@ -2,6 +2,8 @@ extends BaseActor
 class_name Player
 
 signal HP_changed
+signal speed_changed
+signal armor_changed
 
 #Inherits vars:
 #var HP: int
@@ -95,4 +97,3 @@ func _on_Hurtbox_area_entered(area):
 	print(area.get_area_damage())
 	self.HP -= area.get_area_damage()
 	emit_signal("HP_changed")
-	print(self.HP)
