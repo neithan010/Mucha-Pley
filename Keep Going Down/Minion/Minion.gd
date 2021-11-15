@@ -30,8 +30,6 @@ func _ready():
 	FRICTION  = 3000
 	print(player)
 
-
-
 func _physics_process(delta):
 	var input_vector := Vector2.ZERO
 	
@@ -56,6 +54,3 @@ func _physics_process(delta):
 		
 func _attack():
 	attack.show()
-
-
-

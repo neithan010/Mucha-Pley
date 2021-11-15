@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://ActorController.tscn" type="PackedScene" id=1]
 [ext_resource path="res://TileWorld.tscn" type="PackedScene" id=2]
@@ -45,6 +45,16 @@ font_data = ExtResource( 4 )
 [sub_resource type="DynamicFont" id=5]
 size = 26
 font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 26
+font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 1, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0, 0, 0, 0 )
 
 [node name="World" type="Node2D"]
 
@@ -263,6 +273,7 @@ __meta__ = {
 [node name="Health" type="Node" parent="HUD"]
 
 [node name="Panel" type="Panel" parent="HUD/Health"]
+visible = false
 margin_left = 122.0
 margin_top = 477.0
 margin_right = 948.0
@@ -272,23 +283,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureRect" type="TextureRect" parent="HUD/Health"]
-margin_left = 159.0
-margin_top = 487.0
-margin_right = 910.0
-margin_bottom = 559.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="HUD/Health"]
-margin_left = 439.714
-margin_top = 507.0
-margin_right = 639.714
-margin_bottom = 537.0
-custom_fonts/font = SubResource( 5 )
-text = "###/###"
-align = 1
+[node name="ProgressBar" type="ProgressBar" parent="HUD/Health"]
+margin_left = 161.258
+margin_top = 511.094
+margin_right = 912.258
+margin_bottom = 541.094
+rect_min_size = Vector2( 200, 0 )
+size_flags_horizontal = 0
+custom_fonts/font = SubResource( 7 )
+custom_styles/fg = SubResource( 8 )
+custom_styles/bg = SubResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

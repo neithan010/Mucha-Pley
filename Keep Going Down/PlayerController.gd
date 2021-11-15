@@ -22,9 +22,3 @@ func _process(delta):
 		line.gradient.set_color(1, Color("#006abb"))
 		
 	#line.
-	
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass

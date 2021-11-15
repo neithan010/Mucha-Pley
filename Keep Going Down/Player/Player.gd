@@ -1,6 +1,8 @@
 extends BaseActor
 class_name Player
 
+signal HP_changed
+
 #Inherits vars:
 #var HP: int
 #var ARMOR: int
@@ -16,6 +18,7 @@ const RIGHT = INPUT_NAME+"_right"
 const LEFT  = INPUT_NAME+"_left"
 const DASH_LENGTH = 0.2
 const DASH_RELOAD_TIME = 2
+const MAX_HP = 100
 var DASH_SPEED_fin: float
 var DASH_SPEED_init: float
 enum STATE {move, dash}
@@ -33,6 +36,7 @@ func _ready():
 	FRICTION  = 3000
 	DASH_SPEED_fin = MAX_SPEED * 1.5
 	DASH_SPEED_init = MAX_SPEED * 2.5
+	HP = MAX_HP
 #	Engine.time_scale= 0.7
 	
 func _physics_process(delta):
@@ -82,13 +86,6 @@ func _physics_process(delta):
 
 	move_and_slide(velocity)
 
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
-
 func _on_Hurtbox_area_entered(area):
 	#cuando entra una hitbox enemiga en la hurtbox del player
 	#(Cuando el player recibe un ataque)
@@ -96,3 +93,5 @@ func _on_Hurtbox_area_entered(area):
 	print(area)
 	print(area.control)
 	print(area.get_area_damage())
+	self.HP -= area.get_area_damage()
+	print(self.HP)

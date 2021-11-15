@@ -1,10 +1,6 @@
 extends Node2D
 class_name Bullet
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
 var speed :int
 var DAMAGE : int
 var direction : Vector2
@@ -23,9 +19,6 @@ func init(spd:int, dmg:int, pos:Vector2, dir:float, ctrl):
 	rotation = dir
 	direction = Vector2(1, 0).rotated(rotation).normalized()
 	control = ctrl
-	
-	
-
 
 func _physics_process(delta):
 	position += direction * speed * delta
@@ -56,4 +49,3 @@ func _on_Hurtbox_area_entered(area):#choca con algo
 
 func _on_Hurtbox_body_entered(body):
 	destroy()
-
