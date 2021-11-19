@@ -22,7 +22,7 @@ var in_range := true
 
 onready var player = $"../Player"
 onready var attack = $Attack
-
+onready var animation = $AnimationPlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -54,4 +54,4 @@ func _physics_process(delta):
 		return
 		
 func _attack():
-	attack.show()
+	animation.play("Attack")
