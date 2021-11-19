@@ -19,6 +19,8 @@ func on_return_pressed():
 	visible = next_state
 
 func on_file_pressed():
+	visible = false
+	get_tree().paused = false
 	if get_tree().get_current_scene().get_name() == "Archive":
 		get_tree().change_scene("res://Levels/TitleScreen.tscn")
 	else:
