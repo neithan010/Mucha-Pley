@@ -97,3 +97,7 @@ func _on_Hurtbox_area_entered(area):
 	print(area.get_area_damage())
 	self.HP -= area.get_area_damage()
 	emit_signal("HP_changed")
+	#self.ARMOR = 2
+	#emit_signal("armor_changed")
+	if self.HP <= 0:
+		pass

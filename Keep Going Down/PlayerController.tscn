@@ -121,16 +121,19 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="HUD/Armor"]
-margin_left = 52.0
-margin_top = 141.865
-margin_right = 84.0
-margin_bottom = 171.865
+margin_left = 30.6426
+margin_top = 143.2
+margin_right = 102.643
+margin_bottom = 173.2
 custom_fonts/font = SubResource( 5 )
-text = "##"
+text = "##.#"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Timer" type="Timer" parent="HUD/Armor"]
+wait_time = 0.1
 
 [node name="Damage" type="Node" parent="HUD"]
 
