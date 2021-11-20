@@ -9,7 +9,7 @@ var MAX_SPEED: int
 var ACCEL: int
 var FRICTION: int
 var velocity:= Vector2.ZERO
-onready var hurtbox := $Hurtbox
+#onready var hurtbox := $Hurtbox
 
 
 # Called when the node enters the scene tree for the first time.

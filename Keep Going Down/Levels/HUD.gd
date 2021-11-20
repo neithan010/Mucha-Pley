@@ -26,6 +26,16 @@ func _ready():
 	dmg_label.text = String(damage)
 	hp_bar.value = max_health
 
+func _process(delta):
+	if armor_ds < 0:
+		if armor_s > 0:
+			armor_s -= 1
+			armor_ds = 9
+		else:
+			armor_timer.stop()
+			armor_ds = 0
+	armor_label.text = str(armor_s) + ":" + str(armor_ds)
+
 func _on_Player_HP_changed():
 	var health = clamp(player.HP, 0, max_health)
 	hp_bar.value = health
@@ -46,13 +56,3 @@ func _on_Timer_timeout():
 func _on_Minion_attack_changed():
 	damage = 2 #minion.dmg_mult
 	dmg_label.text = String(damage)
-	
-func _process(delta):
-	if armor_ds < 0:
-		if armor_s > 0:
-			armor_s -= 1
-			armor_ds = 9
-		else:
-			armor_timer.stop()
-			armor_ds = 0
-	armor_label.text = str(armor_s) + ":" + str(armor_ds)

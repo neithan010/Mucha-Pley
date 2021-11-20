@@ -21,6 +21,9 @@ const LEFT  = INPUT_NAME+"_left"
 const DASH_LENGTH = 0.2
 const DASH_RELOAD_TIME = 2
 const MAX_HP = 100
+
+onready var res
+
 var DASH_SPEED_fin: float
 var DASH_SPEED_init: float
 enum STATE {move, dash}
@@ -85,8 +88,8 @@ func _physics_process(delta):
 			else:
 				move_state = STATE.move
 	
-
-	move_and_slide(velocity)
+	res = move_and_slide(velocity)
+	
 
 func _on_Hurtbox_area_entered(area):
 	#cuando entra una hitbox enemiga en la hurtbox del player

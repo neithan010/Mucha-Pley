@@ -1,5 +1,6 @@
 extends Control
 
+onready var res
 onready var return_button = $Overlay/Menu/Return
 onready var file_button = $Overlay/Menu/File
 onready var quit_button = $Overlay/Menu/Quit
@@ -22,9 +23,10 @@ func on_file_pressed():
 	visible = false
 	get_tree().paused = false
 	if get_tree().get_current_scene().get_name() == "Archive":
-		get_tree().change_scene("res://Levels/TitleScreen.tscn")
+		res = get_tree().change_scene("res://Levels/TitleScreen.tscn")
 	else:
-		get_tree().change_scene("res://Levels/Archive.tscn")
+		res = get_tree().change_scene("res://Levels/Archive.tscn")
+	assert(res == OK)
 
 func on_quit_pressed():
 	get_tree().quit()

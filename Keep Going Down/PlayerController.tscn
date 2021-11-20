@@ -205,5 +205,3 @@ custom_styles/bg = SubResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[connection signal="HP_changed" from="Player" to="HUD" method="_on_Player_HP_changed"]
