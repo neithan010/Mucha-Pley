@@ -3,6 +3,7 @@
 [ext_resource path="res://title_x4.png" type="Texture" id=1]
 [ext_resource path="res://Levels/Pause.gd" type="Script" id=2]
 [ext_resource path="res://Fonts/80s-retro-future.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://button.tres" type="Theme" id=4]
 
 [sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0, 0, 0, 1 )
@@ -12,10 +13,8 @@ border_width_right = 1
 border_width_bottom = 1
 border_color = Color( 0.0156863, 0.694118, 0.8, 1 )
 
-[sub_resource type="DynamicFont" id=5]
-font_data = ExtResource( 3 )
-
 [sub_resource type="DynamicFont" id=4]
+size = 13
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=1]
@@ -46,24 +45,43 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="Background/Option1"]
+[node name="TextureRect" type="TextureRect" parent="Background/Option1"]
 margin_right = 460.0
 margin_bottom = 100.0
-custom_fonts/font = SubResource( 5 )
-text = "Lorem ipsum"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureRect" type="TextureRect" parent="Background/Option1"]
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="Button" type="Button" parent="Background/Option1"]
+margin_right = 460.0
+margin_bottom = 100.0
+theme = ExtResource( 4 )
+text = "Lorem ipsum"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Option2" type="Panel" parent="Background"]
 margin_top = 100.0
 margin_right = 460.0
 margin_bottom = 200.0
 custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Background/Option2"]
+margin_right = 460.0
+margin_bottom = 100.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="Background/Option2"]
+margin_right = 460.0
+margin_bottom = 100.0
+theme = ExtResource( 4 )
+text = "Lorem ipsum"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -77,11 +95,40 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="TextureRect" type="TextureRect" parent="Background/Option3"]
+margin_right = 460.0
+margin_bottom = 100.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="Background/Option3"]
+margin_right = 460.0
+margin_bottom = 100.0
+theme = ExtResource( 4 )
+text = "Lorem ipsum"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Option4" type="Panel" parent="Background"]
 margin_top = 300.0
 margin_right = 460.0
 margin_bottom = 400.0
 custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Background/Option4"]
+margin_right = 460.0
+margin_bottom = 100.0
+
+[node name="Button" type="Button" parent="Background/Option4"]
+margin_right = 460.0
+margin_bottom = 100.0
+theme = ExtResource( 4 )
+text = "Lorem ipsum"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -95,14 +142,31 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="TextureRect" type="TextureRect" parent="Background/Option5"]
+margin_right = 460.0
+margin_bottom = 100.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="Background/Option5"]
+margin_right = 460.0
+margin_bottom = 100.0
+theme = ExtResource( 4 )
+text = "Lorem ipsum"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="FileContent" type="RichTextLabel" parent="Background"]
 margin_left = 510.0
 margin_top = 50.0
 margin_right = 870.0
 margin_bottom = 450.0
-custom_colors/font_color_selected = Color( 0.0156863, 0.694118, 0.8, 1 )
 custom_fonts/normal_font = SubResource( 4 )
-text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pulvinar ex id sapien vulputate, eget condimentum sem placerat. Donec et ante libero. Integer at tellus nec massa finibus malesuada. Fusce nibh nisl, dignissim sit amet tincidunt ac, lobortis vitae elit. Nam hendrerit quis enim dapibus dictum. Nam eget tempor urna. Phasellus tempor porta suscipit. Curabitur maximus placerat nunc, quis gravida orci porta at. Curabitur purus ex, consequat at fermentum nec, lacinia sit amet nunc. Proin at tristique neque, eu elementum mauris. Quisque elementum felis pharetra lectus gravida semper ac quis ex. Maecenas dictum odio id ultrices pellentesque. Quisque a metus vitae nisl commodo lacinia. Morbi egestas, lectus sed sagittis fringilla, nisi risus faucibus velit, nec mattis eros lorem non ligula.
+
+Integer scelerisque felis vitae augue dignissim cursus. Nulla orci eros, interdum a molestie ut, maximus a est. Nullam ornare augue id venenatis hendrerit. Aliquam tristique velit eu nibh fermentum congue. Sed sit amet elementum velit, congue euismod justo. Phasellus eget scelerisque ligula. Fusce nisi nulla, tincidunt sit amet lectus ut, vehicula commodo turpis. In sed dignissim tellus. Mauris imperdiet ultrices feugiat. Curabitur eget faucibus orci, vitae rutrum velit. Nam convallis, velit ut egestas dignissim, risus lectus fermentum risus, nec varius mauris mi ut dolor. In ac lorem quam. Maecenas tincidunt et purus id bibendum. Integer quam velit, ultrices vel sodales ac, laoreet et tortor. Praesent scelerisque et nulla ut volutpat."
 __meta__ = {
 "_edit_use_anchors_": false
 }
