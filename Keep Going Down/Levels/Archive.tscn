@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://title_x4.png" type="Texture" id=1]
+[ext_resource path="res://Images/title_x4.png" type="Texture" id=1]
 [ext_resource path="res://Levels/Pause.gd" type="Script" id=2]
 [ext_resource path="res://Fonts/80s-retro-future.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://button.tres" type="Theme" id=4]
+[ext_resource path="res://Themes/button.tres" type="Theme" id=4]
 [ext_resource path="res://Levels/FileDisplay.gd" type="Script" id=5]
+[ext_resource path="res://Images/locked_file.png" type="Texture" id=6]
 
 [sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0, 0, 0, 1 )
@@ -14,8 +15,17 @@ border_width_right = 1
 border_width_bottom = 1
 border_color = Color( 0.0156863, 0.694118, 0.8, 1 )
 
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.0156863, 0.694118, 0.8, 1 )
+expand_margin_left = 2.0
+
+[sub_resource type="StyleBoxEmpty" id=6]
+
+[sub_resource type="Theme" id=7]
+VScrollBar/styles/grabber = SubResource( 5 )
+VScrollBar/styles/scroll = SubResource( 6 )
+
 [sub_resource type="DynamicFont" id=4]
-size = 13
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=1]
@@ -47,14 +57,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureRect" type="TextureRect" parent="FileDisplay/Option1"]
-margin_right = 460.0
-margin_bottom = 100.0
+[node name="Lock" type="TextureRect" parent="FileDisplay/Option1"]
+margin_left = 190.0
+margin_top = 10.0
+margin_right = 270.0
+margin_bottom = 90.0
+texture = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Button" type="Button" parent="FileDisplay/Option1"]
+visible = false
 margin_right = 460.0
 margin_bottom = 100.0
 theme = ExtResource( 4 )
@@ -72,14 +86,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureRect" type="TextureRect" parent="FileDisplay/Option2"]
-margin_right = 460.0
-margin_bottom = 100.0
+[node name="Lock" type="TextureRect" parent="FileDisplay/Option2"]
+margin_left = 190.0
+margin_top = 10.0
+margin_right = 270.0
+margin_bottom = 90.0
+texture = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Button" type="Button" parent="FileDisplay/Option2"]
+visible = false
 margin_right = 460.0
 margin_bottom = 100.0
 theme = ExtResource( 4 )
@@ -97,14 +115,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureRect" type="TextureRect" parent="FileDisplay/Option3"]
-margin_right = 460.0
-margin_bottom = 100.0
+[node name="Lock" type="TextureRect" parent="FileDisplay/Option3"]
+margin_left = 190.0
+margin_top = 10.0
+margin_right = 270.0
+margin_bottom = 90.0
+texture = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Button" type="Button" parent="FileDisplay/Option3"]
+visible = false
 margin_right = 460.0
 margin_bottom = 100.0
 theme = ExtResource( 4 )
@@ -122,11 +144,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureRect" type="TextureRect" parent="FileDisplay/Option4"]
-margin_right = 460.0
-margin_bottom = 100.0
+[node name="Lock" type="TextureRect" parent="FileDisplay/Option4"]
+margin_left = 190.0
+margin_top = 10.0
+margin_right = 270.0
+margin_bottom = 90.0
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Button" type="Button" parent="FileDisplay/Option4"]
+visible = false
 margin_right = 460.0
 margin_bottom = 100.0
 theme = ExtResource( 4 )
@@ -144,14 +173,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureRect" type="TextureRect" parent="FileDisplay/Option5"]
-margin_right = 460.0
-margin_bottom = 100.0
+[node name="Lock" type="TextureRect" parent="FileDisplay/Option5"]
+margin_left = 190.0
+margin_top = 10.0
+margin_right = 270.0
+margin_bottom = 90.0
+texture = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Button" type="Button" parent="FileDisplay/Option5"]
+visible = false
 margin_right = 460.0
 margin_bottom = 100.0
 theme = ExtResource( 4 )
@@ -165,6 +198,8 @@ margin_left = 510.0
 margin_top = 50.0
 margin_right = 870.0
 margin_bottom = 450.0
+theme = SubResource( 7 )
+custom_colors/default_color = Color( 0.0156863, 0.694118, 0.8, 1 )
 custom_fonts/normal_font = SubResource( 4 )
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pulvinar ex id sapien vulputate, eget condimentum sem placerat. Donec et ante libero. Integer at tellus nec massa finibus malesuada. Fusce nibh nisl, dignissim sit amet tincidunt ac, lobortis vitae elit. Nam hendrerit quis enim dapibus dictum. Nam eget tempor urna. Phasellus tempor porta suscipit. Curabitur maximus placerat nunc, quis gravida orci porta at. Curabitur purus ex, consequat at fermentum nec, lacinia sit amet nunc. Proin at tristique neque, eu elementum mauris. Quisque elementum felis pharetra lectus gravida semper ac quis ex. Maecenas dictum odio id ultrices pellentesque. Quisque a metus vitae nisl commodo lacinia. Morbi egestas, lectus sed sagittis fringilla, nisi risus faucibus velit, nec mattis eros lorem non ligula.
 

@@ -21,9 +21,9 @@ func _ready():
 	minion.connect("attack_changed", self, "_on_Minion_attack_changed")
 	armor_timer.connect("timeout", self, "_on_Timer_timeout")
 	armor_timer.set_wait_time(1)
-	speed_label.text = String(speed)
+	speed_label.text = "x " + str(speed)
 	armor_label.text = str(armor_s) + ":" + str(armor_ds)
-	dmg_label.text = String(damage)
+	dmg_label.text = "x " + str(damage)
 	hp_bar.value = max_health
 
 func _process(delta):
@@ -42,7 +42,7 @@ func _on_Player_HP_changed():
 
 func _on_Player_speed_changed():
 	speed = 2 #player.speed_mult
-	speed_label.text = String(speed)
+	speed_label.text = "x " + str(speed)
 
 func _on_Player_armor_changed():
 	armor_s = player.ARMOR -1
@@ -55,4 +55,4 @@ func _on_Timer_timeout():
 
 func _on_Minion_attack_changed():
 	damage = 2 #minion.dmg_mult
-	dmg_label.text = String(damage)
+	dmg_label.text = "x " + str(damage)
