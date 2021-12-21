@@ -20,7 +20,7 @@ const RIGHT = INPUT_NAME+"_right"
 const LEFT  = INPUT_NAME+"_left"
 const DASH_LENGTH = 0.2
 const DASH_RELOAD_TIME = 2
-const MAX_HP = 100
+const MAX_HP = 150
 
 onready var res
 
