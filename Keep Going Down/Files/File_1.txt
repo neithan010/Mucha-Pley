@@ -1,5 +1,4 @@
-This is a test for file 1
+Reporte Guerra Corporativa
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pulvinar ex id sapien vulputate, eget condimentum sem placerat. Donec et ante libero. Integer at tellus nec massa finibus malesuada. Fusce nibh nisl, dignissim sit amet tincidunt ac, lobortis vitae elit. Nam hendrerit quis enim dapibus dictum. Nam eget tempor urna. Phasellus tempor porta suscipit. Curabitur maximus placerat nunc, quis gravida orci porta at. Curabitur purus ex, consequat at fermentum nec, lacinia sit amet nunc. Proin at tristique neque, eu elementum mauris. Quisque elementum felis pharetra lectus gravida semper ac quis ex. Maecenas dictum odio id ultrices pellentesque. Quisque a metus vitae nisl commodo lacinia. Morbi egestas, lectus sed sagittis fringilla, nisi risus faucibus velit, nec mattis eros lorem non ligula.
-
-Integer scelerisque felis vitae augue dignissim cursus. Nulla orci eros, interdum a molestie ut, maximus a est. Nullam ornare augue id venenatis hendrerit. Aliquam tristique velit eu nibh fermentum congue. Sed sit amet elementum velit, congue euismod justo. Phasellus eget scelerisque ligula. Fusce nisi nulla, tincidunt sit amet lectus ut, vehicula commodo turpis. In sed dignissim tellus. Mauris imperdiet ultrices feugiat. Curabitur eget faucibus orci, vitae rutrum velit. Nam convallis, velit ut egestas dignissim, risus lectus fermentum risus, nec varius mauris mi ut dolor. In ac lorem quam. Maecenas tincidunt et purus id bibendum. Integer quam velit, ultrices vel sodales ac, laoreet et tortor. Praesent scelerisque et nulla ut volutpat.
+- 40% de la infraestructura en la red de NetSec quedo fuera de operacion
+- Se concreto la anexion de Iotatech

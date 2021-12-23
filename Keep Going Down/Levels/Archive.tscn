@@ -72,7 +72,7 @@ visible = false
 margin_right = 460.0
 margin_bottom = 100.0
 theme = ExtResource( 4 )
-text = "Lorem ipsum"
+text = "Reporte Guerra Corporativa"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -101,7 +101,7 @@ visible = false
 margin_right = 460.0
 margin_bottom = 100.0
 theme = ExtResource( 4 )
-text = "Lorem ipsum"
+text = "Informe Familia e2h=U\\K2"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -130,7 +130,7 @@ visible = false
 margin_right = 460.0
 margin_bottom = 100.0
 theme = ExtResource( 4 )
-text = "Lorem ipsum"
+text = "Reporte Ataques 2055/12/24"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -159,7 +159,7 @@ visible = false
 margin_right = 460.0
 margin_bottom = 100.0
 theme = ExtResource( 4 )
-text = "Lorem ipsum"
+text = "Memo Activacion Durmientes"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -188,7 +188,7 @@ visible = false
 margin_right = 460.0
 margin_bottom = 100.0
 theme = ExtResource( 4 )
-text = "Lorem ipsum"
+text = "Reporte: Danos 9q+tNq&Nq9"
 __meta__ = {
 "_edit_use_anchors_": false
 }

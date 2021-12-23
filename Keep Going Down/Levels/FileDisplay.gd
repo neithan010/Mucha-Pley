@@ -15,7 +15,7 @@ onready var content = $FileContent
 func _ready():
 	content.text = ""
 	# replace with memory
-	var unknown_files = [false, true, false, true, true]
+	var unknown_files = [false, false, false, false, false]
 	lock_1.visible = unknown_files[0]
 	button_1.visible = !unknown_files[0]
 	lock_2.visible = unknown_files[1]
