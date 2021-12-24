@@ -94,13 +94,16 @@ func _physics_process(delta):
 func _on_Hurtbox_area_entered(area):
 	#cuando entra una hitbox enemiga en la hurtbox del player
 	#(Cuando el player recibe un ataque)
-	print("Received Attack")
+	print("Hertbox entered")
 	print(area)
 	print(area.control)
-	print(area.get_area_damage())
-	self.HP -= area.get_area_damage()
-	emit_signal("HP_changed")
-	#self.ARMOR = 2
-	#emit_signal("armor_changed")
-	if self.HP <= 0:
-		pass
+	if area.is_armour():
+		print("Armour: ", area.get_area_armour())
+		self.ARMOR += area.get_area_armour()
+		emit_signal("armor_changed")
+	else:
+		print("Damage: ", area.get_area_damage())
+		self.HP -= area.get_area_damage()
+		emit_signal("HP_changed")
+		if self.HP <= 0:
+			pass

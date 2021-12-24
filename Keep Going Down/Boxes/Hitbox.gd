@@ -12,3 +12,9 @@ func _ready():
 
 func get_area_damage():
 	return control.DAMAGE
+
+func get_area_armour():
+	return control.ARMOUR
+
+func is_armour():
+	return control.is_armour()

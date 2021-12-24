@@ -41,6 +41,7 @@ environment = SubResource( 1 )
 [node name="Tilemap" parent="." instance=ExtResource( 2 )]
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
+visible = false
 margin_left = 154.0
 margin_top = 190.0
 margin_right = 435.0

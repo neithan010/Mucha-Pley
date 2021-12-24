@@ -55,3 +55,6 @@ func _on_Hurtbox_area_entered(area):#choca con algo
 
 func _on_Hurtbox_body_entered(body):
 	destroy()
+
+func is_armour():
+	return false

@@ -23,4 +23,6 @@ func face_target():
 
 func _physics_process(delta):
 	face_target()
-		
+
+func is_armour():
+	return false
