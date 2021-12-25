@@ -6,13 +6,15 @@ signal speed_changed
 signal armor_changed
 
 #Inherits vars:
-#var HP: int
-#var ARMOR: int
-#var MAX_SPEED: int
-#var ACCEL: int
-#var FRICTION: int
+#var HP: float
+#var ARMOR: float
+#var MAX_SPEED: float
+#var SPEED_MULT: int
+#var ACCEL: float
+#var FRICTION: float
 #var velocity:= Vector2.ZERO
-
+#var NAME := "BASENAME"
+#var deathParticles := preload("res://Enemies/DeathParticle.tscn")
 const INPUT_NAME := "player"
 const UP    = INPUT_NAME+"_up"
 const DOWN  = INPUT_NAME+"_down"
@@ -20,9 +22,12 @@ const RIGHT = INPUT_NAME+"_right"
 const LEFT  = INPUT_NAME+"_left"
 const DASH_LENGTH = 0.2
 const DASH_RELOAD_TIME = 2
-const MAX_HP = 150
+const MAX_HP := 150.0
+const XP_THRESHOLD = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]
 
 onready var res
+onready var timer = $Timer
+onready var controller = get_owner()
 
 var DASH_SPEED_fin: float
 var DASH_SPEED_init: float
@@ -32,16 +37,23 @@ var dash_timer : float
 var dash_dir : Vector2
 var dash_curr_spd = 0
 var dash_recharge = DASH_RELOAD_TIME
-
+var XP := 0.0
+var LVL
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	NAME = "Player"
 	ACCEL     = 4000
 	MAX_SPEED = 30000
 	FRICTION  = 3000
+	ARMOR = 50
 	DASH_SPEED_fin = MAX_SPEED * 1.5
 	DASH_SPEED_init = MAX_SPEED * 2.5
 	HP = MAX_HP
+	timer.connect("timeout", self, "_on_Timer_timeout")
+	timer.set_wait_time(1)
+	timer.start()
+	print("PlayerController: ", controller)
 #	Engine.time_scale= 0.7
 	
 func _physics_process(delta):
@@ -64,46 +76,56 @@ func _physics_process(delta):
 		var bullet = preload("res://Bullet.tscn").instance()
 		bullet.init(500, 10, position, rotation, self)
 		owner.add_child(bullet)
-		print(bullet)
 	
 	match move_state:
 		STATE.move:
 			if input_vector != Vector2.ZERO:
-				velocity += input_vector * ACCEL * delta
-				velocity = velocity.clamped(MAX_SPEED * delta)
+				velocity += input_vector * ACCEL * delta * SPEED_MULT
+				velocity = velocity.clamped(MAX_SPEED * delta * SPEED_MULT)
 			else:
 				velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 		STATE.dash:
 			#print("dashing")
 			if dash_timer>0:
 				dash_timer -= delta
-				velocity = dash_dir * dash_curr_spd * delta
+				velocity = dash_dir * dash_curr_spd * delta * SPEED_MULT
 				#print(dash_curr_spd)
 				var dash_diff = dash_curr_spd - DASH_SPEED_fin
 				var brake = delta * dash_diff
 				#print("brake. ", brake)
 				dash_curr_spd = max(DASH_SPEED_fin, dash_curr_spd - brake)
-				
-				
 			else:
 				move_state = STATE.move
 	
 	res = move_and_slide(velocity)
-	
 
-func _on_Hurtbox_area_entered(area):
-	#cuando entra una hitbox enemiga en la hurtbox del player
-	#(Cuando el player recibe un ataque)
-	print("Hertbox entered")
-	print(area)
-	print(area.control)
-	if area.is_armour():
-		print("Armour: ", area.get_area_armour())
-		self.ARMOR += area.get_area_armour()
-		emit_signal("armor_changed")
-	else:
-		print("Damage: ", area.get_area_damage())
-		self.HP -= area.get_area_damage()
-		emit_signal("HP_changed")
-		if self.HP <= 0:
-			pass
+	var _m = move_and_slide(velocity)
+
+func _on_Timer_timeout():
+	print("timeout")
+	if ARMOR > 0:
+		get_armor(-1)
+
+func add_xp(amt:float):
+	XP += amt
+	if XP > XP_THRESHOLD[LVL]:
+		LVL += 1
+		level_up(LVL)
+	
+func get_armor(amt:float):
+	print("<Player> Got ", amt, " armor.")
+	ARMOR += amt
+
+func get_hp(amt:float):
+	print("<Player> Got ", amt, " hp.")
+	HP = clamp(HP + amt, 0, MAX_HP)
+	if HP == 0:
+		die()
+
+func die():
+	print("PLAYER DEAD, GAME OVER")
+	timer.stop()
+	deathplosion(Color("ffffff"))
+
+func level_up(lvl):
+	controller.level_up(lvl)

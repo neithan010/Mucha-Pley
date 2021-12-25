@@ -29,7 +29,7 @@ func _ready():
 	ACCEL     = 4000
 	MAX_SPEED = 30000
 	FRICTION  = 3000
-	print(player)
+	DMG_MULT = 1
 
 func _physics_process(delta):
 	var input_vector := Vector2.ZERO
@@ -39,9 +39,9 @@ func _physics_process(delta):
 		input_vector.y = Input.get_action_strength(DOWN)  - Input.get_action_strength(UP)
 	
 	if input_vector != Vector2.ZERO:
-		velocity += input_vector * ACCEL * delta
-		velocity = velocity.clamped(MAX_SPEED * delta)
-		
+		velocity += input_vector * ACCEL * delta * SPEED_MULT
+		velocity = velocity.clamped(MAX_SPEED * delta * SPEED_MULT)
+	
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 	if velocity != Vector2.ZERO:
@@ -52,6 +52,6 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed(ATTACK):
 		_attack()
 		return
-		
+
 func _attack():
 	animation.play("Attack")

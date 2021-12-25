@@ -1,6 +1,11 @@
 extends BaseItem
 
-var ARMOUR = 5
+var ARMOR = 50
 
-func is_armour():
-	return true
+func _ready():
+	COLOR = "30fc03"
+
+func _on_Hitbox_area_entered(area):
+	var player = area.get_parent()
+	player.get_armor(ARMOR)
+	die()

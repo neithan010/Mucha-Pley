@@ -1,30 +1,15 @@
 extends Node2D
 class_name BaseItem
 
-var destroying = false
-var death_timer = 2.0
+var deathParticles := preload("res://Enemies/DeathParticle.tscn")
+var COLOR := "ffffff"
 
-onready var hitbox = $Hitbox
-onready var hurtbox = $Hurtbox
+func die():
+	deathplosion(COLOR)
+	queue_free()
+	
 
-func _ready():
-	hitbox.control = self
-	hurtbox.control = self
-
-func _physics_process(delta):
-	if destroying:
-		death_timer-= delta
-		if death_timer <= 0:
-			pass#queue_free()
-
-func destroy():
-	print("Destroying")
-	hitbox.set_deferred("monitorable", false)
-	hitbox.set_deferred("monitoring", false)
-	destroying = true
-
-func _on_Hurtbox_area_entered(area):
-	destroy()
-
-func _on_Hurtbox_body_entered(body):
-	destroy()
+func deathplosion(color):
+	var particles = deathParticles.instance()
+	particles.init(color, position)
+	owner.add_child(particles)
