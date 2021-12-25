@@ -28,7 +28,6 @@ func _ready():
 	ACCEL     = 4000
 	MAX_SPEED = 30000
 	FRICTION  = 3000
-	print(player)
 
 
 

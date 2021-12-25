@@ -8,7 +8,7 @@ func ready():
 	#minion.player = player
 	pass
 
-func _process(delta):
+func _process(_delta):
 	line.set_point_position(0, player.position)
 	line.set_point_position(1, minion.position)
 	if minion.position.distance_to(player.position)> 400:

@@ -16,6 +16,7 @@ extends BaseEnemy
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	DAMAGE = 20
+	NAME = "Trash"
 	ATTACK_SPEED = 10
 	ACCEL = 800 * rand_range(0.95, 1.05)
 	MAX_SPEED = 25000* rand_range(0.95, 1.05)
@@ -37,3 +38,12 @@ func _physics_process(delta):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+func navigate_towards(target:Vector2)->void:
+	pass #sobreescrito para que no haga pathfinding
+
+func pathfinding_movement(delta):
+	pass #sobreescrito para que no haga pathfinding
+
+
+func _on_Hitbox_area_entered(area):
+	target_player.receive_damage(DAMAGE)

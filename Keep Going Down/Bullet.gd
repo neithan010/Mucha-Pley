@@ -12,8 +12,6 @@ var control
 var death_timer: float
 var destroying :=false
 func _ready():
-	$Hurtbox.control = self
-	$Hitbox.control = self
 	death_timer = $Particles2D.lifetime*2
 
 func init(spd:int, dmg:int, pos:Vector2, dir:float, ctrl):
@@ -23,6 +21,7 @@ func init(spd:int, dmg:int, pos:Vector2, dir:float, ctrl):
 	rotation = dir
 	direction = Vector2(1, 0).rotated(rotation).normalized()
 	control = ctrl
+	
 	
 	
 
@@ -39,21 +38,24 @@ func _on_AnimatedSprite_animation_finished():
 	$AnimatedSprite.visible = false
 
 func destroy():
-	print("Destroying: ", self)
+	#print("Destroying: ", self)
 	
 	speed = 0
-	$Hurtbox.monitorable = false
-	$Hurtbox.monitoring = false
-	$Hitbox.monitorable = false
-	$Hitbox.monitoring = false
+	set_deferred("$Hurtbox.monitorable", false)
+	set_deferred("$Hurtbox.monitoring", false)
+	set_deferred("$Hitbox.monitorable", false)
+	set_deferred("$Hitbox.monitoring", false)
+	
 	destroying = true
 	
 	$Particles2D.emitting = false
 	$AnimatedSprite.playing = true
 
-func _on_Hurtbox_area_entered(area):#choca con algo
+func _on_Hurtbox_area_entered(_area):#choca con el player
+	control.target_player.receive_damage(DAMAGE)
+	
 	destroy()
 
-func _on_Hurtbox_body_entered(body):
+func _on_Hurtbox_body_entered(_body):#choca con el nivel
 	destroy()
 

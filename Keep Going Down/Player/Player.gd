@@ -24,13 +24,16 @@ var dash_timer : float
 var dash_dir : Vector2
 var dash_curr_spd = 0
 var dash_recharge = DASH_RELOAD_TIME
+var XP := 0.0
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	NAME = "Player"
 	ACCEL     = 4000
 	MAX_SPEED = 30000
 	FRICTION  = 3000
+	ARMOR = 50
 	DASH_SPEED_fin = MAX_SPEED * 1.5
 	DASH_SPEED_init = MAX_SPEED * 2.5
 #	Engine.time_scale= 0.7
@@ -55,7 +58,6 @@ func _physics_process(delta):
 		var bullet = preload("res://Bullet.tscn").instance()
 		bullet.init(500, 10, position, rotation, self)
 		owner.add_child(bullet)
-		print(bullet)
 	
 	match move_state:
 		STATE.move:
@@ -80,19 +82,19 @@ func _physics_process(delta):
 				move_state = STATE.move
 	
 
-	move_and_slide(velocity)
+	var _m = move_and_slide(velocity)
 
 
+func add_xp(amt:float):
+	XP += amt
+	
 
+func die():
+	print("PLAYER DEAD, GAME OVER")
+	
+	pass
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
 
-
-func _on_Hurtbox_area_entered(area):
-	#cuando entra una hitbox enemiga en la hurtbox del player
-	#(Cuando el player recibe un ataque)
-	print("Received Attack")
-	print(area)
-	print(area.control)
-	print(area.get_area_damage())
+	

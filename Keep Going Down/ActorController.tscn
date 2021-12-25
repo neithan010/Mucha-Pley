@@ -19,39 +19,24 @@ position = Vector2( 261.003, 155.272 )
 
 [node name="Heavy" parent="Node" instance=ExtResource( 5 )]
 position = Vector2( 241.706, 53.8116 )
+collision_layer = 0
+collision_mask = 1
 
 [node name="Ranged" parent="Node" instance=ExtResource( 4 )]
-position = Vector2( 193.841, 68.6767 )
+position = Vector2( 454.015, 104.584 )
+collision_layer = 0
+collision_mask = 1
 
 [node name="Fast" parent="Node" instance=ExtResource( 6 )]
-position = Vector2( 200.976, 138.448 )
+position = Vector2( 107.742, 256.251 )
+collision_layer = 0
+collision_mask = 1
 
 [node name="Trash2" parent="Node" instance=ExtResource( 3 )]
-position = Vector2( 246.769, 124.557 )
+position = Vector2( 522.006, 310.544 )
 
 [node name="Trash3" parent="Node" instance=ExtResource( 3 )]
-position = Vector2( 289.845, 78.1092 )
+position = Vector2( 783.009, 465.816 )
 
 [node name="Trash4" parent="Node" instance=ExtResource( 3 )]
-position = Vector2( 290.594, 124.182 )
-
-[node name="Trash5" parent="Node" instance=ExtResource( 3 )]
-position = Vector2( 323.183, 55.6346 )
-
-[node name="Trash6" parent="Node" instance=ExtResource( 3 )]
-position = Vector2( 236.281, 96.4635 )
-
-[node name="Trash7" parent="Node" instance=ExtResource( 3 )]
-position = Vector2( 391.565, 104.161 )
-
-[node name="Trash8" parent="Node" instance=ExtResource( 3 )]
-position = Vector2( 326.865, 135.628 )
-
-[node name="Trash9" parent="Node" instance=ExtResource( 3 )]
-position = Vector2( 301.056, 97.0904 )
-
-[node name="Trash10" parent="Node" instance=ExtResource( 3 )]
-position = Vector2( 450.087, 159.964 )
-
-[node name="Trash11" parent="Node" instance=ExtResource( 3 )]
-position = Vector2( 384.536, 191.054 )
+position = Vector2( 1044.01, 621.088 )
