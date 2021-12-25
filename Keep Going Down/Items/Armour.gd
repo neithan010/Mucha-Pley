@@ -1,6 +1,6 @@
 extends BaseItem
 
-var ARMOR = 5
+var ARMOR = 50
 
 func _ready():
 	COLOR = "30fc03"

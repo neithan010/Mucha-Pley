@@ -1,20 +1,18 @@
 extends Node
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
 var player : Player
 var enemies
-# Called when the node enters the scene tree for the first time.
+var SPEED_MULT = 1
+
 func _ready():
 	player = $PlayerController/Player
 	enemies = $Node.get_children()
 	for enemy in enemies:
 		enemy.target_player = player
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func change_speed_mult(delta):
+	SPEED_MULT = clamp(SPEED_MULT + delta, 1, 100)
+	player.SPEED_MULT = SPEED_MULT
+	#TODO Add SPEED_MULT to enemies
+	for enemy in enemies:
+		enemy.SPEED_MULT = SPEED_MULT

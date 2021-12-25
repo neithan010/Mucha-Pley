@@ -24,9 +24,11 @@ const DASH_RELOAD_TIME = 2
 const MAX_HP := 150.0
 
 onready var res
+onready var timer = $Timer
 
 var DASH_SPEED_fin: float
 var DASH_SPEED_init: float
+var SPEED_MULT: int
 enum STATE {move, dash}
 var move_state = STATE.move
 var dash_timer : float
@@ -45,7 +47,11 @@ func _ready():
 	ARMOR = 50
 	DASH_SPEED_fin = MAX_SPEED * 1.5
 	DASH_SPEED_init = MAX_SPEED * 2.5
+	SPEED_MULT = 1
 	HP = MAX_HP
+	timer.connect("timeout", self, "_on_Timer_timeout")
+	timer.set_wait_time(1)
+	timer.start()
 #	Engine.time_scale= 0.7
 	
 func _physics_process(delta):
@@ -96,6 +102,10 @@ func _physics_process(delta):
 
 	var _m = move_and_slide(velocity)
 
+func _on_Timer_timeout():
+	print("timeout")
+	if ARMOR > 0:
+		get_armor(-1)
 
 func add_xp(amt:float):
 	XP += amt
@@ -106,14 +116,11 @@ func get_armor(amt:float):
 
 func get_hp(amt:float):
 	print("<Player> Got ", amt, " hp.")
-	HP += amt
+	HP = clamp(HP + amt, 0, MAX_HP)
+	if HP == 0:
+		die()
 
 func die():
 	print("PLAYER DEAD, GAME OVER")
-	
+	timer.stop()
 	pass
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
-	

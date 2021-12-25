@@ -61,6 +61,9 @@ gradient = SubResource( 2 )
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 107.028, 99.4715 )
 
+[node name="Timer" type="Timer" parent="Player"]
+wait_time = 0.1
+
 [node name="HUD" type="CanvasLayer" parent="."]
 script = ExtResource( 4 )
 
@@ -111,9 +114,6 @@ text = "##"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Timer" type="Timer" parent="HUD/Armor"]
-wait_time = 0.1
 
 [node name="Damage" type="Node" parent="HUD"]
 

@@ -25,7 +25,7 @@ collision_layer = 0
 collision_mask = 1
 
 [node name="Ranged" parent="Node" instance=ExtResource( 4 )]
-position = Vector2( 454.015, 104.584 )
+position = Vector2( 326.592, 190.948 )
 collision_layer = 0
 collision_mask = 1
 
@@ -42,3 +42,9 @@ position = Vector2( 783.009, 465.816 )
 
 [node name="Trash4" parent="Node" instance=ExtResource( 3 )]
 position = Vector2( 1044.01, 621.088 )
+
+[node name="Health" parent="." instance=ExtResource( 7 )]
+position = Vector2( 225.586, 194.438 )
+
+[node name="Armour" parent="." instance=ExtResource( 8 )]
+position = Vector2( 340.738, 92.9715 )
