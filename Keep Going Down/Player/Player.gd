@@ -6,13 +6,14 @@ signal speed_changed
 signal armor_changed
 
 #Inherits vars:
-#var HP: int
-#var ARMOR: int
-#var MAX_SPEED: int
-#var ACCEL: int
-#var FRICTION: int
+#var HP: float
+#var ARMOR: float
+#var MAX_SPEED: float
+#var ACCEL: float
+#var FRICTION: float
 #var velocity:= Vector2.ZERO
-
+#var NAME := "BASENAME"
+#var deathParticles := preload("res://Enemies/DeathParticle.tscn")
 const INPUT_NAME := "player"
 const UP    = INPUT_NAME+"_up"
 const DOWN  = INPUT_NAME+"_down"
@@ -20,7 +21,7 @@ const RIGHT = INPUT_NAME+"_right"
 const LEFT  = INPUT_NAME+"_left"
 const DASH_LENGTH = 0.2
 const DASH_RELOAD_TIME = 2
-const MAX_HP = 150
+const MAX_HP := 150.0
 
 onready var res
 
@@ -99,6 +100,13 @@ func _physics_process(delta):
 func add_xp(amt:float):
 	XP += amt
 	
+func get_armor(amt:float):
+	print("<Player> Got ", amt, " armor.")
+	ARMOR += amt
+
+func get_hp(amt:float):
+	print("<Player> Got ", amt, " hp.")
+	HP += amt
 
 func die():
 	print("PLAYER DEAD, GAME OVER")

@@ -5,9 +5,9 @@ class_name BaseActor
 
 var HP: float
 var ARMOR: float
-var MAX_SPEED: int
-var ACCEL: int
-var FRICTION: int
+var MAX_SPEED: float
+var ACCEL: float
+var FRICTION: float
 var velocity:= Vector2.ZERO
 var NAME := "BASENAME"
 var deathParticles := preload("res://Enemies/DeathParticle.tscn")
