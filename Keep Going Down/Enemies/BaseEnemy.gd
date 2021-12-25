@@ -60,7 +60,7 @@ func start_attack_timer():
 
 func pathfinding_movement(delta)->void:
 	if navigating:
-		move_along_path(MAX_SPEED*delta)
+		move_along_path(MAX_SPEED * delta * SPEED_MULT)
 	
 
 func navigate_towards(target:Vector2)->void:
