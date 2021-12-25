@@ -2,8 +2,6 @@ extends Node
 
 
 onready var nav_2d: Navigation2D = $Navigation2D
-onready var character: KinematicBody2D = $movementTest
-onready var line: Line2D = $Line2D
 
 onready var player = $ActorController/PlayerController/Player
 

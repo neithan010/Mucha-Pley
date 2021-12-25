@@ -9,7 +9,7 @@
 [ext_resource path="res://Enemies/Fast.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Enemies/Trash.tscn" type="PackedScene" id=10]
 
-[sub_resource type="Environment" id=2]
+[sub_resource type="Environment" id=1]
 background_mode = 4
 background_energy = 0.0
 auto_exposure_max_luma = 13.06
@@ -74,6 +74,6 @@ collision_mask = 1
 position = Vector2( 256.154, 301.512 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 2 )
+environment = SubResource( 1 )
 
 [editable path="ActorController/PlayerController"]

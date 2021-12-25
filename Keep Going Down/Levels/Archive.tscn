@@ -1,0 +1,261 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Images/title_x4.png" type="Texture" id=1]
+[ext_resource path="res://Levels/Pause.gd" type="Script" id=2]
+[ext_resource path="res://Fonts/80s-retro-future.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Themes/button.tres" type="Theme" id=4]
+[ext_resource path="res://Levels/FileDisplay.gd" type="Script" id=5]
+[ext_resource path="res://Images/locked_file.png" type="Texture" id=6]
+[ext_resource path="res://Themes/text.tres" type="Theme" id=7]
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.0156863, 0.694118, 0.8, 1 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 52
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 52
+font_data = ExtResource( 3 )
+
+[node name="Archive" type="CanvasLayer"]
+
+[node name="FileDisplay" type="Panel" parent="."]
+margin_left = 50.0
+margin_top = 50.0
+margin_right = 974.0
+margin_bottom = 550.0
+custom_styles/panel = SubResource( 3 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Option1" type="Panel" parent="FileDisplay"]
+margin_right = 460.0
+margin_bottom = 100.0
+custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Lock" type="TextureRect" parent="FileDisplay/Option1"]
+margin_left = 190.0
+margin_top = 10.0
+margin_right = 270.0
+margin_bottom = 90.0
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="FileDisplay/Option1"]
+visible = false
+margin_right = 460.0
+margin_bottom = 100.0
+theme = ExtResource( 4 )
+text = "Reporte Guerra Corporativa"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Option2" type="Panel" parent="FileDisplay"]
+margin_top = 100.0
+margin_right = 460.0
+margin_bottom = 200.0
+custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Lock" type="TextureRect" parent="FileDisplay/Option2"]
+margin_left = 190.0
+margin_top = 10.0
+margin_right = 270.0
+margin_bottom = 90.0
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="FileDisplay/Option2"]
+visible = false
+margin_right = 460.0
+margin_bottom = 100.0
+theme = ExtResource( 4 )
+text = "Informe Familia e2h=U\\K2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Option3" type="Panel" parent="FileDisplay"]
+margin_top = 200.0
+margin_right = 460.0
+margin_bottom = 300.0
+custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Lock" type="TextureRect" parent="FileDisplay/Option3"]
+margin_left = 190.0
+margin_top = 10.0
+margin_right = 270.0
+margin_bottom = 90.0
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="FileDisplay/Option3"]
+visible = false
+margin_right = 460.0
+margin_bottom = 100.0
+theme = ExtResource( 4 )
+text = "Reporte Ataques 2055/12/24"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Option4" type="Panel" parent="FileDisplay"]
+margin_top = 300.0
+margin_right = 460.0
+margin_bottom = 400.0
+custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Lock" type="TextureRect" parent="FileDisplay/Option4"]
+margin_left = 190.0
+margin_top = 10.0
+margin_right = 270.0
+margin_bottom = 90.0
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="FileDisplay/Option4"]
+visible = false
+margin_right = 460.0
+margin_bottom = 100.0
+theme = ExtResource( 4 )
+text = "Memo Activacion Durmientes"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Option5" type="Panel" parent="FileDisplay"]
+margin_top = 400.0
+margin_right = 460.0
+margin_bottom = 500.0
+custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Lock" type="TextureRect" parent="FileDisplay/Option5"]
+margin_left = 190.0
+margin_top = 10.0
+margin_right = 270.0
+margin_bottom = 90.0
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="FileDisplay/Option5"]
+visible = false
+margin_right = 460.0
+margin_bottom = 100.0
+theme = ExtResource( 4 )
+text = "Reporte: Danos 9q+tNq&Nq9"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FileContent" type="RichTextLabel" parent="FileDisplay"]
+margin_left = 510.0
+margin_top = 50.0
+margin_right = 870.0
+margin_bottom = 450.0
+theme = ExtResource( 7 )
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pulvinar ex id sapien vulputate, eget condimentum sem placerat. Donec et ante libero. Integer at tellus nec massa finibus malesuada. Fusce nibh nisl, dignissim sit amet tincidunt ac, lobortis vitae elit. Nam hendrerit quis enim dapibus dictum. Nam eget tempor urna. Phasellus tempor porta suscipit. Curabitur maximus placerat nunc, quis gravida orci porta at. Curabitur purus ex, consequat at fermentum nec, lacinia sit amet nunc. Proin at tristique neque, eu elementum mauris. Quisque elementum felis pharetra lectus gravida semper ac quis ex. Maecenas dictum odio id ultrices pellentesque. Quisque a metus vitae nisl commodo lacinia. Morbi egestas, lectus sed sagittis fringilla, nisi risus faucibus velit, nec mattis eros lorem non ligula.
+
+Integer scelerisque felis vitae augue dignissim cursus. Nulla orci eros, interdum a molestie ut, maximus a est. Nullam ornare augue id venenatis hendrerit. Aliquam tristique velit eu nibh fermentum congue. Sed sit amet elementum velit, congue euismod justo. Phasellus eget scelerisque ligula. Fusce nisi nulla, tincidunt sit amet lectus ut, vehicula commodo turpis. In sed dignissim tellus. Mauris imperdiet ultrices feugiat. Curabitur eget faucibus orci, vitae rutrum velit. Nam convallis, velit ut egestas dignissim, risus lectus fermentum risus, nec varius mauris mi ut dolor. In ac lorem quam. Maecenas tincidunt et purus id bibendum. Integer quam velit, ultrices vel sodales ac, laoreet et tortor. Praesent scelerisque et nulla ut volutpat."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PauseCanvas" type="CanvasLayer" parent="."]
+
+[node name="Pause" type="Control" parent="PauseCanvas"]
+pause_mode = 2
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Overlay" type="ColorRect" parent="PauseCanvas/Pause"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.784314 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="VBoxContainer" parent="PauseCanvas/Pause/Overlay"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -400.0
+margin_top = -110.0
+margin_right = 400.0
+margin_bottom = 110.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Logo" type="TextureRect" parent="PauseCanvas/Pause/Overlay/Menu"]
+margin_right = 800.0
+margin_bottom = 80.0
+texture = ExtResource( 1 )
+stretch_mode = 4
+
+[node name="Return" type="Button" parent="PauseCanvas/Pause/Overlay/Menu"]
+margin_top = 84.0
+margin_right = 800.0
+margin_bottom = 150.0
+theme = ExtResource( 4 )
+custom_fonts/font = SubResource( 1 )
+text = "RETURN"
+
+[node name="File" type="Button" parent="PauseCanvas/Pause/Overlay/Menu"]
+margin_top = 154.0
+margin_right = 800.0
+margin_bottom = 220.0
+theme = ExtResource( 4 )
+custom_fonts/font = SubResource( 2 )
+text = "MENU"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Quit" type="Button" parent="PauseCanvas/Pause/Overlay/Menu"]
+margin_top = 224.0
+margin_right = 800.0
+margin_bottom = 290.0
+theme = ExtResource( 4 )
+custom_fonts/font = SubResource( 1 )
+text = "QUIT"

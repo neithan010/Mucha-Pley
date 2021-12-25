@@ -1,6 +1,10 @@
 extends BaseActor
 class_name Player
 
+signal HP_changed
+signal speed_changed
+signal armor_changed
+
 #Inherits vars:
 #var HP: int
 #var ARMOR: int
@@ -16,6 +20,10 @@ const RIGHT = INPUT_NAME+"_right"
 const LEFT  = INPUT_NAME+"_left"
 const DASH_LENGTH = 0.2
 const DASH_RELOAD_TIME = 2
+const MAX_HP = 150
+
+onready var res
+
 var DASH_SPEED_fin: float
 var DASH_SPEED_init: float
 enum STATE {move, dash}
@@ -36,6 +44,7 @@ func _ready():
 	ARMOR = 50
 	DASH_SPEED_fin = MAX_SPEED * 1.5
 	DASH_SPEED_init = MAX_SPEED * 2.5
+	HP = MAX_HP
 #	Engine.time_scale= 0.7
 	
 func _physics_process(delta):
@@ -80,6 +89,8 @@ func _physics_process(delta):
 				
 			else:
 				move_state = STATE.move
+	
+	res = move_and_slide(velocity)
 	
 
 	var _m = move_and_slide(velocity)

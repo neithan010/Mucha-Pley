@@ -1,16 +1,18 @@
 extends Node2D
 class_name Bullet
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
 var speed :int
 var DAMAGE : int
 var direction : Vector2
 var control
 var death_timer: float
 var destroying :=false
+
+onready var anim_sprite = $AnimatedSprite
+onready var hurtbox = $Hurtbox
+onready var hitbox = $Hitbox
+onready var particles = $Particles2D
+
 func _ready():
 	death_timer = $Particles2D.lifetime*2
 
@@ -25,7 +27,6 @@ func init(spd:int, dmg:int, pos:Vector2, dir:float, ctrl):
 	
 	
 
-
 func _physics_process(delta):
 	position += direction * speed * delta
 	if destroying:
@@ -34,8 +35,8 @@ func _physics_process(delta):
 			queue_free()
 
 func _on_AnimatedSprite_animation_finished():
-	$AnimatedSprite.playing = false
-	$AnimatedSprite.visible = false
+	anim_sprite.playing = false
+	anim_sprite.visible = false
 
 func destroy():
 	#print("Destroying: ", self)
@@ -48,8 +49,8 @@ func destroy():
 	
 	destroying = true
 	
-	$Particles2D.emitting = false
-	$AnimatedSprite.playing = true
+	particles.emitting = false
+	anim_sprite.playing = true
 
 func _on_Hurtbox_area_entered(_area):#choca con el player
 	control.target_player.receive_damage(DAMAGE)
@@ -59,3 +60,5 @@ func _on_Hurtbox_area_entered(_area):#choca con el player
 func _on_Hurtbox_body_entered(_body):#choca con el nivel
 	destroy()
 
+func is_armour():
+	return false

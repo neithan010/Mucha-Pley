@@ -1,5 +1,7 @@
 extends BaseAttacker
 
+signal attack_changed
+
 #Inherits vars:
 #var HP: int
 #var ARMOR: int
@@ -9,7 +11,6 @@ extends BaseAttacker
 #var velocity:= Vector2.ZERO
 #var DAMAGE: int
 #var ATTACK_SPEED: int
-
 
 const INPUT_NAME := "minion"
 const UP    	= INPUT_NAME+"_up"
@@ -21,15 +22,13 @@ var in_range := true
 
 onready var player = $"../Player"
 onready var attack = $Attack
-
+onready var animation = $AnimationPlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	ACCEL     = 4000
 	MAX_SPEED = 30000
 	FRICTION  = 3000
-
-
 
 func _physics_process(delta):
 	var input_vector := Vector2.ZERO
@@ -54,7 +53,4 @@ func _physics_process(delta):
 		return
 		
 func _attack():
-	attack.show()
-
-
-
+	animation.play("Attack")

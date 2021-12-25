@@ -25,6 +25,11 @@ _global_script_classes=[ {
 "path": "res://Enemies/BaseEnemy.gd"
 }, {
 "base": "Node2D",
+"class": "BaseItem",
+"language": "GDScript",
+"path": "res://Items/BaseItem.gd"
+}, {
+"base": "Node2D",
 "class": "Bullet",
 "language": "GDScript",
 "path": "res://Bullet.gd"
@@ -48,6 +53,7 @@ _global_script_class_icons={
 "BaseActor": "",
 "BaseAttacker": "",
 "BaseEnemy": "",
+"BaseItem": "",
 "Bullet": "",
 "Hitbox": "",
 "Hurtbox": "",
@@ -182,5 +188,5 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
-environment/default_clear_color=Color( 0.45098, 0.45098, 0.45098, 1 )
+environment/default_clear_color=Color( 0, 0, 0, 1 )
 environment/default_environment="res://default_env.tres"

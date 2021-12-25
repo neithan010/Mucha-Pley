@@ -18,8 +18,8 @@ func _ready():
 	DAMAGE = 20
 	NAME = "Trash"
 	ATTACK_SPEED = 10
-	ACCEL = 800 * rand_range(0.95, 1.05)
-	MAX_SPEED = 25000* rand_range(0.95, 1.05)
+	ACCEL = int(800 * rand_range(0.95, 1.05))
+	MAX_SPEED = int(25000* rand_range(0.95, 1.05))
 	FRICTION = 300
 	
 func _physics_process(delta):
