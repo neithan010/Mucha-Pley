@@ -102,7 +102,6 @@ func _physics_process(delta):
 	var _m = move_and_slide(velocity)
 
 func _on_Timer_timeout():
-	print("timeout")
 	if ARMOR > 0:
 		get_armor(-1)
 
