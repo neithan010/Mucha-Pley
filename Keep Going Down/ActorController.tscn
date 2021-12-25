@@ -9,7 +9,7 @@
 [ext_resource path="res://Items/Health.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Items/Armour.tscn" type="PackedScene" id=8]
 
-[node name="ActorController" type="Node"]
+[node name="ActorControllerMap" type="Node"]
 script = ExtResource( 2 )
 
 [node name="PlayerController" parent="." instance=ExtResource( 1 )]
