@@ -67,6 +67,7 @@ tracks/1/keys = {
 }
 
 [node name="Minion" type="KinematicBody2D"]
+position = Vector2( 81.0718, 95.3262 )
 collision_layer = 0
 script = ExtResource( 2 )
 

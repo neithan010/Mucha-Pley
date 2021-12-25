@@ -21,18 +21,12 @@ position = Vector2( 261.003, 155.272 )
 
 [node name="Heavy" parent="Node" instance=ExtResource( 5 )]
 position = Vector2( 241.706, 53.8116 )
-collision_layer = 0
-collision_mask = 1
 
 [node name="Ranged" parent="Node" instance=ExtResource( 4 )]
 position = Vector2( 326.592, 190.948 )
-collision_layer = 0
-collision_mask = 1
 
 [node name="Fast" parent="Node" instance=ExtResource( 6 )]
 position = Vector2( 107.742, 256.251 )
-collision_layer = 0
-collision_mask = 1
 
 [node name="Trash2" parent="Node" instance=ExtResource( 3 )]
 position = Vector2( 522.006, 310.544 )
