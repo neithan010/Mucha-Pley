@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Enemies/Trash.tscn" type="PackedScene" id=2]
-[ext_resource path="res://PlayerController.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Enemies/Fast.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Enemies/Ranged.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Enemies/Heavy.tscn" type="PackedScene" id=6]
@@ -24,7 +23,7 @@ tile_data = PoolIntArray( 0, 0, 0, 1, 0, 196609, 2, 0, 196609, 3, 0, 196609, 4, 
 position = Vector2( 724.794, 619.063 )
 
 [node name="Heavy" parent="TileMap" instance=ExtResource( 6 )]
-position = Vector2( 485.851, 729.255 )
+position = Vector2( 495.851, 723.755 )
 
 [node name="Ranged" parent="TileMap" instance=ExtResource( 5 )]
 position = Vector2( 527.298, 143.21 )
@@ -33,7 +32,7 @@ position = Vector2( 527.298, 143.21 )
 position = Vector2( 589.312, 1497.98 )
 
 [node name="Fast" parent="TileMap" instance=ExtResource( 4 )]
-position = Vector2( 103.461, 768.728 )
+position = Vector2( 174.252, 767.784 )
 
 [node name="Trash2" parent="TileMap" instance=ExtResource( 2 )]
 position = Vector2( 738.506, 647.214 )
@@ -63,21 +62,19 @@ position = Vector2( 751.765, 619.747 )
 position = Vector2( 275.846, 650.758 )
 
 [node name="Fast2" parent="TileMap" instance=ExtResource( 4 )]
-position = Vector2( 115.353, 181.259 )
+position = Vector2( 173.336, 176.219 )
 
 [node name="Heavy2" parent="TileMap" instance=ExtResource( 6 )]
-position = Vector2( 430.462, 633.5 )
+position = Vector2( 412.717, 623.898 )
 
 [node name="Fast3" parent="TileMap" instance=ExtResource( 4 )]
 position = Vector2( 817.461, 770.728 )
 
 [node name="Fast4" parent="TileMap" instance=ExtResource( 4 )]
-position = Vector2( 907.461, 180.728 )
+position = Vector2( 880.089, 174.121 )
 
 [node name="Ranged3" parent="TileMap" instance=ExtResource( 5 )]
-position = Vector2( 489.134, 812.197 )
+position = Vector2( 475.634, 816.697 )
 
 [node name="Heavy3" parent="TileMap" instance=ExtResource( 6 )]
-position = Vector2( 546.464, 637.214 )
-
-[node name="PlayerController" parent="." instance=ExtResource( 3 )]
+position = Vector2( 570.464, 625.214 )

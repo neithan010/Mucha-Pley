@@ -68,10 +68,10 @@ position = Vector2( 206.291, 319.721 )
 position = Vector2( 222.327, 203.904 )
 
 [node name="Heavy" parent="TileMap" instance=ExtResource( 3 )]
-position = Vector2( 501.725, 237.161 )
+position = Vector2( 511.816, 225.388 )
 
 [node name="Heavy2" parent="TileMap" instance=ExtResource( 3 )]
-position = Vector2( 509.878, 804.006 )
+position = Vector2( 511.018, 802.866 )
 
 [node name="Heavy3" parent="TileMap" instance=ExtResource( 3 )]
 position = Vector2( 754.153, 510.342 )

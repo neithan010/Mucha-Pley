@@ -51,19 +51,19 @@ position = Vector2( 631.375, 909.647 )
 position = Vector2( 577.86, 909.647 )
 
 [node name="Fast" parent="TileMap" instance=ExtResource( 4 )]
-position = Vector2( 352.163, 494.488 )
+position = Vector2( 338.108, 495.569 )
 
 [node name="Fast2" parent="TileMap" instance=ExtResource( 4 )]
-position = Vector2( 598.436, 864.894 )
+position = Vector2( 633.034, 859.488 )
 
 [node name="Fast3" parent="TileMap" instance=ExtResource( 4 )]
-position = Vector2( 384.89, 843.681 )
+position = Vector2( 371.916, 848.006 )
 
 [node name="Fast4" parent="TileMap" instance=ExtResource( 4 )]
-position = Vector2( 103.461, 768.728 )
+position = Vector2( 120.922, 735.393 )
 
 [node name="Fast5" parent="TileMap" instance=ExtResource( 4 )]
-position = Vector2( 624.459, 494.12 )
+position = Vector2( 682.843, 498.445 )
 
 [node name="Ranged" parent="TileMap" instance=ExtResource( 5 )]
 position = Vector2( 625.297, 624.295 )
@@ -78,10 +78,13 @@ position = Vector2( 590.552, 401.571 )
 position = Vector2( 423.063, 399.789 )
 
 [node name="Heavy" parent="TileMap" instance=ExtResource( 3 )]
-position = Vector2( 500.834, 772.706 )
+position = Vector2( 509.483, 756.488 )
 
 [node name="Heavy2" parent="TileMap" instance=ExtResource( 3 )]
-position = Vector2( 634.183, 303.736 )
+position = Vector2( 642.832, 303.736 )
 
 [node name="Heavy3" parent="TileMap" instance=ExtResource( 3 )]
-position = Vector2( 377.973, 309.729 )
+position = Vector2( 386.622, 303.242 )
+
+[node name="Fast6" parent="TileMap" instance=ExtResource( 4 )]
+position = Vector2( 870.492, 737.182 )
