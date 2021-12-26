@@ -101,7 +101,6 @@ shape = SubResource( 13 )
 [node name="Hitbox" parent="HitboxPos" index="1"]
 collision_layer = 0
 collision_mask = 2
-monitoring = true
 
 [node name="HitboxShape2d" parent="HitboxPos/Hitbox" index="0"]
 visible = false

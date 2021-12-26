@@ -23,12 +23,14 @@ var hitbox :Hitbox
 var hurtbox :Hurtbox
 var navTimer :Timer
 var XP_WORTH :float
+var _targeted: Sprite
 
 func _ready():
 
 	hitbox = $HitboxPos/Hitbox
 	hurtbox = $Hurtbox
 	navTimer = $NavigationTimer
+	_targeted = $TargetMarker
 
 
 func face_target():
@@ -40,6 +42,8 @@ func face_target():
 func _physics_process(delta):
 	face_target()
 	pathfinding_movement(delta)
+	_targeted.rotation += delta*0.5
+	
 
 onready var _timing:= true
 
@@ -106,3 +110,7 @@ func target_location()->Vector2:
 func _on_NavigationTimer_timeout():
 	if target_detected:
 		navigate_towards(target_location())
+
+func targeted(state:bool):
+	_targeted.visible = state
+	print(self, " targeted: ", state)

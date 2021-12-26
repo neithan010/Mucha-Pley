@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://ActorController.gd" type="Script" id=1]
 [ext_resource path="res://Levels/RoomTemplate.tscn" type="PackedScene" id=2]
@@ -7,7 +7,9 @@
 [ext_resource path="res://Items/Health.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Enemies/Heavy.tscn" type="PackedScene" id=6]
 [ext_resource path="res://PlayerController.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Enemies/Trash.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Enemies/Fast.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Enemies/Ranged.tscn" type="PackedScene" id=10]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
@@ -61,15 +63,22 @@ position = Vector2( 1098.75, 606.105 )
 
 [node name="Node" type="Node" parent="ActorController"]
 
+[node name="Trash" parent="ActorController/Node" instance=ExtResource( 8 )]
+position = Vector2( 409.373, 74.875 )
+
 [node name="Heavy" parent="ActorController/Node" instance=ExtResource( 6 )]
-position = Vector2( 66.0526, 102.085 )
+position = Vector2( 76.5526, 110.585 )
 collision_layer = 0
 collision_mask = 1
 
+[node name="Heavy2" parent="ActorController/Node" instance=ExtResource( 6 )]
+position = Vector2( 154.79, 218.481 )
+
+[node name="Ranged" parent="ActorController/Node" instance=ExtResource( 10 )]
+position = Vector2( 261.749, 109.613 )
+
 [node name="Fast" parent="ActorController/Node" instance=ExtResource( 9 )]
-position = Vector2( 1895.91, 87.2325 )
-collision_layer = 0
-collision_mask = 1
+position = Vector2( 362.765, 177.444 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 1 )

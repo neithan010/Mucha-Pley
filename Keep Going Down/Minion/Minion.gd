@@ -19,6 +19,12 @@ const RIGHT 	= INPUT_NAME+"_right"
 const LEFT  	= INPUT_NAME+"_left"
 const ATTACK	= INPUT_NAME+"_attack"
 
+const CYCLE_UP    = "cycle_target_up"
+const CYCLE_DOWN  = "cycle_target_down"
+
+const TARGET_RANGE = 800
+
+
 var in_range := true
 var body :BaseMinionBody
 var clsnShape
@@ -31,6 +37,7 @@ const HeavyClsn  = preload("res://Minion/HeavyCollision.tscn")
 const FastClsn   = preload("res://Minion/FastCollision.tscn")
 const RangedClsn = preload("res://Minion/RangedCollision.tscn")
 
+var current_target : BaseEnemy= null
 
 onready var player = $"../Player"
 #onready var attack = $Attack
@@ -69,8 +76,45 @@ func change_minion_type(type:String):
 	add_child(clsnShape)
 #	copy_body_vars()
 
+func sort_by_dist(a:Node2D, b:Node2D)->bool:
+	var dist_a = position.distance_to(a.position)
+	var dist_b = position.distance_to(b.position)
+	return dist_a < dist_b
 
+
+func target_list(dist:float):
+	var all_enemies = get_tree().get_nodes_in_group("Enemies")
+	print(all_enemies, range(all_enemies.size()))
+	var target_ls = []
+	for enemy_index in range(all_enemies.size()):
+		if position.distance_to(all_enemies[enemy_index].position) <= dist:
+			target_ls.append(all_enemies[enemy_index])
 	
+	target_ls.sort_custom(self, "sort_by_dist")
+	return target_ls
+
+
+func change_target(new_target:BaseEnemy)->void:
+	if is_instance_valid(current_target):
+		current_target.targeted(false)
+	if new_target != null:
+		new_target.targeted(true)
+	print("changed target from ", current_target, " to ", new_target)
+		
+	current_target = new_target
+	
+func cycle_targets(pos:int):
+	var targets = target_list(800)
+	if targets.size() == 0:
+		change_target(null)
+	else:
+		var current_index :int = targets.find(current_target)
+		if current_index == -1:
+			change_target(targets[0])
+		else:
+			var new_index = (current_index + pos)%targets.size()
+			change_target(targets[new_index])
+
 
 func _physics_process(delta):
 	var input_vector := Vector2.ZERO
@@ -87,6 +131,12 @@ func _physics_process(delta):
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 	if velocity != Vector2.ZERO:
 		rotation = velocity.angle()
+		
+		
+	if is_instance_valid(current_target):
+		var vector_dir := current_target.position - self.position
+		var angle_dir = vector_dir.angle()
+		rotation = angle_dir
 	
 	var _move = move_and_slide(velocity)
 	
@@ -94,5 +144,15 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed(ATTACK):
 		body.DMG_MULT = self.DMG_MULT
 		body.attack()
+		target_list(600)
 		return
+	
+	if Input.is_action_just_pressed(CYCLE_DOWN):
+		cycle_targets(+1)
 
+	if Input.is_action_just_pressed(CYCLE_UP):
+		cycle_targets(-1)
+	
+	
+	
+	
