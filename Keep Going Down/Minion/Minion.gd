@@ -43,6 +43,7 @@ func _ready():
 	clsnShape = $HeavyCollision
 	change_minion_type("RANGED")
 	
+	DMG_MULT = 1
 
 func copy_body_vars():
 	ACCEL = body.ACCEL
@@ -76,9 +77,9 @@ func _physics_process(delta):
 		input_vector.y = Input.get_action_strength(DOWN)  - Input.get_action_strength(UP)
 	
 	if input_vector != Vector2.ZERO:
-		velocity += input_vector * ACCEL * delta
-		velocity = velocity.clamped(MAX_SPEED * delta)
-		
+		velocity += input_vector * ACCEL * delta * SPEED_MULT
+		velocity = velocity.clamped(MAX_SPEED * delta * SPEED_MULT)
+	
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 	if velocity != Vector2.ZERO:

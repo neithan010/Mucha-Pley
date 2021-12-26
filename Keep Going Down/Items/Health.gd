@@ -1,6 +1,6 @@
 extends BaseItem
 
-var HP = 10
+var HP = 50
 
 func is_armour():
 	return false

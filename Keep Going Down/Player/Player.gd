@@ -9,6 +9,7 @@ signal armor_changed
 #var HP: float
 #var ARMOR: float
 #var MAX_SPEED: float
+#var SPEED_MULT: int
 #var ACCEL: float
 #var FRICTION: float
 #var velocity:= Vector2.ZERO
@@ -22,8 +23,11 @@ const LEFT  = INPUT_NAME+"_left"
 const DASH_LENGTH = 0.2
 const DASH_RELOAD_TIME = 2
 const MAX_HP := 150.0
+const XP_THRESHOLD = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]
 
 onready var res
+onready var timer = $Timer
+onready var controller = get_owner()
 
 var DASH_SPEED_fin: float
 var DASH_SPEED_init: float
@@ -34,7 +38,7 @@ var dash_dir : Vector2
 var dash_curr_spd = 0
 var dash_recharge = DASH_RELOAD_TIME
 var XP := 0.0
-
+var LVL
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -46,6 +50,10 @@ func _ready():
 	DASH_SPEED_fin = MAX_SPEED * 1.5
 	DASH_SPEED_init = MAX_SPEED * 2.5
 	HP = MAX_HP
+	timer.connect("timeout", self, "_on_Timer_timeout")
+	timer.set_wait_time(1)
+	timer.start()
+	print("PlayerController: ", controller)
 #	Engine.time_scale= 0.7
 	
 func _physics_process(delta):
@@ -72,33 +80,36 @@ func _physics_process(delta):
 	match move_state:
 		STATE.move:
 			if input_vector != Vector2.ZERO:
-				velocity += input_vector * ACCEL * delta
-				velocity = velocity.clamped(MAX_SPEED * delta)
+				velocity += input_vector * ACCEL * delta * SPEED_MULT
+				velocity = velocity.clamped(MAX_SPEED * delta * SPEED_MULT)
 			else:
 				velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 		STATE.dash:
 			#print("dashing")
 			if dash_timer>0:
 				dash_timer -= delta
-				velocity = dash_dir * dash_curr_spd * delta
+				velocity = dash_dir * dash_curr_spd * delta * SPEED_MULT
 				#print(dash_curr_spd)
 				var dash_diff = dash_curr_spd - DASH_SPEED_fin
 				var brake = delta * dash_diff
 				#print("brake. ", brake)
 				dash_curr_spd = max(DASH_SPEED_fin, dash_curr_spd - brake)
-				
-				
 			else:
 				move_state = STATE.move
 	
 	res = move_and_slide(velocity)
-	
 
 	var _m = move_and_slide(velocity)
 
+func _on_Timer_timeout():
+	if ARMOR > 0:
+		get_armor(-1)
 
 func add_xp(amt:float):
 	XP += amt
+	if XP > XP_THRESHOLD[LVL]:
+		LVL += 1
+		level_up(LVL)
 	
 func get_armor(amt:float):
 	print("<Player> Got ", amt, " armor.")
@@ -106,14 +117,14 @@ func get_armor(amt:float):
 
 func get_hp(amt:float):
 	print("<Player> Got ", amt, " hp.")
-	HP += amt
+	HP = clamp(HP + amt, 0, MAX_HP)
+	if HP == 0:
+		die()
 
 func die():
 	print("PLAYER DEAD, GAME OVER")
-	
-	pass
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+	timer.stop()
+	deathplosion(Color("ffffff"))
 
-	
+func level_up(lvl):
+	controller.level_up(lvl)

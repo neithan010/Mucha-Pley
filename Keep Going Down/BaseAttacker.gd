@@ -9,16 +9,13 @@ class_name BaseAttacker
 #var FRICTION: int
 #var velocity:= Vector2.ZERO
 #onready var hurtbox := $Hurtbox
+
 onready var DAMAGE:= 0
+onready var DMG_MULT: int = 1
 onready var ATTACK_SPEED: float = 0.0
 onready var ATTACK_TIMER:= ATTACK_SPEED
 
 
 
-
-
 func can_attack() -> bool:
 	return ATTACK_TIMER <= 0
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
