@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Karl Casey - White Bat I - 11 Lost Vegas.mp3-da043e1e10d686ab9a5278c6a26fde7b.mp3str"
+
+[deps]
+
+source_file="res://Music/Karl Casey - White Bat I - 11 Lost Vegas.mp3"
+dest_files=[ "res://.import/Karl Casey - White Bat I - 11 Lost Vegas.mp3-da043e1e10d686ab9a5278c6a26fde7b.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

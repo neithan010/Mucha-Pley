@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Karl Casey - White Bat I - 07 Self Inflicted.mp3-a603f65c85f02287854daed9d8968ba7.mp3str"
+
+[deps]
+
+source_file="res://Music/Karl Casey - White Bat I - 07 Self Inflicted.mp3"
+dest_files=[ "res://.import/Karl Casey - White Bat I - 07 Self Inflicted.mp3-a603f65c85f02287854daed9d8968ba7.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

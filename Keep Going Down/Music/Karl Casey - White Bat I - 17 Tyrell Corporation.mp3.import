@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Karl Casey - White Bat I - 17 Tyrell Corporation.mp3-f020ba9a448752fbd0d7bcb5f1498331.mp3str"
+
+[deps]
+
+source_file="res://Music/Karl Casey - White Bat I - 17 Tyrell Corporation.mp3"
+dest_files=[ "res://.import/Karl Casey - White Bat I - 17 Tyrell Corporation.mp3-f020ba9a448752fbd0d7bcb5f1498331.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

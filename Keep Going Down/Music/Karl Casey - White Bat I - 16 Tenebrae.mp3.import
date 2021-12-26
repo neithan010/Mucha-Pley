@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Karl Casey - White Bat I - 16 Tenebrae.mp3-bc696fead39cc822d5ec6efbd7444c10.mp3str"
+
+[deps]
+
+source_file="res://Music/Karl Casey - White Bat I - 16 Tenebrae.mp3"
+dest_files=[ "res://.import/Karl Casey - White Bat I - 16 Tenebrae.mp3-bc696fead39cc822d5ec6efbd7444c10.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

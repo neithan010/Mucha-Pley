@@ -71,6 +71,10 @@ _global_script_class_icons={
 config/name="Keep Going Down"
 run/main_scene="res://Levels/TitleScreen.tscn"
 
+[autoload]
+
+BackgroundMusic="*res://Music/BackgroundMusic.tscn"
+
 [display]
 
 window/size/test_width=1280

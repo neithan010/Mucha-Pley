@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Karl Casey - White Bat I - 22 The Prophet.mp3-ebf811761a24d36995da40cfaf6abfbc.mp3str"
+
+[deps]
+
+source_file="res://Music/Karl Casey - White Bat I - 22 The Prophet.mp3"
+dest_files=[ "res://.import/Karl Casey - White Bat I - 22 The Prophet.mp3-ebf811761a24d36995da40cfaf6abfbc.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
