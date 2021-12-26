@@ -1,4 +1,4 @@
-Reporte Ataques 2055/12/24
+Fecha: 2055/12/27
+Asunto: Reporte preliminar ataques 2055/12/24
 
-- Se contrarrestaron multiples intentos de irrumpir en los bancos de datos de la compania
-- Instalacion de troyanos en wetware de multiples de los atacantes atacantes
+Se detectaron multiples intentos de irrumpir en los bancos de datos de la compania. Sin embargo, el sistema automatizado dio tiempo al equipo de respuesta no solo para contrarrestar dichos ataques, sino tambien para instalar un rootkit experimental en el wetware de 7 de los atacantes atacantes.
