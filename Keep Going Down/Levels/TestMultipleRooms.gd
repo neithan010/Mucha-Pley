@@ -17,5 +17,5 @@ onready var player = $ActorController/PlayerController/Player
 #	print("going from ", character.global_position, " to ", player.global_position)
 
 func _ready():
-	for enemy in $ActorController.enemies:
+	for enemy in get_tree().get_nodes_in_group("Enemies"):#$ActorController.enemies:
 		enemy.navNode = nav_2d

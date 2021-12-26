@@ -18,6 +18,7 @@ func _ready():
 	ATTACK_SPEED = 3
 	NAME = "RANGED"
 	MAX_SPEED = 80.0
+	XP_WORTH = 5
 	start_attack_timer()
 
 
@@ -32,7 +33,7 @@ func _physics_process(delta):
 
 func shoot():
 	var shot = Bullet.instance()
-	shot.init(500, 10, position, rotation, self)
+	shot.init(500, 10, position, rotation)
 	owner.add_child(shot)
 
 

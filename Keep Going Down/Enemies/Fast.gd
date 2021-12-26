@@ -51,7 +51,7 @@ func _physics_process(delta):
 	._physics_process(delta)
 	var timer_ended = advance_attack_timer(delta)
 	if timer_ended:
-		print("<Fast> Timer finished")		
+#		print("<Fast> Timer finished")		
 		var in_attack = detector.get_overlapping_areas()
 		if len(in_attack)>0:
 			start_attack()
@@ -104,18 +104,19 @@ func start_attack():
 
 
 func _on_SwordSprite_animation_finished():
-	print("<fast> finished attack animation")
+#	print("<fast> finished attack animation")
 	set_attack(false)#finish attack
 
 
 func _on_player_detected_in_attack_range(area):
 	if ATTACK_TIMER <= 0:
-		print("<Fast> Fast atacando player")
+#		print("<Fast> Fast atacando player")
 		reset_attack_timer()
 		start_attack()
 	else:
-		print("<Fast> Fast waiting for attack timer")
+#		print("<Fast> Fast waiting for attack timer")
+		pass
 
 func _on_player_entered_hitbox(_area):
-	print("<Fast> player detected in signal")
+#	print("<Fast> player detected in signal")
 	target_player.receive_damage(DAMAGE)

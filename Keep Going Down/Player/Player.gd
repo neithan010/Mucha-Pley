@@ -23,7 +23,7 @@ const LEFT  = INPUT_NAME+"_left"
 const DASH_LENGTH = 0.2
 const DASH_RELOAD_TIME = 2
 const MAX_HP := 150.0
-const XP_THRESHOLD = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]
+const XP_THRESHOLD = [9, 14, 300, 400, 500, 600, 700, 800, 900, 1000]
 
 onready var res
 onready var timer = $Timer
@@ -50,6 +50,7 @@ func _ready():
 	DASH_SPEED_fin = MAX_SPEED * 1.5
 	DASH_SPEED_init = MAX_SPEED * 2.5
 	HP = MAX_HP
+	LVL = 0
 	timer.connect("timeout", self, "_on_Timer_timeout")
 	timer.set_wait_time(1)
 	timer.start()
@@ -72,10 +73,10 @@ func _physics_process(delta):
 		dash_dir= input_vector.normalized()
 		dash_curr_spd = DASH_SPEED_init
 		
-	if Input.is_action_just_pressed("ui_select"):
-		var bullet = preload("res://Bullet.tscn").instance()
-		bullet.init(500, 10, position, rotation, self)
-		owner.add_child(bullet)
+#	if Input.is_action_just_pressed("ui_select"):
+#		var bullet = preload("res://Minion/MinionBullet.tscn").instance()
+#		bullet.init(500, 10, position, rotation, self)
+#		owner.add_child(bullet)
 	
 	match move_state:
 		STATE.move:
@@ -102,7 +103,6 @@ func _physics_process(delta):
 	var _m = move_and_slide(velocity)
 
 func _on_Timer_timeout():
-	print("timeout")
 	if ARMOR > 0:
 		get_armor(-1)
 

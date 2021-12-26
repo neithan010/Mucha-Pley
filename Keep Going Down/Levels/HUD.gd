@@ -23,7 +23,6 @@ func _ready():
 func _process(delta):
 	speed_label.text = "x " + str(player.SPEED_MULT)
 	armor_label.text = str(player.ARMOR)
-	#TODO Add DMG_MULT no minion
 	dmg_label.text = "x " + str(minion.DMG_MULT)
 	hp_bar.value = player.HP
 	hp_label.text = str(player.HP)
