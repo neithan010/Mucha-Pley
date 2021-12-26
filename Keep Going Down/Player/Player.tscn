@@ -12,9 +12,13 @@ radius = 15.0
 radius = 16.0312
 
 [node name="Player" type="KinematicBody2D"]
+position = Vector2( 65.2134, 110.563 )
 collision_layer = 0
 collision_mask = 5
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 111.954 ]
+}
 
 [node name="Sprite" type="Sprite" parent="."]
 modulate = Color( 0.484375, 0.484375, 0.484375, 1 )

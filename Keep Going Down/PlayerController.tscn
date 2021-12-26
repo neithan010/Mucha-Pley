@@ -49,6 +49,9 @@ font_data = ExtResource( 5 )
 
 [node name="PlayerController" type="Node"]
 script = ExtResource( 3 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 100.917 ]
+}
 
 [node name="Line2D" type="Line2D" parent="."]
 points = PoolVector2Array( 0, 0, 0, 0 )
@@ -179,10 +182,10 @@ text = "###"
 material = ExtResource( 9 )
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -0.667389
-margin_top = 0.667435
-margin_right = -0.667358
-margin_bottom = 0.667419
+margin_left = 0.223511
+margin_top = -2.00526
+margin_right = 0.223511
+margin_bottom = -2.00525
 __meta__ = {
 "_edit_use_anchors_": false
 }
