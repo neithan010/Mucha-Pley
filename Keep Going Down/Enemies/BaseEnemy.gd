@@ -71,27 +71,7 @@ func move_and_slide_towards(distance, place):
 	var dir :Vector2 = place-self.position
 	dir = dir.normalized()
 	var _m = move_and_slide(dir*distance)
-#
-#func move_along_path(distance:float)->Vector2:
-#	#avanza distance a través de una linea de puntos
-#	var start_point := position
-#	var end_point : Vector2
-#	#por cada punto 
-#	for _i in range(navPath.size()):
-#		var dist_to_next := start_point.distance_to(navPath[0])
-#		if distance <= dist_to_next and distance >= 0.0:
-#			end_point = start_point.linear_interpolate(navPath[0], distance/dist_to_next)
-#			position = end_point
-#			break
-##		elif distance < 0.0:
-##			end_point = navPath[0]
-##			move_and_slide_towards(distance, end_point)			
-##			navigating = false
-#
-#		distance -= dist_to_next
-#		start_point = navPath[0]
-#		navPath.remove(0)
-#	return end_point
+
 func move_along_path(distance:float)->void:
 	var start_point := position
 	for _i in range(navPath.size()):
@@ -111,7 +91,7 @@ func _on_DetectionRange_area_entered(area):
 	if target_player == null or navNode == null:
 		pass
 	else:
-		print(NAME, " navigating towards player from detection area", area)
+#		print(NAME, " navigating towards player from detection area", area)
 		navigate_towards(target_location())
 		target_detected = true
 		

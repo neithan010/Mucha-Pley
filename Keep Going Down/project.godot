@@ -30,6 +30,11 @@ _global_script_classes=[ {
 "path": "res://Items/BaseItem.gd"
 }, {
 "base": "Node2D",
+"class": "BaseMinionBody",
+"language": "GDScript",
+"path": "res://MinionBody.gd"
+}, {
+"base": "Node2D",
 "class": "Bullet",
 "language": "GDScript",
 "path": "res://Bullet.gd"
@@ -54,6 +59,7 @@ _global_script_class_icons={
 "BaseAttacker": "",
 "BaseEnemy": "",
 "BaseItem": "",
+"BaseMinionBody": "",
 "Bullet": "",
 "Hitbox": "",
 "Hurtbox": "",

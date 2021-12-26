@@ -77,7 +77,7 @@ shape = SubResource( 8 )
 
 [node name="Hurtbox" parent="." instance=ExtResource( 1 )]
 scale = Vector2( 0.920713, 1.04459 )
-collision_mask = 61
+collision_mask = 5
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
 visible = false
@@ -94,6 +94,7 @@ local_coords = false
 process_material = SubResource( 10 )
 
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
+[connection signal="area_entered" from="Hitbox" to="." method="_on_Hitbox_hit"]
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="body_entered" from="Hurtbox" to="." method="_on_Hurtbox_body_entered"]
 

@@ -64,10 +64,10 @@ func _physics_process(delta):
 		dash_dir= input_vector.normalized()
 		dash_curr_spd = DASH_SPEED_init
 		
-	if Input.is_action_just_pressed("ui_select"):
-		var bullet = preload("res://Bullet.tscn").instance()
-		bullet.init(500, 10, position, rotation, self)
-		owner.add_child(bullet)
+#	if Input.is_action_just_pressed("ui_select"):
+#		var bullet = preload("res://Minion/MinionBullet.tscn").instance()
+#		bullet.init(500, 10, position, rotation, self)
+#		owner.add_child(bullet)
 	
 	match move_state:
 		STATE.move:

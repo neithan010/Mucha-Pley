@@ -32,7 +32,7 @@ func _physics_process(delta):
 
 func shoot():
 	var shot = Bullet.instance()
-	shot.init(500, 10, position, rotation, self)
+	shot.init(500, 10, position, rotation)
 	owner.add_child(shot)
 
 

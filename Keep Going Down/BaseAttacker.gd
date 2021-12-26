@@ -14,8 +14,6 @@ onready var ATTACK_SPEED: float = 0.0
 onready var ATTACK_TIMER:= ATTACK_SPEED
 
 
-func deal_damage_to(actor:BaseActor):
-	actor.HP = actor.HP- self.DAMAGE
 
 
 
