@@ -31,7 +31,7 @@ var detector :Area2D
 func _ready():
 
 	._ready()
-	NAME = "Heavy"
+	NAME = "HEAVY"
 	ATTACK_SPEED = 3
 	MAX_SPEED = 80.0
 	XP_WORTH = 5

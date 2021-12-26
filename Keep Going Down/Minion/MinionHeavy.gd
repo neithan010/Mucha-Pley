@@ -11,8 +11,8 @@ extends BaseMinionBody
 #var _timing:= true
 
 func _ready():
-	ATTACK_SPEED = 6.0
-	MAX_SPEED = 80.0
+	ATTACK_SPEED = 4.5
+	MAX_SPEED = 100.0
 	DAMAGE = 40.0
 	
 	_default_color = "5d1c1c"

@@ -16,7 +16,7 @@ extends BaseEnemy
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	DAMAGE = 20
-	NAME = "Trash"
+	NAME = "TRASH"
 	ATTACK_SPEED = 10
 	ACCEL = int(800 * rand_range(0.95, 1.05))
 	MAX_SPEED = int(25000* rand_range(0.95, 1.05))

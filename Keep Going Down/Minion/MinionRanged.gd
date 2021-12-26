@@ -16,7 +16,7 @@ func _ready():
 	ACCEL     = 4000
 	MAX_SPEED = 30000
 	
-	ATTACK_SPEED = 6.0
+	ATTACK_SPEED = 2.0
 	MAX_SPEED = 80.0
 	DAMAGE = 40.0
 	

@@ -60,17 +60,24 @@ func copy_body_vars():
 	MAX_SPEED = body.MAX_SPEED
 	
 func change_minion_type(type:String):
-	body.queue_free()
-	clsnShape.queue_free()
+	
 	if type=="RANGED":
+		body.queue_free()
+		clsnShape.queue_free()
 		body = RangedBody.instance()
 		clsnShape = RangedClsn.instance()
 	elif type == "HEAVY":
+		body.queue_free()
+		clsnShape.queue_free()
 		body = HeavyBody.instance()
 		clsnShape = HeavyClsn.instance()
 	elif type == "FAST":
+		body.queue_free()
+		clsnShape.queue_free()
 		body = FastBody.instance()
 		clsnShape = FastClsn.instance()
+	else:
+		return
 	print(body)
 	add_child(body)
 	add_child(clsnShape)
@@ -157,4 +164,6 @@ func _physics_process(delta):
 func confirm_kill(killed):
 	if killed == current_target:
 		cycle_targets(+1)
+	if Input.is_action_pressed("change_miniion"):
+		change_minion_type(killed.NAME)
 	

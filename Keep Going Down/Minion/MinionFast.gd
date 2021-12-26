@@ -13,7 +13,7 @@ extends BaseMinionBody
 func _ready():
 	DAMAGE = 20.0
 	ATTACK_SPEED = 3.0
-	MAX_SPEED = 140.0
+	MAX_SPEED = 180.0
 	
 	_default_color = "711579"
 	_ready_color = "de0af0"
