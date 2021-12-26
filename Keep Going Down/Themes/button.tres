@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Fonts/80s-retro-future.ttf" type="DynamicFontData" id=1]
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=1]
 size = 26
 font_data = ExtResource( 1 )
 
@@ -14,7 +14,7 @@ font_data = ExtResource( 1 )
 
 [resource]
 Button/colors/font_color = Color( 0.0156863, 0.694118, 0.8, 1 )
-Button/fonts/font = SubResource( 5 )
+Button/fonts/font = SubResource( 1 )
 Button/styles/disabled = null
 Button/styles/hover = SubResource( 2 )
 Button/styles/normal = SubResource( 3 )
