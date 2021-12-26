@@ -129,7 +129,7 @@ func _physics_process(delta):
 	
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
-	if velocity != Vector2.ZERO:
+	if input_vector != Vector2.ZERO and velocity != Vector2.ZERO and not is_instance_valid(current_target):
 		rotation = velocity.angle()
 		
 		
@@ -154,5 +154,7 @@ func _physics_process(delta):
 		cycle_targets(-1)
 	
 	
-	
+func confirm_kill(killed):
+	if killed == current_target:
+		cycle_targets(+1)
 	

@@ -101,7 +101,13 @@ func _on_DetectionRange_area_entered(area):
 		
 func die():
 	deathplosion($Sprite.modulate)
-	target_player.add_xp(XP_WORTH)
+	if target_player != null:
+		target_player.add_xp(XP_WORTH)
+	var minion = get_tree().get_nodes_in_group("Minion")
+	if minion.size()>0:
+		minion = minion[0]
+	minion.confirm_kill(self)
+	
 	queue_free()
 #elige hacia adonde pathfindear, sobreescrito en hijos
 func target_location()->Vector2:

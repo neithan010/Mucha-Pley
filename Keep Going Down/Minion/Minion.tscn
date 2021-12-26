@@ -4,7 +4,9 @@
 [ext_resource path="res://Minion/Minion.gd" type="Script" id=2]
 [ext_resource path="res://Minion/HeavyCollision.tscn" type="PackedScene" id=3]
 
-[node name="Minion" type="KinematicBody2D"]
+[node name="Minion" type="KinematicBody2D" groups=[
+"Minion",
+]]
 collision_layer = 4
 script = ExtResource( 2 )
 
