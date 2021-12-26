@@ -60,7 +60,7 @@ visible = false
 margin_right = 460.0
 margin_bottom = 100.0
 theme = ExtResource( 4 )
-text = "Reporte Guerra Corporativa"
+text = "Guerra"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -89,7 +89,7 @@ visible = false
 margin_right = 460.0
 margin_bottom = 100.0
 theme = ExtResource( 4 )
-text = "Informe Familia e2h=U\\K2"
+text = "Lazos"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -118,7 +118,7 @@ visible = false
 margin_right = 460.0
 margin_bottom = 100.0
 theme = ExtResource( 4 )
-text = "Reporte Ataques 2055/12/24"
+text = "Ataques"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -147,7 +147,7 @@ visible = false
 margin_right = 460.0
 margin_bottom = 100.0
 theme = ExtResource( 4 )
-text = "Memo Activacion Durmientes"
+text = "Activacion"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -176,7 +176,7 @@ visible = false
 margin_right = 460.0
 margin_bottom = 100.0
 theme = ExtResource( 4 )
-text = "Reporte: Danos 9q+tNq&Nq9"
+text = "=sDdK\"K"
 __meta__ = {
 "_edit_use_anchors_": false
 }

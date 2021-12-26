@@ -1,4 +1,5 @@
-Reporte Guerra Corporativa
+Fecha: 2053/07/25
+Asunto: Catastro Guerra Corporativa
 
-- 40% de la infraestructura en la red de NetSec quedo fuera de operacion
-- Se concreto la anexion de Iotatech
+La infraestrucutra de red de la compania sufrio graves danos, como resultado se estima que el 30% del trafico de nuestros clientes se encuentra vulnerable. Se recomienda dar maxima prioridad a la restauracion de nodos comprometidos.
+Iotatech se declaro en quieba, queda propuesto para una evaluacion futura si una anexion seria ventajosa para NetSec.
