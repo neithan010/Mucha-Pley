@@ -5,6 +5,8 @@ signal attack_changed
 #Inherits vars:
 var HP: float
 var ARMOR: float
+var DMG_MULT: int
+var SPEED_MULT: int
 var MAX_SPEED: float
 var ACCEL: float
 var FRICTION: float
@@ -41,9 +43,10 @@ func _ready():
 	FRICTION  = 3000
 	body = $MinionHeavy
 	clsnShape = $HeavyCollision
-	change_minion_type("RANGED")
+	change_minion_type("FAST")
 	
 	DMG_MULT = 1
+	SPEED_MULT = 1
 
 func copy_body_vars():
 	ACCEL = body.ACCEL
@@ -89,6 +92,7 @@ func _physics_process(delta):
 	
 	
 	if Input.is_action_just_pressed(ATTACK):
+		body.DMG_MULT = self.DMG_MULT
 		body.attack()
 		return
 

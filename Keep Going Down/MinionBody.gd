@@ -5,6 +5,7 @@ var MAX_SPEED:float
 var ACCEL:float
 var ATTACK_SPEED:float
 var DAMAGE:float
+var DMG_MULT:int
 
 var _hitbox:Hitbox
 var _attack_sprite:AnimatedSprite
@@ -48,7 +49,7 @@ func apply_damage():
 	for area in _hitbox.get_overlapping_areas():
 		var enemy :BaseEnemy = area.get_parent()
 		print("found enemy in hitbox:", enemy, enemy.NAME)
-		enemy.receive_damage(DAMAGE)
+		enemy.receive_damage(DAMAGE * DMG_MULT)
 
 func enable_sprite(bl:bool):
 	_attack_sprite.visible = bl

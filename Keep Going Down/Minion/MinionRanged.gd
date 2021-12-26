@@ -40,6 +40,6 @@ func attack():
 		#shoot
 		var shot:Bullet = bullet.instance()
 		print("minion pos: ", get_parent().position)
-		shot.init(BULLET_SPEED, DAMAGE, get_parent().position, global_rotation)
+		shot.init(BULLET_SPEED, (DAMAGE * DMG_MULT), get_parent().position, global_rotation)
 		get_parent().owner.add_child(shot)
 		print("shooting, ", shot)

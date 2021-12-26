@@ -18,7 +18,7 @@ func _ready():
 
 # TODO: debug buttons after returning from Archive.tscn
 func on_play_pressed():
-	res = get_tree().change_scene("res://Levels/Mapa1.tscn")
+	res = get_tree().change_scene("res://Levels/World.tscn")
 	assert(res == OK)
 
 func on_file_pressed():
