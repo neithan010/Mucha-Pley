@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Karl Casey - White Bat I - 03 Anima.mp3-1d96950d70ad30fe1053ec186b49d67c.mp3str"
+
+[deps]
+
+source_file="res://Music/Karl Casey - White Bat I - 03 Anima.mp3"
+dest_files=[ "res://.import/Karl Casey - White Bat I - 03 Anima.mp3-1d96950d70ad30fe1053ec186b49d67c.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

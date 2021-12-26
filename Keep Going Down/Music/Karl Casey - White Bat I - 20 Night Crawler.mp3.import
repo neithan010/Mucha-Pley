@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Karl Casey - White Bat I - 20 Night Crawler.mp3-b64f9e728a42f273291ab692ea02b82c.mp3str"
+
+[deps]
+
+source_file="res://Music/Karl Casey - White Bat I - 20 Night Crawler.mp3"
+dest_files=[ "res://.import/Karl Casey - White Bat I - 20 Night Crawler.mp3-b64f9e728a42f273291ab692ea02b82c.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

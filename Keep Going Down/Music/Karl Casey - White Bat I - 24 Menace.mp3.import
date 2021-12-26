@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Karl Casey - White Bat I - 24 Menace.mp3-bc2696d27f95067987ed5b89a13c7f46.mp3str"
+
+[deps]
+
+source_file="res://Music/Karl Casey - White Bat I - 24 Menace.mp3"
+dest_files=[ "res://.import/Karl Casey - White Bat I - 24 Menace.mp3-bc2696d27f95067987ed5b89a13c7f46.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

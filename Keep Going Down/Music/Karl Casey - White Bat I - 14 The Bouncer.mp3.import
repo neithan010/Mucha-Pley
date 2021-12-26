@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Karl Casey - White Bat I - 14 The Bouncer.mp3-fb1035e6dc3a180a48015b55b82b694e.mp3str"
+
+[deps]
+
+source_file="res://Music/Karl Casey - White Bat I - 14 The Bouncer.mp3"
+dest_files=[ "res://.import/Karl Casey - White Bat I - 14 The Bouncer.mp3-fb1035e6dc3a180a48015b55b82b694e.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Karl Casey - White Bat I - 01 Elysium.mp3-c310c508a1a10255981cc7dc3231587b.mp3str"
+
+[deps]
+
+source_file="res://Music/Karl Casey - White Bat I - 01 Elysium.mp3"
+dest_files=[ "res://.import/Karl Casey - White Bat I - 01 Elysium.mp3-c310c508a1a10255981cc7dc3231587b.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
