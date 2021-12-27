@@ -19,30 +19,35 @@ position = Vector2( 245.376, 210.355 )
 
 [node name="Heavy" parent="TileMap" instance=ExtResource( 4 )]
 position = Vector2( 503.343, 722.257 )
+rotation = 1.5708
 
 [node name="Ranged" parent="TileMap" instance=ExtResource( 5 )]
 position = Vector2( 263.596, 498.309 )
 
 [node name="Fast" parent="TileMap" instance=ExtResource( 3 )]
 position = Vector2( 776.571, 321.289 )
+rotation = -3.14159
 
 [node name="Trash2" parent="TileMap" instance=ExtResource( 2 )]
 position = Vector2( 164.765, 210.355 )
 
 [node name="Heavy2" parent="TileMap" instance=ExtResource( 4 )]
 position = Vector2( 143.749, 701.28 )
+rotation = -1.5708
 
 [node name="Ranged2" parent="TileMap" instance=ExtResource( 5 )]
 position = Vector2( 775.995, 533.572 )
 
 [node name="Fast2" parent="TileMap" instance=ExtResource( 3 )]
 position = Vector2( 772.076, 704.855 )
+rotation = -3.14159
 
 [node name="Trash3" parent="TileMap" instance=ExtResource( 2 )]
 position = Vector2( 839.345, 204.698 )
 
 [node name="Heavy3" parent="TileMap" instance=ExtResource( 4 )]
 position = Vector2( 871.926, 704.277 )
+rotation = -1.5708
 
 [node name="Ranged3" parent="TileMap" instance=ExtResource( 5 )]
 position = Vector2( 862.919, 895.36 )
@@ -55,6 +60,7 @@ position = Vector2( 771.463, 206.113 )
 
 [node name="Heavy4" parent="TileMap" instance=ExtResource( 4 )]
 position = Vector2( 152.739, 326.704 )
+rotation = 1.5708
 
 [node name="Ranged4" parent="TileMap" instance=ExtResource( 5 )]
 position = Vector2( 169.203, 890.865 )
@@ -67,6 +73,7 @@ position = Vector2( 866.215, 529.968 )
 
 [node name="Heavy5" parent="TileMap" instance=ExtResource( 4 )]
 position = Vector2( 876.421, 323.707 )
+rotation = 1.5708
 
 [node name="Ranged5" parent="TileMap" instance=ExtResource( 5 )]
 position = Vector2( 495.833, 652.634 )
@@ -79,9 +86,11 @@ position = Vector2( 164.765, 512.997 )
 
 [node name="Heavy6" parent="TileMap" instance=ExtResource( 4 )]
 position = Vector2( 501.844, 317.714 )
+rotation = 1.5708
 
 [node name="Ranged6" parent="TileMap" instance=ExtResource( 5 )]
-position = Vector2( 500.328, 364.959 )
+position = Vector2( 495.566, 387.183 )
 
 [node name="Fast6" parent="TileMap" instance=ExtResource( 3 )]
 position = Vector2( 424.469, 514.57 )
+rotation = -3.14159

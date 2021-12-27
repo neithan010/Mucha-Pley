@@ -104,6 +104,7 @@ position = Vector2( 154.724, 287.434 )
 
 [node name="Fast7" parent="TileMap" instance=ExtResource( 3 )]
 position = Vector2( 865.661, 292.78 )
+rotation = -3.14159
 
 [node name="Fast8" parent="TileMap" instance=ExtResource( 3 )]
 position = Vector2( 707.081, 162.709 )
