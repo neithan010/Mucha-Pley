@@ -50,7 +50,7 @@ func _ready():
 	FRICTION  = 3000
 	body = $MinionHeavy
 	clsnShape = $HeavyCollision
-	change_minion_type("FAST")
+	#change_minion_type("FAST")
 	
 	DMG_MULT = 1
 	SPEED_MULT = 1
