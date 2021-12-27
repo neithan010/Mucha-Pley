@@ -1,0 +1,11 @@
+Object_ScifiDoodad.wav 		Character death
+Object_EnergyField_Disable_1.wav	Enemy death
+Radar_Blip_1.wav			Autofocus enemy left
+Radar_Blip_2.wav			Autofocus enemy right
+Sting_Energy_Gain_1.wav		Item grabbed
+Text_Chatter_1.wav			Load text
+UI_Progress.wav			Level up
+UI_Selection.wav			Button pressed
+					Heavy attack
+					Fast attack
+					Ranged attack
