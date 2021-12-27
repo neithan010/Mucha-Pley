@@ -16,12 +16,14 @@ tile_data = PoolIntArray( 0, 0, 0, 1, 0, 196609, 2, 0, 196609, 3, 0, 196609, 4, 
 
 [node name="Fast" parent="TileMap" instance=ExtResource( 3 )]
 position = Vector2( 208.052, 514.185 )
+rotation = -3.14159
 
 [node name="Fast2" parent="TileMap" instance=ExtResource( 3 )]
 position = Vector2( 753.442, 511.863 )
 
 [node name="Fast3" parent="TileMap" instance=ExtResource( 3 )]
-position = Vector2( 527.827, 466.964 )
+position = Vector2( 529.414, 425.692 )
+rotation = 1.5708
 
 [node name="Ranged" parent="TileMap" instance=ExtResource( 5 )]
 position = Vector2( 354.993, 691.591 )
@@ -37,9 +39,11 @@ position = Vector2( 696.607, 700.58 )
 
 [node name="Heavy2" parent="TileMap" instance=ExtResource( 4 )]
 position = Vector2( 529.585, 213.362 )
+rotation = 1.5708
 
 [node name="Heavy3" parent="TileMap" instance=ExtResource( 4 )]
 position = Vector2( 531.511, 770.976 )
+rotation = -1.5708
 
 [node name="Trash" parent="TileMap" instance=ExtResource( 2 )]
 position = Vector2( 200.386, 238.493 )

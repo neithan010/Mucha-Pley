@@ -16,24 +16,29 @@ tile_data = PoolIntArray( 0, 0, 0, 1, 0, 196609, 2, 0, 196609, 3, 0, 196609, 4, 
 
 [node name="Fast2" parent="TileMap" instance=ExtResource( 4 )]
 position = Vector2( 300.684, 615.135 )
+rotation = -1.5708
 
 [node name="Fast3" parent="TileMap" instance=ExtResource( 4 )]
-position = Vector2( 302.158, 438.98 )
+position = Vector2( 302.158, 440.98 )
+rotation = 1.5708
 
 [node name="Fast4" parent="TileMap" instance=ExtResource( 4 )]
 position = Vector2( 717.168, 609.635 )
+rotation = -1.5708
 
 [node name="Heavy" parent="TileMap" instance=ExtResource( 3 )]
-position = Vector2( 567.129, 543.692 )
+position = Vector2( 571.624, 545.19 )
 
 [node name="Heavy2" parent="TileMap" instance=ExtResource( 3 )]
-position = Vector2( 489.241, 546.503 )
+position = Vector2( 486.244, 543.506 )
+rotation = -3.14159
 
 [node name="Heavy3" parent="TileMap" instance=ExtResource( 3 )]
 position = Vector2( 849.118, 515.104 )
 
 [node name="Heavy4" parent="TileMap" instance=ExtResource( 3 )]
 position = Vector2( 176.961, 511.182 )
+rotation = -3.14159
 
 [node name="Ranged" parent="TileMap" instance=ExtResource( 5 )]
 position = Vector2( 526.381, 862.467 )
@@ -55,6 +60,7 @@ position = Vector2( 739.754, 352.247 )
 
 [node name="Fast" parent="TileMap" instance=ExtResource( 4 )]
 position = Vector2( 716.47, 440.102 )
+rotation = 1.5708
 
 [node name="Trash3" parent="TileMap" instance=ExtResource( 2 )]
 position = Vector2( 711.754, 302.247 )
