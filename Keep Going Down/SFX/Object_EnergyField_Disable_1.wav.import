@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Object_EnergyField_Disable_1.wav-45d01b68184ea153cd1a8c07db2afb84.sample"
+
+[deps]
+
+source_file="res://SFX/Object_EnergyField_Disable_1.wav"
+dest_files=[ "res://.import/Object_EnergyField_Disable_1.wav-45d01b68184ea153cd1a8c07db2afb84.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

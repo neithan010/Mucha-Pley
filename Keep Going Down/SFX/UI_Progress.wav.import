@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/UI_Progress.wav-c6b01d2815908a8a0df78f9d6bd4a524.sample"
+
+[deps]
+
+source_file="res://SFX/UI_Progress.wav"
+dest_files=[ "res://.import/UI_Progress.wav-c6b01d2815908a8a0df78f9d6bd4a524.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
