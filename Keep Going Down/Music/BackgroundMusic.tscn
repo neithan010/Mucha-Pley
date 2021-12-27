@@ -1,7 +1,4 @@
-[gd_scene load_steps=2 format=2]
-
-[ext_resource path="res://Music/Karl Casey - White Bat I - 01 Elysium.mp3" type="AudioStream" id=1]
+[gd_scene format=2]
 
 [node name="BackgroundMusic" type="AudioStreamPlayer"]
-stream = ExtResource( 1 )
 autoplay = true

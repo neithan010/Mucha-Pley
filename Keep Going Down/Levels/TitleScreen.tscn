@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Images/title_x4.png" type="Texture" id=1]
 [ext_resource path="res://Fonts/80s-retro-future.ttf" type="DynamicFontData" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://Themes/button.tres" type="Theme" id=4]
 [ext_resource path="res://Shaders/crt_material.tres" type="Material" id=5]
 [ext_resource path="res://Themes/text.tres" type="Theme" id=6]
+[ext_resource path="res://Music/BackgroundMusic.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Music/Karl Casey - White Bat I - 25 Empty City.mp3" type="AudioStream" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 52
@@ -107,6 +109,32 @@ MUSIC
 White Bat I - Karl Casey
 https://karlcasey.bandcamp.com/
 [/center]"
+text = "
+DEVELOPERS
+
+
+Nicolas Grandon
+Francisco Ortiz
+Clemente Paredes
+
+
++----------------------------------------------------------------------------------------------+
+
+ASSETS
+
+
+80s Retro future font - SciGho
+https://ninjikin.itch.io/a-font-for-the-future-that-never-existed-80s-retro-future-font
+
+
++----------------------------------------------------------------------------------------------+
+
+MUSIC
+
+
+White Bat I - Karl Casey
+https://karlcasey.bandcamp.com/
+"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -133,3 +161,6 @@ anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="BackgroundMusic" parent="." instance=ExtResource( 7 )]
+stream = ExtResource( 8 )
