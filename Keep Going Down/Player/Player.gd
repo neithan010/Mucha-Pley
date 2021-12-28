@@ -26,7 +26,7 @@ const MAX_HP := 100.0
 const XP_THRESHOLD = [9, 14, 300, 400, 500, 600, 700, 800, 900, 1000]
 
 onready var res
-onready var timer = $Timer
+onready var armor_timer = $ArmorTimer
 onready var upgrade_sfx = $PlayerUpgrade
 onready var controller = get_owner()
 onready var game_over = $"../GameOverCanvas/GameOver"
@@ -54,9 +54,9 @@ func _ready():
 	DASH_SPEED_init = MAX_SPEED * 2.5
 	HP = MAX_HP
 	LVL = 0
-	timer.connect("timeout", self, "_on_Timer_timeout")
-	timer.set_wait_time(1)
-	timer.start()
+	armor_timer.connect("timeout", self, "_on_Timer_timeout")
+	armor_timer.set_wait_time(1)
+	armor_timer.start()
 	print("PlayerController: ", controller)
 #	Engine.time_scale= 0.7
 	
@@ -128,7 +128,7 @@ func get_hp(amt:float):
 func die():
 	deathplosion(Color("ffffff"))
 	print("PLAYER DEAD, GAME OVER")
-	timer.stop()
+	armor_timer.stop()
 	pause.game_over = true
 	game_over.show()
 
