@@ -4,6 +4,7 @@ const normalColor := ["#00fcd9", "#006abb"]
 onready var player := $Player
 onready var minion := $Minion
 onready var line   :Line2D= $Line2D
+onready var controller = get_owner()
 
 func ready():
 	#minion.player = player
