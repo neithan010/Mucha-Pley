@@ -2,18 +2,20 @@ extends Control
 
 onready var res
 onready var return_button = $Overlay/Menu/Return
-onready var file_button = $Overlay/Menu/File
+onready var menu_button = $Overlay/Menu/Menu
 onready var quit_button = $Overlay/Menu/Quit
 onready var button_sfx = $ButtonPress
+onready var game_over = false
 
 func _ready():
 	return_button.connect("pressed", self, "on_return_pressed")
-	file_button.connect("pressed", self, "on_file_pressed")
+	menu_button.connect("pressed", self, "on_menu_pressed")
 	quit_button.connect("pressed", self, "on_quit_pressed")
 
 func _input(event):
 	if event.is_action_pressed("pause"):
-		on_return_pressed()
+		if !game_over:
+			on_return_pressed()
 
 func on_return_pressed():
 	button_sfx.play()
@@ -21,14 +23,10 @@ func on_return_pressed():
 	get_tree().paused = next_state
 	visible = next_state
 
-func on_file_pressed():
+func on_menu_pressed():
 	button_sfx.play()
-	visible = false
 	get_tree().paused = false
-	if get_tree().get_current_scene().get_name() == "Archive":
-		res = get_tree().change_scene("res://Levels/TitleScreen.tscn")
-	else:
-		res = get_tree().change_scene("res://Levels/Archive.tscn")
+	res = get_tree().change_scene("res://Levels/TitleScreen.tscn")
 	assert(res == OK)
 
 func on_quit_pressed():

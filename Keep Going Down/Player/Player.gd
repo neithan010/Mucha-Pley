@@ -22,14 +22,15 @@ const RIGHT = INPUT_NAME+"_right"
 const LEFT  = INPUT_NAME+"_left"
 const DASH_LENGTH = 0.2
 const DASH_RELOAD_TIME = 2
-const MAX_HP := 150.0
+const MAX_HP := 100.0
 const XP_THRESHOLD = [9, 14, 300, 400, 500, 600, 700, 800, 900, 1000]
 
 onready var res
 onready var timer = $Timer
 onready var upgrade_sfx = $PlayerUpgrade
 onready var controller = get_owner()
-onready var game_over = $"../../../GameOverCanvas/GameOver"
+onready var game_over = $"../GameOverCanvas/GameOver"
+onready var pause = $"../PauseCanvas/Pause"
 
 var DASH_SPEED_fin: float
 var DASH_SPEED_init: float
@@ -125,9 +126,10 @@ func get_hp(amt:float):
 		die()
 
 func die():
+	deathplosion(Color("ffffff"))
 	print("PLAYER DEAD, GAME OVER")
 	timer.stop()
-	deathplosion(Color("ffffff"))
+	pause.game_over = true
 	game_over.show()
 
 func level_up(lvl):
