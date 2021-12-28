@@ -33,13 +33,13 @@ func _ready():
 	hurtbox = $Hurtbox
 	navTimer = $NavigationTimer
 	_targeted = $TargetMarker
+	set_process(false)
 
 
 func face_target():
 	if target_player != null:
-		var vector_dir := target_player.position - self.position
-		var angle_dir = vector_dir.angle()
-		rotation = angle_dir
+		var vector_dir := target_player.global_position - self.global_position
+		rotation = vector_dir.angle()
 
 func _physics_process(delta):
 	face_target()
@@ -70,6 +70,7 @@ func pathfinding_movement(delta)->void:
 	
 
 func navigate_towards(target:Vector2)->void:
+#	print("nav towards: ", target)
 	navPath = navNode.get_simple_path(global_position, target)
 	navigating = true
 
@@ -93,15 +94,25 @@ func move_along_path(distance:float)->void:
 		start_point = navPath[0]
 		navPath.remove(0)
 
-func _on_DetectionRange_area_entered(area):
-	if target_player == null or navNode == null:
-		print("no nav")
-		pass
+func activate(target_pl):
+	if target_detected:
+		return
+	elif navNode == null:
+#		print("no nav")
+		return
 	else:
 #		print(NAME, " navigating towards player from detection area", area)
+		target_player = target_pl
 		navigate_towards(target_location())
 		target_detected = true
-		
+		set_process(true)
+		navTimer.start()
+
+func deactivate():
+	target_detected = false
+	set_process(false)
+	navTimer.stop()
+
 func die():
 	death_sfx.play()
 	deathplosion($Sprite.modulate)
@@ -123,4 +134,4 @@ func _on_NavigationTimer_timeout():
 
 func targeted(state:bool):
 	_targeted.visible = state
-	print(self, " targeted: ", state)
+#	print(self, " targeted: ", state)

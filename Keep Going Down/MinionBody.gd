@@ -29,7 +29,7 @@ func advance_attack_timer(delta:float):
 	if _timing and _attack_timer >0:
 		_attack_timer -= delta
 		if _attack_timer <= 0.0:
-			print("<Minion> Attack timer finished")
+#			print("<Minion> Attack timer finished")
 			return true
 	return false
 func reset_attack_timer():
@@ -48,7 +48,7 @@ func apply_damage():
 		return
 	for area in _hitbox.get_overlapping_areas():
 		var enemy :BaseEnemy = area.get_parent()
-		print("found enemy in hitbox:", enemy, enemy.NAME)
+#		print("found enemy in hitbox:", enemy, enemy.NAME)
 		enemy.receive_damage(DAMAGE * DMG_MULT)
 
 func enable_sprite(bl:bool):

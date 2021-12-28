@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://PlayerController.tscn" type="PackedScene" id=1]
 [ext_resource path="res://ActorController.gd" type="Script" id=2]
@@ -6,7 +6,6 @@
 [ext_resource path="res://Enemies/Ranged.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Enemies/Heavy.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Enemies/Fast.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Items/Health.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Items/Armour.tscn" type="PackedScene" id=8]
 
 [node name="ActorControllerMap" type="Node"]
@@ -36,9 +35,6 @@ position = Vector2( 783.009, 465.816 )
 
 [node name="Trash4" parent="Node" instance=ExtResource( 3 )]
 position = Vector2( 1044.01, 621.088 )
-
-[node name="Health" parent="." instance=ExtResource( 7 )]
-position = Vector2( 225.586, 194.438 )
 
 [node name="Armour" parent="." instance=ExtResource( 8 )]
 position = Vector2( 340.738, 92.9715 )

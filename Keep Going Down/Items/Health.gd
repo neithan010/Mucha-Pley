@@ -13,5 +13,5 @@ func _on_Hitbox_area_entered(area):
 	var player = area.get_parent()
 	player.get_hp(HP)
 	$HealthUp.play()
-	print($HealthUp)
+#	print($HealthUp)
 	die()

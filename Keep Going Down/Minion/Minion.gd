@@ -1,6 +1,5 @@
 extends KinematicBody2D
 
-signal attack_changed
 
 #Inherits vars:
 var HP: float
@@ -80,23 +79,23 @@ func change_minion_type(type:String):
 		clsnShape = FastClsn.instance()
 	else:
 		return
-	print(body)
+#	print(body)
 	add_child(body)
 	add_child(clsnShape)
 #	copy_body_vars()
 
 func sort_by_dist(a:Node2D, b:Node2D)->bool:
-	var dist_a = position.distance_to(a.position)
-	var dist_b = position.distance_to(b.position)
+	var dist_a = global_position.distance_to(a.global_position)
+	var dist_b = global_position.distance_to(b.global_position)
 	return dist_a < dist_b
 
 
 func target_list(dist:float):
 	var all_enemies = get_tree().get_nodes_in_group("Enemies")
-	print(all_enemies, range(all_enemies.size()))
+#	print(all_enemies, range(all_enemies.size()))
 	var target_ls = []
 	for enemy_index in range(all_enemies.size()):
-		if position.distance_to(all_enemies[enemy_index].position) <= dist:
+		if global_position.distance_to(all_enemies[enemy_index].global_position) <= dist:
 			target_ls.append(all_enemies[enemy_index])
 	
 	target_ls.sort_custom(self, "sort_by_dist")
@@ -108,7 +107,7 @@ func change_target(new_target:BaseEnemy)->void:
 		current_target.targeted(false)
 	if new_target != null:
 		new_target.targeted(true)
-	print("changed target from ", current_target, " to ", new_target)
+#	print("changed target from ", current_target, " to ", new_target)
 		
 	current_target = new_target
 	

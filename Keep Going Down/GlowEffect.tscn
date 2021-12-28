@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="Environment" id=1]
+background_mode = 4
+background_energy = 0.0
+auto_exposure_max_luma = 13.06
+auto_exposure_speed = 0.01
+glow_enabled = true
+glow_levels/1 = true
+glow_levels/2 = true
+glow_levels/5 = false
+glow_intensity = 1.7
+glow_strength = 0.95
+glow_bloom = 1.0
+glow_blend_mode = 0
+glow_bicubic_upscale = true
+adjustment_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment"]
+environment = SubResource( 1 )

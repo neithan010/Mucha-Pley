@@ -22,7 +22,7 @@ func _ready():
 	
 	_hitbox = $Attack/Hitbox
 	_body_sprite = $Sprite
-	print(_hitbox)
+#	print(_hitbox)
 	_hitbox.monitoring = false
 	_attack_sprite = $Attack/SwordSprite
 	reset_attack_timer()
@@ -42,7 +42,7 @@ func attack():
 		apply_damage()
 
 
-func _on_Hitbox_area_entered(area):
+func _on_Hitbox_area_entered(_area):
 	apply_damage()
 
 

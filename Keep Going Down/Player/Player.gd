@@ -1,9 +1,7 @@
 extends BaseActor
 class_name Player
 
-signal HP_changed
-signal speed_changed
-signal armor_changed
+
 
 #Inherits vars:
 #var HP: float
@@ -127,7 +125,7 @@ func get_hp(amt:float):
 
 func die():
 	deathplosion(Color("ffffff"))
-	print("PLAYER DEAD, GAME OVER")
+#	print("PLAYER DEAD, GAME OVER")
 	armor_timer.stop()
 	pause.game_over = true
 	game_over.show()
@@ -135,3 +133,16 @@ func die():
 func level_up(lvl):
 	upgrade_sfx.play()
 	controller.level_up(lvl)
+
+
+func _on_DetectionRange_area_entered(area):
+	area.get_parent().activate(self)
+#	print(global_position, position)
+
+
+
+func _on_UndetectionRange_area_exited(area):
+	area.get_parent().deactivate()
+	
+func receive_damage(_dmg:float):
+	pass

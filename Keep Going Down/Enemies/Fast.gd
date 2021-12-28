@@ -62,7 +62,7 @@ func _physics_process(delta):
 		#wait a second before starting damaging part of the attack
 		attack_delay_timer -= delta
 		if attack_delay_timer <0 and detector.monitoring:
-			var in_attack = detector.get_overlapping_areas()
+			var _in_attack = detector.get_overlapping_areas()
 			set_attack(true)
 #			print("<Fast> in attack area:", in_attack)
 #			if len(in_attack)>0:
@@ -110,7 +110,7 @@ func _on_SwordSprite_animation_finished():
 	set_attack(false)#finish attack
 
 
-func _on_player_detected_in_attack_range(area):
+func _on_player_detected_in_attack_range(_area):
 	if ATTACK_TIMER <= 0:
 #		print("<Fast> Fast atacando player")
 		reset_attack_timer()
