@@ -24,34 +24,38 @@ _data = [ Vector2( 0.0238908, 0.736364 ), 0.0, 1.04931, 0, 0, Vector2( 0.993174,
 offsets = PoolRealArray( 0, 0.145038 )
 colors = PoolColorArray( 0, 0.988235, 0.85098, 1, 0, 0.415686, 0.733333, 1 )
 
-[sub_resource type="Theme" id=9]
+[sub_resource type="Theme" id=3]
 Label/colors/font_color = Color( 0.0156863, 0.694118, 0.8, 1 )
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=4]
 size = 26
 font_data = ExtResource( 5 )
 
-[sub_resource type="Theme" id=10]
+[sub_resource type="Theme" id=5]
 Label/colors/font_color = Color( 0, 0.8, 0.133333, 1 )
 
-[sub_resource type="Theme" id=11]
+[sub_resource type="Theme" id=6]
 Label/colors/font_color = Color( 0.54902, 0, 0, 1 )
 
-[sub_resource type="StyleBoxFlat" id=3]
+[sub_resource type="StyleBoxFlat" id=7]
 bg_color = Color( 0, 0, 0, 0.784314 )
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 1, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0, 0, 0, 0 )
+
+[sub_resource type="DynamicFont" id=10]
 size = 26
 font_data = ExtResource( 5 )
 
-[sub_resource type="StyleBoxFlat" id=7]
-bg_color = Color( 1, 0, 0, 1 )
-
-[sub_resource type="StyleBoxFlat" id=8]
-bg_color = Color( 0, 0, 0, 0 )
+[sub_resource type="DynamicFont" id=11]
+size = 26
+font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=12]
-size = 26
+size = 52
 font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=13]
@@ -59,10 +63,6 @@ size = 52
 font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=14]
-size = 52
-font_data = ExtResource( 5 )
-
-[sub_resource type="DynamicFont" id=15]
 size = 52
 font_data = ExtResource( 5 )
 
@@ -82,9 +82,6 @@ gradient = SubResource( 2 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 107.028, 99.4715 )
-
-[node name="Timer" type="Timer" parent="Player"]
-wait_time = 0.1
 
 [node name="HUD" type="CanvasLayer" parent="."]
 script = ExtResource( 4 )
@@ -106,8 +103,8 @@ margin_left = 35.0
 margin_top = 52.0
 margin_right = 81.0
 margin_bottom = 82.0
-theme = SubResource( 9 )
-custom_fonts/font = SubResource( 5 )
+theme = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 text = "x #"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -130,8 +127,8 @@ margin_left = 35.0
 margin_top = 167.0
 margin_right = 107.0
 margin_bottom = 197.0
-theme = SubResource( 10 )
-custom_fonts/font = SubResource( 5 )
+theme = SubResource( 5 )
+custom_fonts/font = SubResource( 4 )
 text = "##"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -154,8 +151,8 @@ margin_left = 35.0
 margin_top = 282.0
 margin_right = 81.0
 margin_bottom = 312.0
-theme = SubResource( 11 )
-custom_fonts/font = SubResource( 5 )
+theme = SubResource( 6 )
+custom_fonts/font = SubResource( 4 )
 text = "x #"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -168,7 +165,7 @@ margin_left = 62.0
 margin_top = 500.0
 margin_right = 962.0
 margin_bottom = 540.0
-custom_styles/panel = SubResource( 3 )
+custom_styles/panel = SubResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -180,9 +177,9 @@ margin_right = 962.0
 margin_bottom = 540.0
 rect_min_size = Vector2( 200, 0 )
 size_flags_horizontal = 0
-custom_fonts/font = SubResource( 6 )
-custom_styles/fg = SubResource( 7 )
-custom_styles/bg = SubResource( 8 )
+custom_styles/fg = SubResource( 8 )
+custom_styles/bg = SubResource( 9 )
+custom_fonts/font = SubResource( 10 )
 allow_greater = true
 percent_visible = false
 __meta__ = {
@@ -194,7 +191,7 @@ margin_left = 425.0
 margin_top = 5.0
 margin_right = 475.0
 margin_bottom = 35.0
-custom_fonts/font = SubResource( 12 )
+custom_fonts/font = SubResource( 11 )
 text = "###"
 
 [node name="CRT_shader" type="ColorRect" parent="HUD"]
@@ -253,7 +250,7 @@ margin_top = 84.0
 margin_right = 800.0
 margin_bottom = 144.0
 theme = ExtResource( 12 )
-custom_fonts/font = SubResource( 13 )
+custom_fonts/font = SubResource( 12 )
 text = "MENU"
 
 [node name="File" type="Button" parent="GameOverCanvas/GameOver/Overlay/Menu"]
@@ -261,7 +258,7 @@ margin_top = 148.0
 margin_right = 800.0
 margin_bottom = 208.0
 theme = ExtResource( 12 )
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 13 )
 text = "FILE"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -272,7 +269,7 @@ margin_top = 212.0
 margin_right = 800.0
 margin_bottom = 272.0
 theme = ExtResource( 12 )
-custom_fonts/font = SubResource( 13 )
+custom_fonts/font = SubResource( 12 )
 text = "QUIT"
 
 [node name="ButtonPress" type="AudioStreamPlayer" parent="GameOverCanvas/GameOver"]
@@ -325,7 +322,7 @@ margin_top = 84.0
 margin_right = 800.0
 margin_bottom = 150.0
 theme = ExtResource( 12 )
-custom_fonts/font = SubResource( 15 )
+custom_fonts/font = SubResource( 14 )
 text = "RETURN"
 
 [node name="Menu" type="Button" parent="PauseCanvas/Pause/Overlay/Menu"]
@@ -333,7 +330,7 @@ margin_top = 84.0
 margin_right = 800.0
 margin_bottom = 150.0
 theme = ExtResource( 12 )
-custom_fonts/font = SubResource( 15 )
+custom_fonts/font = SubResource( 14 )
 text = "MENU"
 
 [node name="Quit" type="Button" parent="PauseCanvas/Pause/Overlay/Menu"]
@@ -341,7 +338,7 @@ margin_top = 224.0
 margin_right = 800.0
 margin_bottom = 290.0
 theme = ExtResource( 12 )
-custom_fonts/font = SubResource( 15 )
+custom_fonts/font = SubResource( 14 )
 text = "QUIT"
 
 [node name="ButtonPress" type="AudioStreamPlayer" parent="PauseCanvas/Pause"]

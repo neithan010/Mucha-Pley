@@ -13,7 +13,6 @@ radius = 15.0
 radius = 16.0312
 
 [node name="Player" type="KinematicBody2D"]
-position = Vector2( 65.2134, 110.563 )
 collision_layer = 0
 collision_mask = 5
 script = ExtResource( 2 )
@@ -36,7 +35,6 @@ smoothing_enabled = true
 [node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
 
 [node name="CRT_shader" type="ColorRect" parent="Camera2D/CanvasLayer"]
-visible = false
 material = ExtResource( 3 )
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -64,5 +62,8 @@ shape = SubResource( 2 )
 
 [node name="PlayerUpgrade" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 5 )
+
+[node name="ArmorTimer" type="Timer" parent="."]
+wait_time = 0.1
 
 [editable path="Hurtbox"]

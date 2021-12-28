@@ -11,8 +11,8 @@ onready var hp_label = $Health/ProgressBar/Label
 var damage = 1
 
 func _ready():
-	player.connect("speed_changed", self, "_on_Player_speed_changed")
-	minion.connect("attack_changed", self, "_on_Minion_attack_changed")
+#	player.connect("speed_changed", self, "_on_Player_speed_changed")
+#	minion.connect("attack_changed", self, "_on_Minion_attack_changed")
 	speed_label.text = "x 1"
 	armor_label.text = "0"
 	dmg_label.text = "x 1"
