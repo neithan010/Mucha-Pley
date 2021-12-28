@@ -23,7 +23,7 @@ script = ExtResource( 3 )
 visible = false
 shape = SubResource( 1 )
 
-[node name="ArmourUp" type="AudioStreamPlayer" parent="."]
+[node name="ArmourUp" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 4 )
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_Hitbox_area_entered"]

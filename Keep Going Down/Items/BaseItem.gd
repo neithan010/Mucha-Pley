@@ -3,6 +3,7 @@ class_name BaseItem
 
 var deathParticles := preload("res://Enemies/DeathParticle.tscn")
 var COLOR := "ffffff"
+var grab_sfx
 
 func die():
 	print("Playing SFX: ", self.grab_sfx)
