@@ -11,6 +11,8 @@ onready var lock_3 = $Option3/Lock
 onready var lock_4 = $Option4/Lock
 onready var lock_5 = $Option5/Lock
 onready var content = $FileContent
+onready var button_sfx = $ButtonPress
+onready var text_sfx = $LoadText
 
 func _ready():
 	content.text = ""
@@ -42,17 +44,26 @@ func load_text_file(path):
 	return text
 
 func on_1_pressed():
-	print("pressed")
+	button_sfx.play()
 	content.text = load_text_file("res://Files/File_1.txt")
+	text_sfx.play()
 
 func on_2_pressed():
+	button_sfx.play()
 	content.text = load_text_file("res://Files/File_2.txt")
+	text_sfx.play()
 
 func on_3_pressed():
+	button_sfx.play()
 	content.text = load_text_file("res://Files/File_3.txt")
+	text_sfx.play()
 
 func on_4_pressed():
+	button_sfx.play()
 	content.text = load_text_file("res://Files/File_4.txt")
+	text_sfx.play()
 
 func on_5_pressed():
+	button_sfx.play()
 	content.text = load_text_file("res://Files/File_5.txt")
+	text_sfx.play()

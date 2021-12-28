@@ -25,6 +25,8 @@ var navTimer :Timer
 var XP_WORTH :float
 var _targeted: Sprite
 
+onready var death_sfx = $EnemyDeath
+
 func _ready():
 
 	hitbox = $HitboxPos/Hitbox
@@ -100,6 +102,7 @@ func _on_DetectionRange_area_entered(area):
 		target_detected = true
 		
 func die():
+	death_sfx.play()
 	deathplosion($Sprite.modulate)
 	if target_player != null:
 		target_player.add_xp(XP_WORTH)

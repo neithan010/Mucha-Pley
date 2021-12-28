@@ -10,6 +10,8 @@ extends BaseMinionBody
 #var _attack_timer:float
 #var _timing:= true
 
+onready var attack_sfx = $HeavyAttack
+
 func _ready():
 	ATTACK_SPEED = 4.5
 	MAX_SPEED = 100.0
@@ -31,6 +33,7 @@ func _physics_process(delta):
 
 func attack():
 	if can_attack():
+		attack_sfx.play()
 		sprite_ready(false)
 		_hitbox.monitoring = true
 		reset_attack_timer()

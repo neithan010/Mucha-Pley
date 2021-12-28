@@ -2,6 +2,8 @@ extends BaseItem
 
 var ARMOR = 50
 
+onready var grab_sfx = $ArmourUp
+
 func _ready():
 	COLOR = "30fc03"
 

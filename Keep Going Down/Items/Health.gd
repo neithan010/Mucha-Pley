@@ -2,6 +2,8 @@ extends BaseItem
 
 var HP = 50
 
+onready var grab_sfx = $HealthUp
+
 func is_armour():
 	return false
 func _ready():

@@ -12,6 +12,7 @@ extends BaseEnemy
 #var target_player : Player
 var Bullet = preload("res://Enemies/EnemyBullet.tscn")
 
+onready var attack_sfx = $RangedAttack
 
 func _ready():
 	DAMAGE = 20
@@ -32,6 +33,7 @@ func _physics_process(delta):
 
 
 func shoot():
+	attack_sfx.play()
 	var shot = Bullet.instance()
 	shot.init(500, 10, position, rotation)
 	owner.add_child(shot)

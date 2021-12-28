@@ -40,6 +40,8 @@ const RangedClsn = preload("res://Minion/RangedCollision.tscn")
 var current_target : BaseEnemy= null
 
 onready var player = $"../Player"
+onready var cycle_down_sfx = $CycleDown
+onready var cycle_up_sfx = $CycleUp
 #onready var attack = $Attack
 #onready var animation = $AnimationPlayer
 
@@ -155,9 +157,11 @@ func _physics_process(delta):
 		return
 	
 	if Input.is_action_just_pressed(CYCLE_DOWN):
+		cycle_down_sfx.play()
 		cycle_targets(+1)
 
 	if Input.is_action_just_pressed(CYCLE_UP):
+		cycle_up_sfx.play()
 		cycle_targets(-1)
 	
 	

@@ -5,6 +5,7 @@ var deathParticles := preload("res://Enemies/DeathParticle.tscn")
 var COLOR := "ffffff"
 
 func die():
+	self.grab_sfx.play()
 	deathplosion(COLOR)
 	queue_free()
 	

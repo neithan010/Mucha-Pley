@@ -12,6 +12,8 @@ extends BaseMinionBody
 var BULLET_SPEED := 500.0
 var bullet = preload("res://Minion/MinionBullet.tscn")
 
+onready var attack_sfx = $RangedAttack
+
 func _ready():
 	ACCEL     = 4000
 	MAX_SPEED = 30000
@@ -35,6 +37,7 @@ func _physics_process(delta):
 
 func attack():
 	if can_attack():
+		attack_sfx.play()
 		sprite_ready(false)
 		reset_attack_timer()
 		#shoot

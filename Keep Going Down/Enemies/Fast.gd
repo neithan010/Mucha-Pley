@@ -27,6 +27,8 @@ var default_color = "711579"
 var attack_color = "de0af0"
 var detector :Area2D
 
+onready var attack_sfx = $FastAttack
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	DAMAGE = 20
@@ -119,4 +121,5 @@ func _on_player_detected_in_attack_range(area):
 
 func _on_player_entered_hitbox(_area):
 #	print("<Fast> player detected in signal")
+	attack_sfx.play()
 	target_player.receive_damage(DAMAGE)

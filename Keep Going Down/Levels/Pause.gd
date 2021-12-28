@@ -4,6 +4,7 @@ onready var res
 onready var return_button = $Overlay/Menu/Return
 onready var file_button = $Overlay/Menu/File
 onready var quit_button = $Overlay/Menu/Quit
+onready var button_sfx = $ButtonPress
 
 func _ready():
 	return_button.connect("pressed", self, "on_return_pressed")
@@ -15,11 +16,13 @@ func _input(event):
 		on_return_pressed()
 
 func on_return_pressed():
+	button_sfx.play()
 	var next_state = not get_tree().paused
 	get_tree().paused = next_state
 	visible = next_state
 
 func on_file_pressed():
+	button_sfx.play()
 	visible = false
 	get_tree().paused = false
 	if get_tree().get_current_scene().get_name() == "Archive":
@@ -29,4 +32,5 @@ func on_file_pressed():
 	assert(res == OK)
 
 func on_quit_pressed():
+	button_sfx.play()
 	get_tree().quit()
