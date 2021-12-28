@@ -9,6 +9,7 @@ var ALTO=4
 
 var player : Player
 var enemies
+var nav:Navigation2D
 
 var LISTA_HABITACIONES=[preload("res://Levels/Mapa1.tscn"),preload("res://Levels/Mapa2.tscn"),
 preload("res://Levels/Mapa3.tscn"),preload("res://Levels/Mapa4.tscn"),
@@ -27,25 +28,22 @@ func _ready():
 	randomize()
 	var ancho=0
 	var alto=0
-	for i in range(ALTO):
-		for j in range(ANCHO):
+	nav = $Navigation2D
+	for _i in range(ALTO):
+		for _j in range(ANCHO):
 			var a = LISTA_HABITACIONES[randi() % LISTA_HABITACIONES.size()]
 			a.instance()
 			var nuevo_habitacion = a.instance()
-			add_child(nuevo_habitacion)
+			nav.add_child(nuevo_habitacion)
 			
 			nuevo_habitacion.position.x=ancho
 			nuevo_habitacion.position.y=alto
 			ancho+=1024
 		ancho=0
 		alto+=1024
-		
-	#for enemy in enemies:
-	#	enemies = $nuevo_habitacion.get_children()
-	#	enemy.target_player = player
+	player = $PlayerController.player
+	for enemy in get_tree().get_nodes_in_group("Enemies"):
+#		enemy.target_player = player
+		enemy.navNode = nav
+#	print(get_tree())
 	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass

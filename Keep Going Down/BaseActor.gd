@@ -18,7 +18,7 @@ func _ready():
 func die():
 	pass
 
-func level_up(lvl):
+func level_up(_lvl):
 	pass
 
 func deathplosion(color):
@@ -30,6 +30,6 @@ func receive_damage(dmg:float):
 	var received_dmg = max(dmg-dmg*ARMOR/100, 0)
 	ARMOR = max(ARMOR-10, 0)
 	HP = max(HP - received_dmg, 0)
-	print("<",NAME, "> Received Damage: ", received_dmg, ", remaining: ", HP)
+#	print("<",NAME, "> Received Damage: ", received_dmg, ", remaining: ", HP)
 	if HP<=0:
 		die()

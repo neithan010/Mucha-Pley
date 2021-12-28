@@ -24,7 +24,7 @@ _data = [ Vector2( 0.0238908, 0.736364 ), 0.0, 1.04931, 0, 0, Vector2( 0.993174,
 offsets = PoolRealArray( 0, 0.145038 )
 colors = PoolColorArray( 0, 0.988235, 0.85098, 1, 0, 0.415686, 0.733333, 1 )
 
-[sub_resource type="Theme" id=3]
+[sub_resource type="Theme" id=15]
 Label/colors/font_color = Color( 0.0156863, 0.694118, 0.8, 1 )
 
 [sub_resource type="DynamicFont" id=4]
@@ -34,13 +34,13 @@ font_data = ExtResource( 5 )
 [sub_resource type="Theme" id=5]
 Label/colors/font_color = Color( 0, 0.8, 0.133333, 1 )
 
-[sub_resource type="Theme" id=6]
+[sub_resource type="Theme" id=16]
 Label/colors/font_color = Color( 0.54902, 0, 0, 1 )
 
-[sub_resource type="StyleBoxFlat" id=7]
+[sub_resource type="StyleBoxFlat" id=17]
 bg_color = Color( 0, 0, 0, 0.784314 )
 
-[sub_resource type="StyleBoxFlat" id=8]
+[sub_resource type="StyleBoxFlat" id=18]
 bg_color = Color( 1, 0, 0, 1 )
 
 [sub_resource type="StyleBoxFlat" id=9]
@@ -66,11 +66,8 @@ font_data = ExtResource( 5 )
 size = 52
 font_data = ExtResource( 5 )
 
-[node name="PlayerController" type="Node"]
+[node name="PlayerController" type="Node2D"]
 script = ExtResource( 3 )
-__meta__ = {
-"_edit_horizontal_guides_": [ 100.917 ]
-}
 
 [node name="Line2D" type="Line2D" parent="."]
 points = PoolVector2Array( 0, 0, 0, 0 )
@@ -81,7 +78,7 @@ gradient = SubResource( 2 )
 [node name="Minion" parent="." instance=ExtResource( 1 )]
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 107.028, 99.4715 )
+position = Vector2( 34, 0 )
 
 [node name="HUD" type="CanvasLayer" parent="."]
 script = ExtResource( 4 )
@@ -103,7 +100,7 @@ margin_left = 35.0
 margin_top = 52.0
 margin_right = 81.0
 margin_bottom = 82.0
-theme = SubResource( 3 )
+theme = SubResource( 15 )
 custom_fonts/font = SubResource( 4 )
 text = "x #"
 __meta__ = {
@@ -151,7 +148,7 @@ margin_left = 35.0
 margin_top = 282.0
 margin_right = 81.0
 margin_bottom = 312.0
-theme = SubResource( 6 )
+theme = SubResource( 16 )
 custom_fonts/font = SubResource( 4 )
 text = "x #"
 __meta__ = {
@@ -165,7 +162,7 @@ margin_left = 62.0
 margin_top = 500.0
 margin_right = 962.0
 margin_bottom = 540.0
-custom_styles/panel = SubResource( 7 )
+custom_styles/panel = SubResource( 17 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -177,7 +174,7 @@ margin_right = 962.0
 margin_bottom = 540.0
 rect_min_size = Vector2( 200, 0 )
 size_flags_horizontal = 0
-custom_styles/fg = SubResource( 8 )
+custom_styles/fg = SubResource( 18 )
 custom_styles/bg = SubResource( 9 )
 custom_fonts/font = SubResource( 10 )
 allow_greater = true
@@ -195,6 +192,7 @@ custom_fonts/font = SubResource( 11 )
 text = "###"
 
 [node name="CRT_shader" type="ColorRect" parent="HUD"]
+visible = false
 material = ExtResource( 9 )
 anchor_right = 1.0
 anchor_bottom = 1.0

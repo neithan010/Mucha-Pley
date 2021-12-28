@@ -26,7 +26,7 @@ func _ready():
 func _physics_process(delta):
 	._physics_process(delta)
 	if target_player != null and target_detected:
-		var vector_dir := target_player.position - self.position
+		var vector_dir := target_player.global_position - self.global_position
 		vector_dir = vector_dir.normalized()
 		if vector_dir != Vector2.ZERO:
 			velocity += vector_dir * ACCEL * delta
@@ -39,13 +39,15 @@ func _physics_process(delta):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-func navigate_towards(target:Vector2)->void:
+func navigate_towards(_target:Vector2)->void:
 	pass #sobreescrito para que no haga pathfinding
 
-func pathfinding_movement(delta):
+func pathfinding_movement(_delta):
 	pass #sobreescrito para que no haga pathfinding
 
 
-func _on_Hitbox_area_entered(area):
+func _on_Hitbox_area_entered(_area):
+	if target_player == null:
+		return
 	target_player.receive_damage(DAMAGE)
 	die()

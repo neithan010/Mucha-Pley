@@ -48,7 +48,7 @@ func _on_AnimatedSprite_animation_finished():
 	anim_sprite.visible = false
 
 func _on_Hurtbox_area_entered(_area):#choca
-	print("choca con area ", _area)
+#	print("choca con area ", _area)
 	destroy()
 
 func _on_Hurtbox_body_entered(_body):#choca
@@ -57,7 +57,7 @@ func _on_Hurtbox_body_entered(_body):#choca
 	destroy()
 
 func _on_Hitbox_hit(area):
-	print("ataca con area ", area)
+#	print("ataca con area ", area)
 	
 	area.get_parent().receive_damage(DAMAGE)
 	destroy()

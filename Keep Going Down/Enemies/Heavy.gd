@@ -58,7 +58,7 @@ func _physics_process(delta):
 		#wait a second before starting damaging part of the attack
 		attack_delay_timer -= delta
 		if attack_delay_timer <0 and detector.monitoring:
-			var in_attack = detector.get_overlapping_areas()
+			var _in_attack = detector.get_overlapping_areas()
 			set_attack(true)
 #			print("<Heavy> in attack area:", in_attack)
 #			if len(in_attack)>0:

@@ -20,7 +20,7 @@ func _ready():
 	hp_bar.value = player.HP
 	hp_label.text = str(player.HP)
 
-func _process(delta):
+func _physics_process(_delta):
 	speed_label.text = "x " + str(player.SPEED_MULT)
 	armor_label.text = str(player.ARMOR)
 	dmg_label.text = "x " + str(minion.DMG_MULT)

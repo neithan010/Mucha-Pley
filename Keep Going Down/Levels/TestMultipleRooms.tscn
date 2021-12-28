@@ -56,6 +56,10 @@ script = ExtResource( 1 )
 
 [node name="PlayerController" parent="ActorController" instance=ExtResource( 7 )]
 
+[node name="Line2D" parent="ActorController/PlayerController" index="0"]
+position = Vector2( 748.178, 355.735 )
+scale = Vector2( 93.9298, 45.1852 )
+
 [node name="Minion" parent="ActorController/PlayerController" index="1"]
 position = Vector2( 1220.05, 613.815 )
 

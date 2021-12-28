@@ -42,7 +42,7 @@ func attack():
 		reset_attack_timer()
 		#shoot
 		var shot:Bullet = bullet.instance()
-		print("minion pos: ", get_parent().position)
+#		print("minion pos: ", get_parent().position)
 		shot.init(BULLET_SPEED, (DAMAGE * DMG_MULT), get_parent().position, global_rotation)
 		get_parent().owner.add_child(shot)
-		print("shooting, ", shot)
+#		print("shooting, ", shot)
