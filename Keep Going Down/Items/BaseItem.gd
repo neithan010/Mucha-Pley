@@ -6,8 +6,8 @@ var COLOR := "ffffff"
 var grab_sfx
 
 func die():
-	print("Playing SFX: ", self.grab_sfx)
-	self.grab_sfx.play()
+	print("Playing SFX: ", grab_sfx)
+	grab_sfx.play()
 	deathplosion(COLOR)
 	queue_free()
 	

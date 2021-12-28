@@ -52,7 +52,7 @@ func _on_Hurtbox_area_entered(_area):#choca
 	destroy()
 
 func _on_Hurtbox_body_entered(_body):#choca
-	print("choca con mundo ", _body, position)
+	#print("choca con mundo ", _body, position)
 	
 	destroy()
 

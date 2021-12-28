@@ -26,7 +26,7 @@ func _ready():
 func _physics_process(delta):
 	._physics_process(delta)
 	advance_attack_timer(delta)
-	if target_player and can_attack():
+	if target_player and can_attack() and target_detected:
 		shoot()
 		reset_attack_timer()
 		

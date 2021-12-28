@@ -115,11 +115,11 @@ func add_xp(amt:float):
 		level_up(LVL)
 	
 func get_armor(amt:float):
-	print("<Player> Got ", amt, " armor.")
+	#print("<Player> Got ", amt, " armor.")
 	ARMOR += amt
 
 func get_hp(amt:float):
-	print("<Player> Got ", amt, " hp.")
+	#print("<Player> Got ", amt, " hp.")
 	HP = clamp(HP + amt, 0, MAX_HP)
 	if HP == 0:
 		die()

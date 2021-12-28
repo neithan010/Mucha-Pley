@@ -6,7 +6,9 @@
 [ext_resource path="res://SFX/Radar_Blip_2.wav" type="AudioStream" id=4]
 [ext_resource path="res://SFX/Radar_Blip_1.wav" type="AudioStream" id=5]
 
-[node name="Minion" type="KinematicBody2D" groups=["Minion"]]
+[node name="Minion" type="KinematicBody2D" groups=[
+"Minion",
+]]
 collision_layer = 4
 script = ExtResource( 2 )
 
