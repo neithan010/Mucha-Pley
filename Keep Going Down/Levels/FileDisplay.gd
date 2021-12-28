@@ -5,6 +5,7 @@ onready var button_2 = $Option2/Button
 onready var button_3 = $Option3/Button
 onready var button_4 = $Option4/Button
 onready var button_5 = $Option5/Button
+onready var close_button = $Close
 onready var lock_1 = $Option1/Lock
 onready var lock_2 = $Option2/Lock
 onready var lock_3 = $Option3/Lock
@@ -17,7 +18,7 @@ onready var text_sfx = $LoadText
 func _ready():
 	content.text = ""
 	# replace with memory
-	var unknown_files = [false, false, false, false, false]
+	var unknown_files = [true, true, true, true, true]
 	lock_1.visible = unknown_files[0]
 	button_1.visible = !unknown_files[0]
 	lock_2.visible = unknown_files[1]
@@ -33,6 +34,7 @@ func _ready():
 	button_3.connect("pressed", self, "on_3_pressed")
 	button_4.connect("pressed", self, "on_4_pressed")
 	button_5.connect("pressed", self, "on_5_pressed")
+	close_button.connect("pressed", self, "on_close_pressed")
 
 func load_text_file(path):
 	var text = ""
@@ -67,3 +69,8 @@ func on_5_pressed():
 	button_sfx.play()
 	content.text = load_text_file("res://Files/File_5.txt")
 	text_sfx.play()
+
+func on_close_pressed():
+	button_sfx.play()
+	var res = get_tree().change_scene("res://Levels/TitleScreen.tscn")
+	assert(res == OK)
