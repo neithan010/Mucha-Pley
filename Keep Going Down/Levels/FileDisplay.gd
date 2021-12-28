@@ -1,5 +1,7 @@
 extends Panel
 
+var res
+
 onready var button_1 = $Option1/Button
 onready var button_2 = $Option2/Button
 onready var button_3 = $Option3/Button
@@ -14,21 +16,20 @@ onready var lock_5 = $Option5/Lock
 onready var content = $FileContent
 onready var button_sfx = $ButtonPress
 onready var text_sfx = $LoadText
+onready var unknown_files = load_json_file("res://Files/unknown_files.json")
 
 func _ready():
 	content.text = ""
-	# replace with memory
-	var unknown_files = [true, true, true, true, true]
-	lock_1.visible = unknown_files[0]
-	button_1.visible = !unknown_files[0]
-	lock_2.visible = unknown_files[1]
-	button_2.visible = !unknown_files[1]
-	lock_3.visible = unknown_files[2]
-	button_3.visible = !unknown_files[2]
-	lock_4.visible = unknown_files[3]
-	button_4.visible = !unknown_files[3]
-	lock_5.visible = unknown_files[4]
-	button_5.visible = !unknown_files[4]
+	lock_1.visible = unknown_files["0"]
+	button_1.visible = !unknown_files["0"]
+	lock_2.visible = unknown_files["1"]
+	button_2.visible = !unknown_files["1"]
+	lock_3.visible = unknown_files["2"]
+	button_3.visible = !unknown_files["2"]
+	lock_4.visible = unknown_files["3"]
+	button_4.visible = !unknown_files["3"]
+	lock_5.visible = unknown_files["4"]
+	button_5.visible = !unknown_files["4"]
 	button_1.connect("pressed", self, "on_1_pressed")
 	button_2.connect("pressed", self, "on_2_pressed")
 	button_3.connect("pressed", self, "on_3_pressed")
@@ -36,11 +37,20 @@ func _ready():
 	button_5.connect("pressed", self, "on_5_pressed")
 	close_button.connect("pressed", self, "on_close_pressed")
 
+func load_json_file(path):
+	var data = {}
+	var f = File.new()
+	res = f.open(path, File.READ)
+	if res == OK:
+		data = parse_json(f.get_as_text())
+	f.close()
+	return data
+
 func load_text_file(path):
 	var text = ""
 	var f = File.new()
-	var err = f.open(path, File.READ)
-	if err == OK:
+	res = f.open(path, File.READ)
+	if res == OK:
 		text = f.get_as_text()
 	f.close()
 	return text
@@ -72,5 +82,5 @@ func on_5_pressed():
 
 func on_close_pressed():
 	button_sfx.play()
-	var res = get_tree().change_scene("res://Levels/TitleScreen.tscn")
+	res = get_tree().change_scene("res://Levels/TitleScreen.tscn")
 	assert(res == OK)

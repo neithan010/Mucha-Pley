@@ -23,4 +23,4 @@ func _process(_delta):
 		line.gradient.set_color(1, Color("#006abb"))
 
 func level_up(lvl):
-	pass#controller.level_up(lvl)
+	controller.level_up(lvl)
