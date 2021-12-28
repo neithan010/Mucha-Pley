@@ -13,3 +13,28 @@ GraterHit.wav				Heavy attack
 DefiniteMissileLaunch.wav		Ranged attack
 DestroyMonster2.wav			Enemy death
 EnergyShieldActivated.wav		Armour up
+
+UI
+	Load text
+	Button pressed
+
+Player
+	Character death
+	Level up
+	
+Minion
+	Autofocus enemy left
+	Autofocus enemy right
+	Fast attack
+	Heavy attack
+	Ranged attack
+	
+Item
+	Heath up
+	Armour up
+	
+Enemy
+	Fast attack
+	Heavy attack
+	Ranged attack
+	Enemy death

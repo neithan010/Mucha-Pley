@@ -27,9 +27,9 @@ const XP_THRESHOLD = [9, 14, 300, 400, 500, 600, 700, 800, 900, 1000]
 
 onready var res
 onready var timer = $Timer
-onready var death_sfx = $PlayerDeath
 onready var upgrade_sfx = $PlayerUpgrade
 onready var controller = get_owner()
+onready var game_over = $"../../../GameOverCanvas/GameOver"
 
 var DASH_SPEED_fin: float
 var DASH_SPEED_init: float
@@ -125,10 +125,10 @@ func get_hp(amt:float):
 		die()
 
 func die():
-	death_sfx.play()
 	print("PLAYER DEAD, GAME OVER")
 	timer.stop()
 	deathplosion(Color("ffffff"))
+	game_over.show()
 
 func level_up(lvl):
 	upgrade_sfx.play()
