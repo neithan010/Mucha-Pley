@@ -22,5 +22,5 @@ func _physics_process(_delta):
 		line.gradient.set_color(1, Color("#006abb"))
 	print("minion: ", minion.global_position, "; player: ", player.global_position, ", line: ", line.points)
 
-func level_up(_lvl):
-	pass#controller.level_up(lvl)
+func level_up(lvl):
+	controller.level_up(lvl)
