@@ -95,6 +95,7 @@ func move_along_path(distance:float)->void:
 
 func _on_DetectionRange_area_entered(area):
 	if target_player == null or navNode == null:
+		print("no nav")
 		pass
 	else:
 #		print(NAME, " navigating towards player from detection area", area)

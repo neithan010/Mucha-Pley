@@ -25,7 +25,7 @@ func _ready():
 	
 func _physics_process(delta):
 	._physics_process(delta)
-	if target_player != null:
+	if target_player != null and target_detected:
 		var vector_dir := target_player.position - self.position
 		vector_dir = vector_dir.normalized()
 		if vector_dir != Vector2.ZERO:
@@ -48,3 +48,4 @@ func pathfinding_movement(delta):
 
 func _on_Hitbox_area_entered(area):
 	target_player.receive_damage(DAMAGE)
+	die()
