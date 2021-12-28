@@ -43,7 +43,7 @@ collision_layer = 8
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
 shape = SubResource( 3 )
 
-[node name="HitboxPos" parent="." index="6"]
+[node name="HitboxPos" parent="." index="5"]
 visible = false
 
 [node name="Hitbox" parent="HitboxPos" index="0"]
@@ -57,7 +57,7 @@ visible = false
 position = Vector2( -30, 0 )
 shape = SubResource( 4 )
 
-[node name="EnemyDeath" type="AudioStreamPlayer" parent="." index="8"]
+[node name="EnemyDeath" type="AudioStreamPlayer" parent="." index="7"]
 stream = ExtResource( 5 )
 
 [connection signal="area_entered" from="HitboxPos/Hitbox" to="." method="_on_Hitbox_area_entered"]

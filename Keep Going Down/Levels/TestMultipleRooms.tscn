@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://ActorController.gd" type="Script" id=1]
 [ext_resource path="res://Levels/RoomTemplate.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Enemies/Trash.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Enemies/Fast.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Enemies/Ranged.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Music/LevelMusic.tscn" type="PackedScene" id=11]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
@@ -87,5 +88,7 @@ position = Vector2( 362.765, 177.444 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 1 )
+
+[node name="LevelMusic" parent="." instance=ExtResource( 11 )]
 
 [editable path="ActorController/PlayerController"]
