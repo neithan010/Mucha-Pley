@@ -11,7 +11,7 @@ var player : Player
 var enemies
 var nav:Navigation2D
 var entities:Node
-var LISTA_HABITACIONES=[preload("res://Levels/Mapa1.tscn"),preload("res://Levels/Mapa2.tscn"),
+var LISTA_HABITACIONES=[preload("res://Levels/Mapa1.tscn"),preload("res://Levels/Mapa2.1.tscn"),
 preload("res://Levels/Mapa3.tscn"),preload("res://Levels/Mapa4.tscn"),
 preload("res://Levels/Mapa5.tscn")]
 

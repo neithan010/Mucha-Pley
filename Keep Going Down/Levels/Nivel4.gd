@@ -10,11 +10,10 @@ var ALTO=2
 var player : Player
 var enemies
 var nav:Navigation2D
-
-var LISTA_HABITACIONES=[preload("res://Levels/Mapa16.tscn"),
-preload("res://Levels/Mapa17.tscn"),preload("res://Levels/Mapa18.tscn"),
-preload("res://Levels/Mapa19.tscn"),preload("res://Levels/Mapa20.tscn"),
-preload("res://Levels/Mapa21.tscn"),preload("res://Levels/Mapa22.tscn")]
+var entities:Node
+var LISTA_HABITACIONES=[preload("res://Levels/Mapa16.tscn"),preload("res://Levels/Mapa17.tscn"),
+preload("res://Levels/Mapa18.tscn"),preload("res://Levels/Mapa19.tscn"),
+preload("res://Levels/Mapa20.tscn"),preload("res://Levels/Mapa21.tscn"),preload("res://Levels/Mapa22.tscn"),]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -22,15 +21,21 @@ func _ready():
 	var ancho=0
 	var alto=0
 	nav = $Navigation2D
+	entities=$Entity
 	for _i in range(ALTO):
 		for _j in range(ANCHO):
 			var a = LISTA_HABITACIONES[randi() % LISTA_HABITACIONES.size()]
-			a.instance()
 			var nuevo_habitacion = a.instance()
-			nav.add_child(nuevo_habitacion)
-			
-			nuevo_habitacion.position.x=ancho
-			nuevo_habitacion.position.y=alto
+			var children = nuevo_habitacion.get_children()
+			var tilemap = children[0].duplicate()
+			nav.add_child(tilemap)
+			tilemap.position.x=ancho
+			tilemap.position.y=alto
+			for _e in range(1, len(children)-1):
+				var entity = children[_e].duplicate()
+				entities.add_child(entity)
+				entity.position.x+=ancho
+				entity.position.y+=alto
 			ancho+=1024
 		ancho=0
 		alto+=1024

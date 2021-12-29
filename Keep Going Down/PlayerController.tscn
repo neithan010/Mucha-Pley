@@ -67,6 +67,7 @@ size = 52
 font_data = ExtResource( 5 )
 
 [node name="PlayerController" type="Node2D"]
+position = Vector2( 313.72, -34.0179 )
 script = ExtResource( 3 )
 
 [node name="Line2D" type="Line2D" parent="."]
