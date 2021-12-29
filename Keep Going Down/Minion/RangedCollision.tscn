@@ -4,4 +4,5 @@
 extents = Vector2( 14, 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D"]
+scale = Vector2( 0.8, 0.8 )
 shape = SubResource( 1 )

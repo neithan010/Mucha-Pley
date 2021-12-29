@@ -9,7 +9,7 @@ extends BaseMinionBody
 #var _attack_sprite:Sprite
 #var _attack_timer:float
 #var _timing:= true
-var BULLET_SPEED := 500.0
+var BULLET_SPEED := 1000.0
 var bullet = preload("res://Minion/MinionBullet.tscn")
 
 onready var attack_sfx = $RangedAttack

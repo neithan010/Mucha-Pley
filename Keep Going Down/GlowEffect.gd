@@ -23,4 +23,4 @@ func _process(delta):
 	for val in magnitudes:
 		sum += val
 	
-	environment.glow_intensity = 1+ 10*log(sum/magnitudes.size()+1)
+	environment.glow_intensity = 0.5+ 10*log(sum/magnitudes.size()+1)

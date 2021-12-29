@@ -20,7 +20,7 @@ const ATTACK	= INPUT_NAME+"_attack"
 
 const CYCLE_UP    = "cycle_target_up"
 const CYCLE_DOWN  = "cycle_target_down"
-
+const CHANGE      = "minion_change"
 const TARGET_RANGE = 800
 
 
@@ -142,7 +142,7 @@ func _physics_process(delta):
 		
 		
 	if is_instance_valid(current_target):
-		var vector_dir := current_target.position - self.position
+		var vector_dir := current_target.global_position - self.global_position
 		var angle_dir = vector_dir.angle()
 		rotation = angle_dir
 	
@@ -153,7 +153,6 @@ func _physics_process(delta):
 		body.DMG_MULT = self.DMG_MULT
 		body.attack()
 		target_list(600)
-		return
 	
 	if Input.is_action_just_pressed(CYCLE_DOWN):
 		cycle_down_sfx.play()
@@ -162,11 +161,15 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed(CYCLE_UP):
 		cycle_up_sfx.play()
 		cycle_targets(-1)
+	if Input.is_action_pressed("minion_change"):
+		print("S")
 	
 	
 func confirm_kill(killed):
+	print("aa")
 	if killed == current_target:
 		cycle_targets(+1)
-	if Input.is_action_pressed("change_miniion"):
+	if Input.is_action_pressed(CHANGE):
+		print("a")
 		change_minion_type(killed.NAME)
 	
