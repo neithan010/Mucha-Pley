@@ -49,6 +49,8 @@ animations = [ {
 
 [node name="Fast" instance=ExtResource( 2 )]
 position = Vector2( 0, 0.5 )
+collision_layer = 0
+collision_mask = 1
 script = ExtResource( 4 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="0"]
@@ -105,10 +107,10 @@ scale = Vector2( 2.02083, 1 )
 frames = SubResource( 10 )
 speed_scale = 2.0
 
-[node name="FastAttack" type="AudioStreamPlayer2D" parent="." index="9"]
+[node name="FastAttack" type="AudioStreamPlayer2D" parent="." index="8"]
 stream = ExtResource( 6 )
 
-[node name="EnemyDeath" type="AudioStreamPlayer2D" parent="." index="10"]
+[node name="EnemyDeath" type="AudioStreamPlayer2D" parent="." index="9"]
 stream = ExtResource( 7 )
 
 [connection signal="area_entered" from="HitboxPos/Hitbox" to="." method="_on_player_entered_hitbox"]

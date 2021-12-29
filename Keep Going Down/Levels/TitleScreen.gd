@@ -20,7 +20,7 @@ func _ready():
 # TODO: debug buttons after returning from Archive.tscn
 func on_play_pressed():
 	button_sfx.play()
-	res = get_tree().change_scene("res://Levels/World.tscn")
+	res = get_tree().change_scene("res://Levels/Nivel1.tscn")
 	assert(res == OK)
 
 func on_file_pressed():

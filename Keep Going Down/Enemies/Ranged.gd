@@ -36,7 +36,7 @@ func shoot():
 	attack_sfx.play()
 	var shot = Bullet.instance()
 	shot.init(500, 10, position, rotation)
-	owner.add_child(shot)
+	get_parent().add_child(shot)
 
 
 func target_location()->Vector2:
