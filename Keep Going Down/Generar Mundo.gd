@@ -12,7 +12,8 @@ var enemies
 var nav:Navigation2D
 var entities:Node
 var LISTA_HABITACIONES=[preload("res://Levels/Mapa1.tscn"),preload("res://Levels/Mapa2.tscn"),
-preload("res://Levels/Mapa3.tscn")]
+preload("res://Levels/Mapa3.tscn"),preload("res://Levels/Mapa4.tscn"),
+preload("res://Levels/Mapa5.tscn")]
 
 var glow
 var magnitudes = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
