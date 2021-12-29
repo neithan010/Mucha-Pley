@@ -25,7 +25,6 @@ var navTimer :Timer
 var XP_WORTH :float
 var _targeted: Sprite
 
-onready var death_sfx = $EnemyDeath
 
 func _ready():
 
@@ -114,7 +113,7 @@ func deactivate():
 	navTimer.stop()
 
 func die():
-	death_sfx.play()
+	linger_sound("res://SFX/DestroyMonster2.wav")
 	deathplosion($Sprite.modulate)
 	if target_player != null:
 		target_player.add_xp(XP_WORTH)
