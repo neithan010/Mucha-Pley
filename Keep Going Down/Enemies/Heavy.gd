@@ -36,8 +36,9 @@ func _ready():
 	NAME = "HEAVY"
 	ATTACK_SPEED = 3
 	MAX_SPEED = 80.0
-	XP_WORTH = 5
+	XP_WORTH = 3
 	DAMAGE = 20
+	HP = 50
 	reset_attack_timer()
 	start_attack_timer()
 	hitbox.NAME = "HItBOX"

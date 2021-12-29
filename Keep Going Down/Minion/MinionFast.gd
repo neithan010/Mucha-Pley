@@ -13,9 +13,9 @@ extends BaseMinionBody
 onready var attack_sfx = $FastAttack
 
 func _ready():
-	DAMAGE = 20.0
-	ATTACK_SPEED = 3.0
-	MAX_SPEED = 180.0
+	DAMAGE = 15.0
+	ATTACK_SPEED = 1.5
+	MAX_SPEED = 210.0
 	
 	_default_color = "711579"
 	_ready_color = "de0af0"
@@ -39,11 +39,11 @@ func attack():
 		_hitbox.monitoring = true
 		reset_attack_timer()
 		enable_sprite(true)
-		apply_damage()
+#		apply_damage()
 
 
 func _on_Hitbox_area_entered(_area):
-	apply_damage()
+	apply_damage(_area)
 
 
 func _on_SwordSprite_animation_finished():

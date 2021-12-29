@@ -46,13 +46,14 @@ func unlock_file(lvl):
 
 func speed_lvl(lvl):
 	lvl = clamp(lvl, 0, 9)
-	return speed_arr[lvl]
+	return 1+0.3*lvl#speed_arr[lvl]
 
 func damage_lvl(lvl):
 	lvl = clamp(lvl, 0, 9)
-	return damage_arr[lvl]
+	return 1+0.3*pow(1.2, lvl)#damage_arr[lvl]
 
 func level_up(lvl):
 	minion.DMG_MULT = damage_lvl(lvl)
 	change_speed_mult(speed_lvl(lvl))
+	print("Level ", lvl, "; spped: ", speed_lvl(lvl), ";DMG: ", damage_lvl(lvl))
 	unlock_file(lvl)

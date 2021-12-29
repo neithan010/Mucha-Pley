@@ -19,7 +19,8 @@ func _ready():
 	ATTACK_SPEED = 3
 	NAME = "RANGED"
 	MAX_SPEED = 80.0
-	XP_WORTH = 5
+	XP_WORTH = 3
+	HP = 30
 	start_attack_timer()
 
 

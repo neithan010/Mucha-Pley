@@ -43,13 +43,12 @@ func can_attack() -> bool:
 func attack():
 	pass
 
-func apply_damage():
+func apply_damage(area):
 	if not _hitbox.monitoring:
 		return
-	for area in _hitbox.get_overlapping_areas():
-		var enemy :BaseEnemy = area.get_parent()
-#		print("found enemy in hitbox:", enemy, enemy.NAME)
-		enemy.receive_damage(DAMAGE * DMG_MULT)
+#	for area in _hitbox.get_overlapping_areas():
+	var enemy :BaseEnemy = area.get_parent()
+	enemy.receive_damage(DAMAGE * DMG_MULT)
 
 func enable_sprite(bl:bool):
 	_attack_sprite.visible = bl

@@ -33,6 +33,7 @@ func deathplosion(color):
 	get_parent().add_child(particles)
 
 func receive_damage(dmg:float):
+	print(NAME)
 	var received_dmg = max(dmg-dmg*ARMOR/100, 0)
 	ARMOR = max(ARMOR-10, 0)
 	HP = max(HP - received_dmg, 0)

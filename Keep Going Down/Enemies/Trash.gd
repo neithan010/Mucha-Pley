@@ -21,8 +21,8 @@ func _ready():
 	ACCEL = int(800 * rand_range(0.95, 1.05))
 	MAX_SPEED = int(25000* rand_range(0.95, 1.05))
 	FRICTION = 300
-	XP_WORTH = 0.1
-	
+	XP_WORTH = 1
+	HP = 1
 func _physics_process(delta):
 	._physics_process(delta)
 	if target_player != null and target_detected:

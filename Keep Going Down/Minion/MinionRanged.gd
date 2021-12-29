@@ -18,9 +18,9 @@ func _ready():
 	ACCEL     = 4000
 	MAX_SPEED = 30000
 	
-	ATTACK_SPEED = 2.0
+	ATTACK_SPEED = 1.0
 	MAX_SPEED = 80.0
-	DAMAGE = 40.0
+	DAMAGE = 25.0
 	
 	_default_color = "735014"
 	_ready_color = "ffa100"

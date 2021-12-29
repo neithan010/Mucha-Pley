@@ -34,7 +34,8 @@ func _ready():
 	DAMAGE = 20
 	ATTACK_SPEED = 10
 	MAX_SPEED = 140.0
-	XP_WORTH = 5
+	XP_WORTH = 3
+	HP = 20
 	
 	._ready()
 	NAME = "FAST"

@@ -44,8 +44,8 @@ var LVL
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	NAME = "Player"
-	ACCEL     = 4000
-	MAX_SPEED = 30000
+	ACCEL     = 3000
+	MAX_SPEED = 20000
 	FRICTION  = 3000
 	ARMOR = 50
 	DASH_SPEED_fin = MAX_SPEED * 1.5
@@ -85,7 +85,7 @@ func _physics_process(delta):
 				velocity += input_vector * ACCEL * delta * SPEED_MULT
 				velocity = velocity.clamped(MAX_SPEED * delta * SPEED_MULT)
 			else:
-				velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
+				velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta * SPEED_MULT)
 		STATE.dash:
 			#print("dashing")
 			if dash_timer>0:
@@ -109,7 +109,7 @@ func _on_Timer_timeout():
 
 func add_xp(amt:float):
 	XP += amt
-	if XP > XP_THRESHOLD[LVL]:
+	if XP > LVL*15:#XP_THRESHOLD[LVL]:
 		LVL += 1
 		level_up(LVL)
 	
