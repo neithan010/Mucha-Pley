@@ -8,7 +8,7 @@ const file_arr = ["", "0", "", "1", "", "2", "", "3", "", "4"]
 onready var player := $Player
 onready var minion := $Minion
 onready var line   :Line2D= $Line2D
-onready var SPEED_MULT = 1
+onready var SPEED_MULT:float = 1
 
 var enemies
 

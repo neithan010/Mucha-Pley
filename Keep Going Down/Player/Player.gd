@@ -39,9 +39,9 @@ var dash_dir : Vector2
 var dash_curr_spd = 0
 var dash_recharge = DASH_RELOAD_TIME
 var XP := 0.0
-var LVL
-var SCORE
-var SCORE_MULT
+var LVL:int
+var SCORE:float
+var SCORE_MULT:float
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

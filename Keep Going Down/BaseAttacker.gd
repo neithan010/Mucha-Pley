@@ -10,10 +10,10 @@ class_name BaseAttacker
 #var velocity:= Vector2.ZERO
 #onready var hurtbox := $Hurtbox
 
-onready var DAMAGE:= 0
-onready var DMG_MULT: int = 1
+onready var DAMAGE:float= 0
+onready var DMG_MULT: float = 1
 onready var ATTACK_SPEED: float = 0.0
-onready var ATTACK_TIMER:= ATTACK_SPEED
+onready var ATTACK_TIMER:float= ATTACK_SPEED
 
 
 

@@ -11,3 +11,11 @@ func _ready():
 	play()
 	
 
+func _physics_process(delta):
+	if Input.is_action_just_pressed("change_song"):
+		randomize()
+		stop()
+		var id = rand_range(0, songs.size())
+		var song = load(songs[id])
+		stream = song
+		play()

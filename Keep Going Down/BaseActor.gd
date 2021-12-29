@@ -5,7 +5,7 @@ class_name BaseActor
 var HP: float
 var ARMOR: float
 var MAX_SPEED: float
-var SPEED_MULT: int = 1
+var SPEED_MULT: float = 1
 var ACCEL: float
 var FRICTION: float
 var velocity:= Vector2.ZERO

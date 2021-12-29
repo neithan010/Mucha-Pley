@@ -4,8 +4,8 @@ extends KinematicBody2D
 #Inherits vars:
 var HP: float
 var ARMOR: float
-var DMG_MULT: int
-var SPEED_MULT: int
+var DMG_MULT: float
+var SPEED_MULT: float
 var MAX_SPEED: float
 var ACCEL: float
 var FRICTION: float

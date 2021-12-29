@@ -36,7 +36,7 @@ font_data = ExtResource( 5 )
 Label/colors/font_color = Color( 0, 0.8, 0.133333, 1 )
 
 [sub_resource type="Theme" id=6]
-Label/colors/font_color = Color( 0.913725, 0.878431, 0, 1 )
+Label/colors/font_color = Color( 0.858824, 0.784314, 0, 1 )
 
 [sub_resource type="StyleBoxFlat" id=7]
 bg_color = Color( 0, 0, 0, 0.784314 )
@@ -231,6 +231,7 @@ __meta__ = {
 "GameOver",
 ]]
 pause_mode = 2
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 11 )

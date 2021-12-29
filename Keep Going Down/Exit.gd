@@ -1,11 +1,11 @@
 extends Node2D
 
 var LVL: int
-var HP: int
-var XP: int
-var AP: int
-var SPEED_MULT: int
-var DMG_MULT: int
+var HP: float
+var XP: float
+var AP: float
+var SPEED_MULT: float
+var DMG_MULT: float
 
 onready var path = "res://Files/player_state.json"
 onready var change_lvl = $ChangeLevel
