@@ -23,4 +23,5 @@ func _physics_process(_delta):
 	print("minion: ", minion.global_position, "; player: ", player.global_position, ", line: ", line.points)
 
 func level_up(lvl):
-	controller.level_up(lvl)
+	pass
+	#controller.level_up(lvl)
