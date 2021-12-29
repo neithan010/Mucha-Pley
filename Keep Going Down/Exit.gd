@@ -49,7 +49,7 @@ func _write_state(player):
 	f.close()
 
 func _on_Hitbox_area_entered(area):
-	print("PLAYER ENTERED")
+	#print("PLAYER ENTERED")
 	var player = area.get_parent()
 	_write_state(player)
 	change_lvl.play()

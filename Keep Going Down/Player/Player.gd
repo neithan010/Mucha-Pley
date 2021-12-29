@@ -142,8 +142,8 @@ func _on_DetectionRange_area_entered(area):
 func _on_UndetectionRange_area_exited(area):
 	area.get_parent().deactivate()
 	
-func receive_damage(_dmg:float):
-	pass
+#func receive_damage(_dmg:float):
+#	pass
 
 func reset_status():
 	var path = "res://Files/player_state.json"

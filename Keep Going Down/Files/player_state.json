@@ -1,8 +1,8 @@
 {
-  "LVL": 0,
-  "HP": 100,
-  "XP": 0,
   "AP": 50,
+  "DMG_MULT": 1,
+  "HP": 100,
+  "LVL": 0,
   "SPEED_MULT": 1,
-  "DMG_MULT": 1
+  "XP": 0
 }
