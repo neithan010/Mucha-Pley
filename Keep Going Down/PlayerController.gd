@@ -23,7 +23,6 @@ func _physics_process(_delta):
 		minion.in_range = true
 		line.gradient.set_color(0, Color("#00fcd9"))
 		line.gradient.set_color(1, Color("#006abb"))
-	print("minion: ", minion.global_position, "; player: ", player.global_position, ", line: ", line.points)
 
 func change_speed_mult(new_speed):
 	SPEED_MULT = clamp(new_speed, 1, 100)

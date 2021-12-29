@@ -14,6 +14,10 @@ radius = 16.0
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 14, 14 )
 
+[sub_resource type="CapsuleShape2D" id=13]
+
+[sub_resource type="CapsuleShape2D" id=14]
+
 [sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 5 )
 region = Rect2( 0, 0, 32, 32 )
@@ -58,11 +62,9 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=13]
-
-[sub_resource type="CapsuleShape2D" id=14]
-
 [node name="Heavy" instance=ExtResource( 2 )]
+collision_layer = 0
+collision_mask = 1
 script = ExtResource( 4 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="0"]
@@ -83,16 +85,6 @@ collision_layer = 8
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
 shape = SubResource( 2 )
 
-[node name="SwordPosition" type="Position2D" parent="." index="6"]
-position = Vector2( 37, -5 )
-scale = Vector2( 1.5, 1.5 )
-
-[node name="SwordSprite" type="AnimatedSprite" parent="SwordPosition" index="0"]
-visible = false
-frames = SubResource( 12 )
-frame = 2
-speed_scale = 2.0
-
 [node name="HitboxDetection" parent="HitboxPos" index="0" instance=ExtResource( 1 )]
 position = Vector2( 30, 0 )
 collision_mask = 2
@@ -108,15 +100,25 @@ collision_mask = 2
 visible = false
 shape = SubResource( 14 )
 
-[node name="HeavyAttack" type="AudioStreamPlayer" parent="." index="9"]
+[node name="SwordPosition" type="Position2D" parent="." index="6"]
+position = Vector2( 37, -5 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="SwordSprite" type="AnimatedSprite" parent="SwordPosition" index="0"]
+visible = false
+frames = SubResource( 12 )
+frame = 2
+speed_scale = 2.0
+
+[node name="HeavyAttack" type="AudioStreamPlayer" parent="." index="8"]
 stream = ExtResource( 6 )
 
-[node name="EnemyDeath" type="AudioStreamPlayer" parent="." index="10"]
+[node name="EnemyDeath" type="AudioStreamPlayer" parent="." index="9"]
 stream = ExtResource( 7 )
 
-[connection signal="animation_finished" from="SwordPosition/SwordSprite" to="." method="_on_SwordSprite_animation_finished"]
 [connection signal="area_entered" from="HitboxPos/HitboxDetection" to="." method="_on_player_detected_in_attack_range"]
 [connection signal="area_entered" from="HitboxPos/Hitbox" to="." method="_on_player_entered_hitbox"]
+[connection signal="animation_finished" from="SwordPosition/SwordSprite" to="." method="_on_SwordSprite_animation_finished"]
 
 [editable path="Hurtbox"]
 [editable path="HitboxPos/HitboxDetection"]

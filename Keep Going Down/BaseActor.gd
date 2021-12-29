@@ -24,7 +24,7 @@ func level_up(_lvl):
 func deathplosion(color):
 	var particles = deathParticles.instance()
 	particles.init(color, position)
-	owner.add_child(particles)
+	get_parent().add_child(particles)
 
 func receive_damage(dmg:float):
 	var received_dmg = max(dmg-dmg*ARMOR/100, 0)
