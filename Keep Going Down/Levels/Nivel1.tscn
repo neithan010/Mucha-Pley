@@ -4,7 +4,7 @@
 [ext_resource path="res://PlayerController.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Tileset.tres" type="TileSet" id=3]
 [ext_resource path="res://GlowEffect.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Images/end_scene.png" type="Texture" id=5]
+[ext_resource path="res://Exit.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Music/LevelMusic.tscn" type="PackedScene" id=6]
 
 [node name="Nivel1" type="Node2D"]
@@ -27,6 +27,5 @@ position = Vector2( 491.604, -54.0131 )
 
 [node name="Entity" type="Node2D" parent="."]
 
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 2048, 1536 )
-texture = ExtResource( 5 )
+[node name="Exit" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1536, 2048 )

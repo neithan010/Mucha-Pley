@@ -41,7 +41,6 @@ func unlock_file(lvl):
 		var f = File.new()
 		f.open(path, File.READ)
 		var json = JSON.parse(f.get_as_text())
-		print("is null: ", json.result == null) 
 		f.close()
 		var data = json.result
 
