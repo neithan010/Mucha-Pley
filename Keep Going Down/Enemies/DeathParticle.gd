@@ -9,10 +9,12 @@ onready var lifetimer :float = lifetime + lifetime*process_material.lifetime_ran
 
 func init(color, pos):
 	modulate = color
-	emitting =  true
-	position = pos
+	emitting = true
+	global_position = pos
+
 
 func _physics_process(delta):
 	lifetimer -= delta
 	if lifetimer <0:
 		queue_free()
+

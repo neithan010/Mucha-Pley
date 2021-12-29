@@ -25,7 +25,6 @@ var navTimer :Timer
 var XP_WORTH :float
 var _targeted: Sprite
 
-
 func _ready():
 
 	hitbox = $HitboxPos/Hitbox
@@ -33,7 +32,7 @@ func _ready():
 	navTimer = $NavigationTimer
 	_targeted = $TargetMarker
 	set_process(false)
-
+	
 
 func face_target():
 	if target_player != null:

@@ -23,6 +23,8 @@ func _load_state():
 	var json = JSON.parse(f.get_as_text())
 	f.close()
 	var data = json.result
+	player.SCORE = data["SCORE"]
+	player.SCORE_MULT = data["SCORE_MULT"]
 	player.LVL = data["LVL"]
 	player.HP = data["HP"]
 	player.XP = data["XP"]
@@ -36,6 +38,8 @@ func _load_state():
 
 func _write_state(player):
 	var data = {}
+	data["SCORE"] = player.SCORE
+	data["SCORE_MULT"] = player.SCORE_MULT
 	data["LVL"] = player.LVL
 	data["HP"] = player.HP
 	data["XP"] = player.XP

@@ -10,7 +10,7 @@
 [ext_resource path="res://SFX/Text_Chatter_1.wav" type="AudioStream" id=11]
 [ext_resource path="res://Images/solid_croos.png" type="Texture" id=12]
 
-[sub_resource type="StyleBoxFlat" id=3]
+[sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 1 )
 border_width_left = 1
 border_width_top = 1
@@ -25,7 +25,7 @@ margin_left = 50.0
 margin_top = 50.0
 margin_right = 974.0
 margin_bottom = 550.0
-custom_styles/panel = SubResource( 3 )
+custom_styles/panel = SubResource( 1 )
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -34,7 +34,7 @@ __meta__ = {
 [node name="Option1" type="Panel" parent="FileDisplay"]
 margin_right = 460.0
 margin_bottom = 100.0
-custom_styles/panel = SubResource( 3 )
+custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -63,7 +63,7 @@ __meta__ = {
 margin_top = 100.0
 margin_right = 460.0
 margin_bottom = 200.0
-custom_styles/panel = SubResource( 3 )
+custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -92,7 +92,7 @@ __meta__ = {
 margin_top = 200.0
 margin_right = 460.0
 margin_bottom = 300.0
-custom_styles/panel = SubResource( 3 )
+custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -121,7 +121,7 @@ __meta__ = {
 margin_top = 300.0
 margin_right = 460.0
 margin_bottom = 400.0
-custom_styles/panel = SubResource( 3 )
+custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -150,7 +150,7 @@ __meta__ = {
 margin_top = 400.0
 margin_right = 460.0
 margin_bottom = 500.0
-custom_styles/panel = SubResource( 3 )
+custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

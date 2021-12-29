@@ -18,7 +18,7 @@ func _ready():
 func linger_sound(asset:String):
 	var sound = load("res://LingeringSound.tscn").instance()
 	sound.init(global_position, asset)
-	get_tree().root.get_child(0).add_child(sound)
+	get_tree().root.add_child(sound)
 	
 	
 func die():
@@ -29,7 +29,7 @@ func level_up(_lvl):
 
 func deathplosion(color):
 	var particles = deathParticles.instance()
-	particles.init(color, position)
+	particles.init(color, global_position)
 	get_parent().add_child(particles)
 
 func receive_damage(dmg:float):

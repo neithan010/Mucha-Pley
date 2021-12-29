@@ -15,7 +15,7 @@ var Bullet = preload("res://Enemies/EnemyBullet.tscn")
 onready var attack_sfx = $RangedAttack
 
 func _ready():
-	DAMAGE = 20
+	DAMAGE = 10
 	ATTACK_SPEED = 3
 	NAME = "RANGED"
 	MAX_SPEED = 80.0

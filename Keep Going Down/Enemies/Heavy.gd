@@ -35,9 +35,9 @@ func _ready():
 	._ready()
 	NAME = "HEAVY"
 	ATTACK_SPEED = 3
-	MAX_SPEED = 80.0
+	MAX_SPEED = 60.0
 	XP_WORTH = 3
-	DAMAGE = 20
+	DAMAGE = 15
 	HP = 50
 	reset_attack_timer()
 	start_attack_timer()

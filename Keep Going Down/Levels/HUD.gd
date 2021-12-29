@@ -7,7 +7,7 @@ onready var armor_label = $Armor/Label
 onready var dmg_label = $Damage/Label
 onready var hp_bar = $Health/ProgressBar
 onready var hp_label = $Health/ProgressBar/Label
-
+onready var score_label = $Score/Label
 var damage = 1
 
 func _ready():
@@ -26,3 +26,4 @@ func _physics_process(_delta):
 	dmg_label.text = "x " + str(minion.DMG_MULT)
 	hp_bar.value = player.HP
 	hp_label.text = str(player.HP)
+	score_label.text = "Score\n"+str(player.SCORE) + "x " + str(player.SCORE_MULT)

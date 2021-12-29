@@ -36,20 +36,20 @@ font_data = ExtResource( 5 )
 Label/colors/font_color = Color( 0, 0.8, 0.133333, 1 )
 
 [sub_resource type="Theme" id=6]
-Label/colors/font_color = Color( 0.54902, 0, 0, 1 )
+Label/colors/font_color = Color( 0.913725, 0.878431, 0, 1 )
 
 [sub_resource type="StyleBoxFlat" id=7]
 bg_color = Color( 0, 0, 0, 0.784314 )
-
-[sub_resource type="DynamicFont" id=10]
-size = 26
-font_data = ExtResource( 5 )
 
 [sub_resource type="StyleBoxFlat" id=8]
 bg_color = Color( 1, 0, 0, 1 )
 
 [sub_resource type="StyleBoxFlat" id=9]
 bg_color = Color( 0, 0, 0, 0 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 26
+font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=11]
 size = 26
@@ -67,7 +67,9 @@ font_data = ExtResource( 5 )
 size = 52
 font_data = ExtResource( 5 )
 
-[node name="PlayerController" type="Node2D" groups=["PlayerController"]]
+[node name="PlayerController" type="Node2D" groups=[
+"PlayerController",
+]]
 position = Vector2( 313.72, -34.0179 )
 script = ExtResource( 3 )
 
@@ -177,9 +179,10 @@ margin_right = 962.0
 margin_bottom = 540.0
 rect_min_size = Vector2( 200, 0 )
 size_flags_horizontal = 0
-custom_fonts/font = SubResource( 10 )
 custom_styles/fg = SubResource( 8 )
 custom_styles/bg = SubResource( 9 )
+custom_fonts/font = SubResource( 10 )
+max_value = 200.0
 allow_greater = true
 percent_visible = false
 __meta__ = {
@@ -207,11 +210,27 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Score" type="Node" parent="HUD"]
+
+[node name="Label" type="Label" parent="HUD/Score"]
+margin_left = 19.5
+margin_top = 360.5
+margin_right = 97.5
+margin_bottom = 390.5
+theme = SubResource( 6 )
+custom_fonts/font = SubResource( 4 )
+text = "Score
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="GameOverCanvas" type="CanvasLayer" parent="."]
 
-[node name="GameOver" type="Control" parent="GameOverCanvas"]
+[node name="GameOver" type="Control" parent="GameOverCanvas" groups=[
+"GameOver",
+]]
 pause_mode = 2
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 11 )
@@ -272,6 +291,19 @@ margin_bottom = 272.0
 theme = ExtResource( 12 )
 custom_fonts/font = SubResource( 12 )
 text = "QUIT"
+
+[node name="ScoreLabel" type="Label" parent="GameOverCanvas/GameOver/Overlay"]
+margin_left = 471.5
+margin_top = 463.5
+margin_right = 549.5
+margin_bottom = 526.5
+theme = SubResource( 6 )
+custom_fonts/font = SubResource( 4 )
+text = "Score
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="ButtonPress" type="AudioStreamPlayer" parent="GameOverCanvas/GameOver"]
 stream = ExtResource( 14 )

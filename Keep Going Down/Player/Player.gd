@@ -20,7 +20,7 @@ const RIGHT = INPUT_NAME+"_right"
 const LEFT  = INPUT_NAME+"_left"
 const DASH_LENGTH = 0.2
 const DASH_RELOAD_TIME = 2
-const MAX_HP := 100.0
+const MAX_HP := 200.0
 const XP_THRESHOLD = [9, 14, 300, 400, 500, 600, 700, 800, 900, 1000]
 
 onready var res
@@ -40,6 +40,8 @@ var dash_curr_spd = 0
 var dash_recharge = DASH_RELOAD_TIME
 var XP := 0.0
 var LVL
+var SCORE
+var SCORE_MULT
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -48,6 +50,8 @@ func _ready():
 	MAX_SPEED = 20000
 	FRICTION  = 3000
 	ARMOR = 50
+	SCORE = 0
+	SCORE_MULT = 1
 	DASH_SPEED_fin = MAX_SPEED * 1.5
 	DASH_SPEED_init = MAX_SPEED * 2.5
 	HP = MAX_HP
@@ -56,7 +60,7 @@ func _ready():
 	armor_timer.set_wait_time(1)
 	armor_timer.start()
 	print("PlayerController: ", controller)
-#	Engine.time_scale= 0.7
+#	Engine.time_scale= 0.5
 	
 func _physics_process(delta):
 	if dash_recharge>0:
@@ -106,9 +110,16 @@ func _physics_process(delta):
 func _on_Timer_timeout():
 	if ARMOR > 0:
 		ARMOR -= 1
+	if HP >0:
+		HP -= 0.0001*LVL*MAX_HP
+		if HP <= 0:
+			die()
+	SCORE_MULT = max(1, SCORE_MULT-0.1)
 
 func add_xp(amt:float):
 	XP += amt
+	SCORE_MULT += 1
+	SCORE += amt*SCORE_MULT
 	if XP > LVL*15:#XP_THRESHOLD[LVL]:
 		LVL += 1
 		level_up(LVL)
@@ -129,6 +140,7 @@ func die():
 	armor_timer.stop()
 	reset_status()
 	pause.game_over = true
+	game_over.SCORE = SCORE
 	game_over.show()
 
 func level_up(lvl):
@@ -148,6 +160,8 @@ func _on_UndetectionRange_area_exited(area):
 func reset_status():
 	var path = "res://Files/player_state.json"
 	var data = {}
+	data["SCORE"] = 0
+	data["SCORE_MULT"] = 1
 	data["LVL"] = 0
 	data["HP"] = MAX_HP
 	data["XP"] = 0

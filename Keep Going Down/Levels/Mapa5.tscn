@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Enemies/Trash.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Enemies/Heavy.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Enemies/Fast.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Enemies/Ranged.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Items/Health.tscn" type="PackedScene" id=6]
 
 [node name="Mapa5" type="Node2D"]
 
@@ -77,3 +78,6 @@ rotation = 1.5708
 [node name="Fast4" parent="." instance=ExtResource( 4 )]
 position = Vector2( 175.044, 172.242 )
 rotation = 1.5708
+
+[node name="Health" parent="." instance=ExtResource( 6 )]
+position = Vector2( 520, 800 )

@@ -31,7 +31,7 @@ onready var attack_sfx = $FastAttack
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	DAMAGE = 20
+	DAMAGE = 10
 	ATTACK_SPEED = 10
 	MAX_SPEED = 140.0
 	XP_WORTH = 3

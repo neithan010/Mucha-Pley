@@ -1,8 +1,10 @@
 {
   "AP": 50,
   "DMG_MULT": 1,
-  "HP": 100,
+  "HP": 200,
   "LVL": 0,
+  "SCORE": 0,
+  "SCORE_MULT": 1,
   "SPEED_MULT": 1,
   "XP": 0
 }

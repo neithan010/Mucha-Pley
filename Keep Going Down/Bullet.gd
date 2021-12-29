@@ -33,6 +33,7 @@ func _physics_process(delta):
 
 func destroy():
 	speed = 0
+	DAMAGE = 0
 	set_deferred("$Hurtbox.monitorable", false)
 	set_deferred("$Hurtbox.monitoring", false)
 	set_deferred("$Hitbox.monitorable", false)
