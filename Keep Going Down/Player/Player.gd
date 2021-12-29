@@ -109,12 +109,12 @@ func _physics_process(delta):
 
 func _on_Timer_timeout():
 	if ARMOR > 0:
-		ARMOR -= 1
+		ARMOR -= 0.5
 	if HP >0:
 		HP -= 0.0001*LVL*MAX_HP
 		if HP <= 0:
 			die()
-	SCORE_MULT = max(1, SCORE_MULT-0.1)
+	SCORE_MULT = max(1, SCORE_MULT-0.4)
 
 func add_xp(amt:float):
 	XP += amt
