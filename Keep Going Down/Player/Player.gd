@@ -127,6 +127,7 @@ func die():
 	deathplosion(Color("ffffff"))
 #	print("PLAYER DEAD, GAME OVER")
 	armor_timer.stop()
+	reset_status()
 	pause.game_over = true
 	game_over.show()
 
@@ -134,15 +135,26 @@ func level_up(lvl):
 	upgrade_sfx.play()
 	controller.level_up(lvl)
 
-
 func _on_DetectionRange_area_entered(area):
 	area.get_parent().activate(self)
 #	print(global_position, position)
 
-
-
 func _on_UndetectionRange_area_exited(area):
 	area.get_parent().deactivate()
 	
-func receive_damage(_dmg:float):
-	pass
+#func receive_damage(_dmg:float):
+#	pass
+
+func reset_status():
+	var path = "res://Files/player_state.json"
+	var data = {}
+	data["LVL"] = 0
+	data["HP"] = MAX_HP
+	data["XP"] = 0
+	data["AP"] = 50
+	data["SPEED_MULT"] = 1
+	data["DMG_MULT"] = 1
+	var f = File.new()
+	f.open(path, File.WRITE)
+	f.store_string(JSON.print(data, "  ", true))
+	f.close()
