@@ -15,6 +15,8 @@ var LISTA_HABITACIONES=[preload("res://Levels/Mapa1.tscn"),preload("res://Levels
 preload("res://Levels/Mapa3.tscn"),preload("res://Levels/Mapa4.tscn"),
 preload("res://Levels/Mapa5.tscn")]
 
+var glow
+var magnitudes = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
@@ -45,3 +47,10 @@ func _ready():
 		enemy.navNode = nav
 #	print(get_tree())
 	pass # Replace with function body.
+
+
+	
+	
+	
+	
+	

@@ -15,6 +15,12 @@ var deathParticles := preload("res://Enemies/DeathParticle.tscn")
 func _ready():
 	pass
 
+func linger_sound(asset:String):
+	var sound = load("res://LingeringSound.tscn").instance()
+	sound.init(global_position, asset)
+	get_tree().root.get_child(0).add_child(sound)
+	
+	
 func die():
 	pass
 

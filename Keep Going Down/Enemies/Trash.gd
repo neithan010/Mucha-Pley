@@ -50,4 +50,5 @@ func _on_Hitbox_area_entered(_area):
 	if target_player == null:
 		return
 	target_player.receive_damage(DAMAGE)
+	target_player = null #asi no le da xp por morir explotado
 	die()
