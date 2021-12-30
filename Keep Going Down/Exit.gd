@@ -53,12 +53,11 @@ func _write_state(player):
 	f.close()
 
 func _on_Hitbox_area_entered(area):
-	#print("PLAYER ENTERED")
 	var player = area.get_parent()
 	_write_state(player)
 	change_lvl.play()
 	if current_lvl == 4:
-		var res = get_tree().change_scene("res://Levels/TitleScreen.tscn")
+		var res = get_tree().change_scene("res://Levels/EndScreen.tscn")
 		assert(res == OK)
 	else:
 		var res = get_tree().change_scene("res://Levels/Nivel" + str(current_lvl+1) + ".tscn")
